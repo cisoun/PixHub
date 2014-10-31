@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="icon" href="../../favicon.ico">
+
+		<title>PixHub</title>
+		<script>
+			function toggle() {
+				var button = document.querySelector('.toggle');
+				var overlay = document.querySelector('.glass');
+				if (overlay.className === 'glass down') {
+					overlay.className = 'glass up';
+				} else {
+					overlay.className = 'glass down';
+				}
+			}
+
+			window.onload = function() {
+				/* transition support ~= classList support */
+				var preload = document.querySelector('.preload');
+				preload.classList.remove('preload');
+			}
+
+		</script>
+		<style>
+			/* LAYOUT */
+			html, body, article, .glass::before {
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+			}
+
+			.glass {
+				position: relative;
+			}
+
+			.glass::before {
+				z-index: -1;
+				display: block;
+				position: absolute;
+				content: ' ';
+			}
+
+			/* BACKGROUNDS */
+			body {
+				background-image: url(test.jpg);
+				background-size: cover;
+			}
+
+			.glass::before {
+				background-image: url('test.jpg');
+				/* Prefix free isn't picking up this one */
+				-webkit-filter: url('#blur');
+				filter: url('#blur');
+				-webkit-filter: blur(10px);
+				filter: blur(10px);
+				background-size: cover;
+				opacity: 1.0;
+
+				background-size: 110%;
+			}
+
+			.glass {
+				background-clip: content-box;
+			}
+
+			/* TRANSFORMATIONS */
+			.glass.down {
+				/* Fallback for browsers that don't support 3D Transforms */
+				transform: translateY(100%) translateY(-7rem);
+				transform: translateY(100%) translateY(-7rem) translateZ(0);
+			}
+
+			.glass.down::before {
+				transform: translateY(-100%) translateY(7rem);
+				transform: translateY(-100%) translateY(7rem) translateZ(0);
+			}
+
+			.glass.up, .glass.up::before {
+				transform: translateY(0);
+				transform: translateY(0) translateZ(0);
+			}
+
+			/* TRANSITIONS */
+			.preload * {
+				/* wait until document is loaded before transitioning */
+				transition: none !important;
+			}
+
+			.glass, .glass::before {
+				transition: transform 0.5s ease-out;
+			}
+
+			h1 {
+				font-size: 5rem;
+				line-height: 1.4;
+				font-weight: bold;
+				text-align: center;
+				padding: 0 7rem;
+				border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+				cursor: pointer;
+			}
+
+			h1::before {
+				position: absolute;
+				left: 0;
+				top: 0;
+				background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/28727/double-chevron-up.svg');
+				content: ' ';
+				display: block;
+				width: 7rem;
+				height: 7rem;
+				transition: transform 0.2s ease-out 0.5s;
+			}
+
+			.up h1::before {
+				transform: rotate(180deg);
+			}
+
+		</style>
+	</head>
+	<body>
+		<article class="glass down">
+			<h1 class='toggle' onmouseover='toggle()'>Celui qui lit ça est un con</h1>
+		</article>
+		<svg xmlns="http://www.w3.org/2000/svg"  version="1.1">
+			<defs>
+				<filter id="blur">
+					<feGaussianBlur stdDeviation="20"/>
+				</filter>
+			</defs>
+		</svg>
+		<!-- Image by Yair Hazout via unsplash.com -->
+		<!-- Text from Webster's Unabridged Dictionary via Project Gutenberg -->
+	</body>
+</html>
