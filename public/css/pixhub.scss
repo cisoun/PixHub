@@ -1,16 +1,9 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300);
-
-$navbar-a-bg-top: rgba(0,0,0,0.2);
-$navbar-a-bg-bottom: rgba(0,0,0,0);
-$home-btn-bg: rgba(255, 255, 255, 0.4);
-$home-btn-bg-hover: rgba(255, 255, 255, 0.8);
-$home-btn-fg: #999;
+@import 'pixhub-variables.scss';
 
 body {
 	background-color: #fff;
-	background-image: url('../img/banniere.jpg');
-	background-repeat: no-repeat;
-	background-size: cover;
+
 
 	color: #333;
 
@@ -21,103 +14,16 @@ body {
 
 /*h1, h2, h3, h4, h5, h6 { color: #6f5f53; }*/
 
-#home-page {
-	position: relative;
-	top: 800px;
-}
-
-#home-welcome {
-	color: #fff;
-	padding: 200px 0;
-	position:fixed;
-	text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-}
-
-#home-welcome-content {
-	position: fixed;
-	left: 50%;
-	margin-left: -250px;
-	width: 500px;
-}
-
-#home-welcome .btn {
-	border: 3px solid $home-btn-bg;
-	border-radius: 0;
-
-	transition: all .2s ease-in-out;
-	margin-top: 30px;
-	padding: 0;
-
-	&:focus,
-	&:hover { border: 9px solid $home-btn-bg-hover; box-shadow: 0px 0px 4px rgba(0, 0, 0, .25);}
-	width: 403px;
-	height: 86px;
-
-}
-
-#home-welcome .btn-inr {
-	background-color: $home-btn-bg;
-	color: $home-btn-fg;
-	display: block;
-	font-weight: 100;
-	font-size: 20px;
-	margin: 6px;
-	padding: 20px 0;
-	text-shadow: none;
-	text-transform: uppercase;
-	transition: all .2s ease-in-out;
-}
-
-#home-welcome .btn:hover .btn-inr {
-	background-color: $home-btn-bg-hover;
-	margin: 0px;
-}
-
-#home-welcome .btn .txt-a { display: inline; }
-#home-welcome .btn .txt-b { display: none; }
-
-#home-welcome .btn:focus .txt-a,
-#home-welcome .btn:hover .txt-a { display: none; }
-#home-welcome .btn:focus .txt-b,
-#home-welcome .btn:hover .txt-b { display: inline; }
-
-
-#home-presentation {
-	background-color: #fff;
-	border-top: 1px solid #999;
-	box-shadow: 0 0 50px #999;
-	font-size: 1.2em;
-	font-weight: 100;
-
-	padding: 100px 0;
-}
-
-#home-presentation h1 {
-	font-weight: 100;
-	padding-bottom: 30px;
-}
-
-#home-presentation .row {
-	padding: 50px 0;
-}
-
 .navbar {
-	background-color: transparent;
-	border: 0;
-	transition: all .5s ease-in-out;
+	background-color: rgba(255, 255, 255, 0.9);
+	border-bottom: 1px solid #ccc;
 }
 
 .navbar-search {
 	width: 300px;
 }
 
-.navbar-scroll {
-	background-color: rgba(255, 255, 255, 0.9);
-	/*box-shadow: 0px 0px 20px #fff;*/
-	border-bottom: 1px solid #ccc;
-}
-
-.navbar-scroll a {
+.navbar a {
 	color: #333 !important;
 }
 
@@ -145,10 +51,11 @@ body {
 	color: #fff;
 }
 
-.footer {
+#footer {
 	background-color: #fff;
 	border-top: 1px solid #ddd;
 	color: #999;
 	padding: 20px 0;
 	text-align: center;
+	width: 100%;
 }
