@@ -5,7 +5,7 @@ $home-btn-bg-hover: rgba(255, 255, 255, 0.8);
 $home-btn-fg: #999;
 
 body {
-	background-image: url('../img/banniere.jpg');
+	background-image: url('../img/background-blue.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -82,11 +82,6 @@ body {
 
 	position: relative;
 	top: 800px;
-}
-
-#home-presentation h1 {
-	font-weight: 100;
-	padding-bottom: 30px;
 }
 
 #home-presentation .row {

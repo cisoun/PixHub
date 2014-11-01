@@ -30,7 +30,7 @@
 		@include($page)
 
 		<div id="footer" class="container-fluid">
-			PixHub is a free and open source project created at the HE-Arc Engineering School |
+			PixHub is a free and open source project created at Haute-École Arc |
 			<a href="https://github.com/cisoun/PixHub">Check PixHub on GitHub</a>
 		</div>
 

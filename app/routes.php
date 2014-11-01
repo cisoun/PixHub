@@ -15,3 +15,14 @@ Route::get('/', function()
 {
 	return View::make('index', array('page' => 'home'));
 });
+
+Route::get('/home', function()
+{
+	return View::make('index', array('page' => 'home'));
+});
+
+
+Route::get('/signup', function()
+{
+	return View::make('index', array('page' => 'signup'));
+});

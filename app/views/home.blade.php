@@ -23,12 +23,12 @@
 				</p>
 			</div>
 			<div class="col-md-6">
-				<img src="img/banniere3.jpg" alt="..." class="img-thumbnail">
+				<img src="img/background-yellow.jpg" alt="..." class="img-thumbnail">
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-6">
-				<img src="img/banniere2.jpg" alt="..." class="img-thumbnail">
+				<img src="img/background-red.jpg" alt="..." class="img-thumbnail">
 			</div>
 			<div class="col-md-6">
 				<h1>What's cool about  it</h1>

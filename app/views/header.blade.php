@@ -7,7 +7,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">
+			<a class="navbar-brand" href="home">
 				Pix<b>Hub</b>
 			</a>
 		</div>
@@ -24,8 +24,8 @@
 				</div>
 			</form>
 			<ul class="nav navbar-nav navbar-right">
-				<li class=""><a href="#">Sign in</a></li>
-				<li class=""><a href="#">Sign up</a></li>
+				<li class=""><a href="signin">Sign in</a></li>
+				<li class=""><a href="signup">Sign up</a></li>
 			</ul>
 		</div><!--/.nav-collapse -->
 	</div>
