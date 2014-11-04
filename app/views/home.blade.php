@@ -3,7 +3,7 @@
 		<img id="home-welcome-logo" src="img/logo.png" class="img-responsive" alt="Responsive image">
 		<h1>Welcome to PixHub</h1>
 		<p>PixHub is a community platform where you can share your photos.</p>
-		<a class="btn" data-js="btn">
+		<a class="btn" data-js="btn" href="signup">
 			<span class="btn-inr">
 				<span class="txt-a">Join us now !</span>
 				<span class="txt-b">Hell yeah !</span>

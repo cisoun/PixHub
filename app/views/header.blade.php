@@ -13,19 +13,19 @@
 		</div>
 		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav">
-				<li class=""><a href="#">Explore</a></li>
+				<li class=""><a href="#"><span class="glyphicon glyphicon-search"></span> Explore</a></li>
 			</ul>
 			<form class="navbar-form navbar-left" role="search">
 				<div class="input-group navbar-search">
 					<input type="text" class="form-control">
-					<span class="input-group-btn">
+					<span class="input-group-btn">glyphicon glyphicon-ok-circle
 						<button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
 					</span>
 				</div>
 			</form>
 			<ul class="nav navbar-nav navbar-right">
-				<li class=""><a href="signin">Sign in</a></li>
-				<li class=""><a href="signup">Sign up</a></li>
+				<li class=""><a href="signin"><span class="glyphicon glyphicon-ok-circle"></span> Sign in</a></li>
+				<li class=""><a href="signup"><span class="glyphicon glyphicon-upload"></span> Sign up</a></li>
 			</ul>
 		</div><!--/.nav-collapse -->
 	</div>

@@ -1,7 +1,7 @@
 <div id="signup" class="container-fluid">
 	<div class="container">
 		<div class="col-md-8">
-			<h1>Sign up now !</h1>
+			<h1>Get in here !</h1>
 			<form role="form">
 				<div class="form-group">
 					<label for="signinName">Name or pseudo</label>
