@@ -10,6 +10,67 @@ h1 {
   font-weight: 100;
   padding-bottom: 30px; }
 
+#header-signin:hover > #header-signin-panel {
+  display: inline-block; }
+
+#header-signin-panel {
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 1px solid #999;
+  color: #fff;
+  display: none;
+  padding: 20px;
+  position: absolute;
+  right: 0;
+  width: 400px; }
+
+#header-signin-panel:after, #header-signin-panel:before {
+  bottom: 100%;
+  left: 90%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none; }
+
+#header-signin-panel:after {
+  border-color: rgba(0, 0, 0, 0);
+  border-bottom-color: rgba(0, 0, 0, 0.8);
+  border-width: 12px;
+  margin-left: -12px; }
+
+#header-signin-panel:before {
+  border-color: rgba(245, 238, 235, 0);
+  border-bottom-color: #999;
+  border-width: 13px;
+  margin-left: -13px; }
+
+#header-signin-panel button, #header-signin-panel button:focus {
+  border: 1px solid #999;
+  border-radius: 0;
+  background-color: transparent;
+  color: #fff;
+  transition: all 0.2s ease-in-out; }
+
+#header-signin-panel button:hover {
+  background-color: rgba(127, 127, 127, 0.8); }
+
+#header-signin-panel a {
+  border: 0;
+  color: #fff; }
+
+#footer {
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+  color: #999;
+  padding: 20px 0;
+  text-align: center;
+  width: 100%; }
+
+.signin-password-forgotten {
+  display: inline-block;
+  vertical-align: middle; }
+
 .navbar {
   background-color: rgba(255, 255, 255, 0.9);
   border-bottom: 1px solid #ccc;
@@ -65,12 +126,11 @@ h1 {
 .navbar-transparent a:hover {
   border-top-color: #fff; }
 
-#footer {
-  background-color: #fff;
-  border-top: 1px solid #ddd;
-  color: #999;
-  padding: 20px 0;
-  text-align: center;
-  width: 100%; }
+.page-default {
+  padding: 50px 0; }
+
+.form-info {
+  font-size: 0.9em;
+  margin: 20px 0; }
 
 /*# sourceMappingURL=pixhub.css.map */
