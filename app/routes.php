@@ -21,6 +21,12 @@ Route::get('/home', function()
 	return View::make('index', array('page' => 'home'));
 });
 
+//Route::get('/user/{user}', function()
+Route::get('/user', function()
+{
+	return View::make('index', array('page' => 'user'));
+});
+
 Route::get('/signin', function()
 {
 	return View::make('index', array('page' => 'signin'));
