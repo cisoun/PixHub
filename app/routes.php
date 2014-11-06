@@ -21,6 +21,10 @@ Route::get('/home', function()
 	return View::make('index', array('page' => 'home'));
 });
 
+Route::get('/signin', function()
+{
+	return View::make('index', array('page' => 'signin'));
+});
 
 Route::get('/signup', function()
 {

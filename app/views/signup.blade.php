@@ -1,32 +1,30 @@
-<div id="signup" class="container-fluid">
+<div id="signup" class="container-fluid page-default">
 	<div class="container">
 		<div class="col-md-8">
 			<h1>Get in here !</h1>
 			<form role="form">
 				<div class="form-group">
-					<label for="signinName">Name or pseudo</label>
-					<input type="email" class="form-control" id="signinName" placeholder="Enter email">
+					<label for="signupName">Name or pseudo *</label>
+					<input type="email" class="form-control" id="signupName" placeholder="Enter name" required>
 				</div>
 				<div class="form-group">
-					<label for="signinEmail">Email address</label>
-					<input type="email" class="form-control" id="signinEmail" placeholder="Enter email">
+					<label for="signupEmail">Email address *</label>
+					<input type="email" class="form-control" id="signupEmail" placeholder="Enter email" required>
 				</div>
 				<div class="form-group">
-					<label for="exampleInputPassword1">Password</label>
-					<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+					<label for="signupPassword">Password *</label>
+					<input type="password" class="form-control" id="signupPassword" placeholder="Password" required>
 				</div>
 				<div class="form-group">
-					<label for="exampleInputFile">File input</label>
-					<input type="file" id="exampleInputFile">
-					<p class="help-block">Example block-level help text here.</p>
+					<label for="signupPasswordConfirm">Confirm Password *</label>
+					<input type="password" class="form-control" id="signupPasswordConfirm" placeholder="Password" required>
 				</div>
-				<div class="checkbox">
-					<label>
-						<input type="checkbox"> Check me out
-					</label>
+				<div id="captcha">
+					<?php echo(Form::captcha()); ?>
 				</div>
-				<button type="submit" class="btn btn-default">Submit</button>
+				<button type="submit" class="btn btn-lg btn-default">Let's go !</button>
 			</form>
+			<p class="form-info">* These field <b>must</b> be filled.</p>
 		</div>
 		<div class="col-md-4">
 			<img src="img/signup.png" alt="sign up" class="img-responsive">
