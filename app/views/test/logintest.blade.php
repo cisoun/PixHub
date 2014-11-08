@@ -13,7 +13,7 @@
 			{{ $errors->first('mail') }}
 			{{ $errors->first('password') }}
 		</p>
-		
+
 		<p>
 			{{ Form::label('mail', 'Email Address') }}
 			{{ Form::text('mail', Input::old('mail'), array('placeholder' => 'example@example.com')) }}

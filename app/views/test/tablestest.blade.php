@@ -16,20 +16,20 @@
 	@foreach ($albums as $album)
 		<!-- GET OUR BASIC BEAR INFORMATION -->
 		<h2>Album : {{ $album->name }} <small> belongs to {{ $album->user->name }}</small></h2>
-		@foreach ($album->images as $image) 
-			<b>{{ $image->name}}</b> have exif's camera model : <b> {{ $image->exif->cameraModel}}</b>			
+		@foreach ($album->images as $image)
+			<b>{{ $image->name}}</b> have exif's camera model : <b> {{ $image->exif->cameraModel}}</b>
 			<i>, tags : </i>
 			@foreach ($image->tags as $tag)
 				<b>{{ $tag->name}}</b>
 			@endforeach
 			</br>
-		@endforeach		
+		@endforeach
 	@endforeach
-	
+
 	<?php $tags2 = Tag::all(); ?>
 	<h2> Tags : </h2>
 	@foreach ($tags2 as $tag)
-		<h3>{{ $tag->name }}<small> associates to 
+		<h3>{{ $tag->name }}<small> associates to
 			@foreach($tag->images as $image)
 				<b>{{$image->name}}</b>
 			@endforeach

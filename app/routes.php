@@ -37,25 +37,43 @@ Route::get('/signup', function()
 	return View::make('index', array('page' => 'signup'));
 });
 
+
+
+/*
+|--------------------------------------------------------------------------
+| Tests Routes
+|--------------------------------------------------------------------------
+*/
+
 // route pour afficher une page de test de la BDD
-Route::get('tablestest', function() {
-
-	return View::make('tablestest')
-		->with('albums', Album::all());
-
+Route::get('test/tablestest', function()
+{
+	return View::make('test/tablestest')->with('albums', Album::all());
 });
 
 // formulaire de login de test
-Route::get('logintest', array('uses' => 'HomeController@showLogin'));
+Route::get('test/logintest', function()
+{
+   return View::make('test/logintest', array('uses' => 'HomeController@showLogin'));
+});
 
 // route pour effectuer le login
-Route::post('logintest', array('uses' => 'HomeController@doLogin'));
+Route::post('test/logintest', function()
+{
+   return View::make('test/logintest', array('uses' => 'HomeController@doLogin'));
+});
 
 // route pour se dé loguer
 Route::get('logout', array('uses' => 'HomeController@doLogout'));
 
 // formulaire de crlation d'utilisateur de test
-Route::get('createusertest', array('uses' => 'HomeController@showCreate'));
+Route::get('test/createusertest', function()
+{
+   return View::make('test/createusertest', array('uses' => 'HomeController@showCreate'));
+});
 
 // route pour crééer l'utilisateur dans la BDD
-Route::post('createusertest', array('uses' => 'HomeController@createUser'));
+Route::post('test/createusertest', function()
+{
+   return View::make('test/createusertest', array('uses' => 'HomeController@createUser'));
+});
