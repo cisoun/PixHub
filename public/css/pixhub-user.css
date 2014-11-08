@@ -1,6 +1,25 @@
+#user {
+  min-height: 1000px; }
+
 #user-cover {
-  background-image: url('../img/test.jpg');
+  background-image: url('../img/background-blue.jpg');
   background-size: cover;
+  border-bottom: 1px solid #999;
   height: 600px; }
+
+#user-name {
+  left: 500px;
+  font-size: 4em;
+  font-weight: 100;
+  position: absolute;
+  top: 660px; }
+
+.user-avatar {
+  border: 3px solid #fff;
+  height: 256px;
+  left: 200px;
+  top: 520px;
+  position: absolute;
+  width: 256px; }
 
 /*# sourceMappingURL=pixhub-user.css.map */

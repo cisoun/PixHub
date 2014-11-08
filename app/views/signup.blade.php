@@ -1,11 +1,11 @@
 <div id="signup" class="container-fluid page-default">
 	<div class="container">
 		<div class="col-md-8">
-			<h1>Get in here !</h1>
-			<form role="form">
+			<h1>{{ trans('signup.title') }}</h1>
+			{{ Form::open(array('url' => 'foo/bar')) }}
 				<div class="form-group">
 					<label for="signupName">Name or pseudo *</label>
-					<input type="email" class="form-control" id="signupName" placeholder="Enter name" required>
+					<input type="text" class="form-control" id="signupName" placeholder="Enter name" required>
 				</div>
 				<div class="form-group">
 					<label for="signupEmail">Email address *</label>
@@ -22,12 +22,12 @@
 				<div id="captcha">
 					<?php echo(Form::captcha()); ?>
 				</div>
-				<button type="submit" class="btn btn-lg btn-default">Let's go !</button>
-			</form>
-			<p class="form-info">* These field <b>must</b> be filled.</p>
+			<button type="submit" class="btn btn-lg btn-default">Let's go ! <span class="glyphicon glyphicon-upload"></span></button>
+			{{ Form::close() }}
+			<p class="form-info">* {{ trans('forms.reminders.filled') }}</p>
 		</div>
 		<div class="col-md-4">
-			<img src="img/signup.png" alt="sign up" class="img-responsive">
+			<img src="img/signup.png" alt="sign up" class="img-responsive img-center">
 		</div>
 	</div>
 </div>
