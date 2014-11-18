@@ -56,7 +56,7 @@ return array(
 		'4' => 'Mirror vertical',
 		'5' => 'Mirror horizontal and rotated at 270°',
 		'6' => 'Rotated at 90°',
-		'7' => 'Mirror horizontal and rotated at 90°'
+		'7' => 'Mirror horizontal and rotated at 90°',
 		'8' => 'Rotated at 270°'
 	),
 );
