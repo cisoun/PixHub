@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Sam 08 Novembre 2014 à 15:54
+-- Généré le :  Mar 18 Novembre 2014 à 14:00
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `albums` (
   `user_id` int(11) NOT NULL,
   PRIMARY KEY (`id`,`user_id`),
   KEY `fk_album_user_idx` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
 -- Contenu de la table `albums`
@@ -40,7 +40,9 @@ CREATE TABLE IF NOT EXISTS `albums` (
 
 INSERT INTO `albums` (`id`, `name`, `user_id`) VALUES
 (1, 'Panorama', 35),
-(4, 'Macro', 65);
+(4, 'Macro', 65),
+(10, 'test', 35),
+(11, 'afasdfasd', 35);
 
 -- --------------------------------------------------------
 
@@ -62,18 +64,14 @@ CREATE TABLE IF NOT EXISTS `exifs` (
   `orientation` varchar(15) NOT NULL,
   `date` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=49 ;
 
 --
 -- Contenu de la table `exifs`
 --
 
 INSERT INTO `exifs` (`id`, `height`, `width`, `cameraModel`, `cameraBrand`, `iso`, `aperture`, `exposure`, `focal`, `flash`, `orientation`, `date`) VALUES
-(1, 100, 100, 'Nikon', '', '', '', '', '', 0, '', NULL),
-(2, 200, 200, 'Canon', '', '', '', '', '', 0, '', NULL),
-(3, 300, 300, 'Nikon', '', '', '', '', '', 0, '', NULL),
-(4, 400, 400, 'Minolta', '', '', '', '', '', 0, '', NULL),
-(5, 500, 500, 'Apple iPhone', '', '', '', '', '', 0, '', NULL);
+(1, 0, 0, '', '', '', '', '', '', 0, '', NULL);
 
 -- --------------------------------------------------------
 
@@ -83,27 +81,23 @@ INSERT INTO `exifs` (`id`, `height`, `width`, `cameraModel`, `cameraBrand`, `iso
 
 CREATE TABLE IF NOT EXISTS `images` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(20) NOT NULL,
+  `name` varchar(255) NOT NULL,
   `description` varchar(50) NOT NULL,
   `dateUpload` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `album_id` int(11) NOT NULL,
   `exif_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `exif_id_UNIQUE` (`exif_id`),
   KEY `fk_image_album_idx` (`album_id`),
-  KEY `fk_image_exif_idx` (`exif_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+  KEY `fk_image_exif_idx` (`exif_id`),
+  KEY `exif_id_UNIQUE` (`exif_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=26 ;
 
 --
 -- Contenu de la table `images`
 --
 
 INSERT INTO `images` (`id`, `name`, `description`, `dateUpload`, `album_id`, `exif_id`) VALUES
-(1, 'img1', '', '2014-11-06 15:12:12', 1, 1),
-(2, 'img3', '', '2014-11-06 15:12:28', 1, 3),
-(4, 'img4', '', '2014-11-06 15:12:51', 1, 4),
-(5, 'img5', '', '2014-11-06 15:12:59', 1, 5),
-(6, 'macro.png', '', '2014-11-07 15:26:38', 4, 2);
+(1, 'img1', '', '2014-11-06 15:12:12', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -125,12 +119,8 @@ CREATE TABLE IF NOT EXISTS `image_has_tag` (
 
 INSERT INTO `image_has_tag` (`image_id`, `tag_id`) VALUES
 (1, 1),
-(2, 1),
-(4, 1),
 (1, 2),
-(2, 2),
-(1, 3),
-(6, 3);
+(1, 3);
 
 -- --------------------------------------------------------
 
@@ -170,7 +160,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `description` text NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `mail` (`mail`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=67 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=68 ;
 
 --
 -- Contenu de la table `users`
@@ -179,7 +169,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 INSERT INTO `users` (`id`, `name`, `password`, `cover`, `site`, `mail`, `location`, `description`) VALUES
 (35, 'Jack', '$2y$10$f/5r3wrHmKpMrv8PDYQV/e5pOd1qx61kJ9v4ckGFpYGBlyYzjOAHS', '', '', 'c@c.com', '-', 'sdfd'),
 (65, 'Eddy', '$2y$10$2T/6EuFYAskSH87mB85F7OmARTxSU1OXCGgyuh0n5CAT/DBdXaxt2', '-', '', 'ed.strambini@bluewin.ch', 'Suisse', 'Bla bla bla '),
-(66, 'Marc', '$2y$10$wKsQnp4skJx/QR2FBF9/U.1W6eCdhbTU4Z/34X9osHCt7AS1al5JS', '-', '', 'marc@marc.com', '', '');
+(66, 'Marc', '$2y$10$wKsQnp4skJx/QR2FBF9/U.1W6eCdhbTU4Z/34X9osHCt7AS1al5JS', '-', '', 'marc@marc.com', '', ''),
+(67, 'simon', '$2y$10$GsVo6YjJDK.iNXdeZ3YREeo/R59xvj00vVreVKGYYlF5fb/TlBKgK', '-', 'asdfasfd', 'simon@simon.com', 'asdfasdf', 'asdfasdf');
 
 --
 -- Contraintes pour les tables exportées
