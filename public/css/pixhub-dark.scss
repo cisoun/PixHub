@@ -1,0 +1,14 @@
+@import 'pixhub-variables.scss';
+
+body {
+	color: $fg-dark;
+}
+
+body,
+#footer {
+	background-color: $bg-dark;
+}
+
+#footer {
+	border-top: 1px solid $footer-border-dark !important;
+}

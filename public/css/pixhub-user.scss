@@ -1,27 +1,77 @@
-#user {
-	min-height: 1000px;
-}
+@import 'pixhub-dark.scss';
+
+$user-cover-fg: #fff;
+$user-cover-fg-shadow: #000;
+$user-nav-bg: #333;
+$user-nav-link: #ccc;
+$user-nav-link-hover: #fff;
 
 #user-cover {
 	background-image: url('../img/background-blue.jpg');
 	background-size: cover;
 	border-bottom: 1px solid #999;
-	height: 600px;
+	color: $user-cover-fg;
+	height: 700px;
+	padding-top: 150px;
+	position: fixed;
+	width: 100%;
+	text-align: center;
+	top: 0px;
+	z-index: -1
 }
 
 #user-name {
-	left: 500px;
 	font-size: 4em;
 	font-weight: 100;
-	position: absolute;
-	top : 660px;
 }
 
-.user-avatar {
-	border: 3px solid #fff;
+#user-avatar {
+	border: 3px solid $user-cover-fg;
 	height: 256px;
-	left: 200px;
-	top: 520px;
-	position: absolute;
+	margin: 0 auto;
 	width: 256px;
+}
+
+#user-location {
+	font-size: 1.3em;
+}
+
+#user-body {
+	background-color: $bg-dark;
+	padding: 0;
+	margin: 0;
+	//position: relative;
+	margin-top: 700px;
+	width: 100%;
+	z-index: 1;
+}
+
+#user-tabs .nav {
+	background-color: $user-nav-bg;
+	text-align: center;
+}
+
+#user-tabs .nav li {
+	display: inline-block;
+	float: none;
+}
+
+#user-tabs .nav li a {
+	background: transparent;
+	color: $user-nav-link;
+	padding: 20px;
+
+	&:hover,
+	&:focus {
+		color: $user-nav-link-hover;
+	}
+}
+
+#user-tabs .dropdown-menu {
+	background-color: $user-nav-bg;
+	padding: 20px;
+}
+
+#user-page {
+	padding: 50px 0;
 }
