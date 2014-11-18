@@ -19,12 +19,13 @@ class HomeController extends BaseController {
 	{
 		return View::make('hello');
 	}
+	
 	// création d'une vue de création d'ajout d'utilisateur ...
 	public function showCreate()
 	{
 		return View::make('test/createusertest'); // ... de test
 	}
-
+	
 	// Méthode de cération d'utilisateur
 	public function createUser()
 	{
@@ -34,7 +35,7 @@ class HomeController extends BaseController {
 			'mail'    => 'required|email', // make sure the email is an actual email
 			'password' => 'required|alphaNum|min:3' // password can only be alphanumeric and has to be greater than 3 characters
 		);
-
+		
 		// run the validation rules on the inputs from the form
 		$validator = Validator::make(Input::all(), $rules);
 
@@ -43,8 +44,8 @@ class HomeController extends BaseController {
 			return Redirect::to('test/createusertest')
 				->withErrors($validator) // send back all errors to the login form
 				->withInput(Input::except('password')); // send back the input (not the password) so that we can repopulate the form
-		}
-		else {
+		} 
+		else {			
 			$pass = Input::get('password');
 			$user = [
 				'name' => Input::get('name'),
@@ -55,13 +56,13 @@ class HomeController extends BaseController {
 				'cover' => '-', // En 'dur' car pas de champs dans le formulaire de test.
 				'password' => Hash::make($pass),
 			];
-
+			
 			User::create($user);
-
+			
 			return Redirect::to('test/tablestest');
 		}
 	}
-
+	
 	// Création d'une vue de login ...
 	public function showLogin()
 	{
@@ -104,16 +105,16 @@ class HomeController extends BaseController {
 				// for now we'll just echo success (even though echoing in a controller is bad)
 				//echo 'SUCCESS!';
 
-			} else {
+			} else {	 	
 
-				// validation not successful, send back to form
+				// validation not successful, send back to form	
 				return Redirect::to('test/logintest'); // Page de login de test
 
 			}
 
 		}
 	}
-
+	
 	// Méthode de logOut
 	public function doLogout()
 	{

@@ -4,7 +4,7 @@
 	<title>Create user test</title>
 </head>
 <body>
-	{{ Form::open(array('url' => 'createusertest')) }}
+	{{ Form::open(array('url' => 'test/createusertest')) }}
 		<h1>Create your account</h1>
 
 		<!-- if there are login errors, show them here -->
