@@ -1,4 +1,4 @@
-<div id="signup" class="container-fluid page-default">
+<div id="signup" class="container-fluid page">
 	<div class="container">
 		<div class="col-md-8">
 			<h1>{{ trans('signup.title') }}</h1>

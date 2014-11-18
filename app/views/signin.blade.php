@@ -1,4 +1,4 @@
-<div id="signin" class="container-fluid page-default">
+<div id="signin" class="container-fluid page">
 	<div class="container">
 		<div class="col-md-4">
 			<img src="img/signin.png" alt="sign in" class="img-responsive img-center">
