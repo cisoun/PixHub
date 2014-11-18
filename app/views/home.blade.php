@@ -1,5 +1,5 @@
 <div id="home-welcome" class="container-fluid text-center">
-	<div id="home-welcome-content">
+	<div id="home-welcome-content" class="text-shadow">
 		<img id="home-welcome-logo" src="img/logo.png" class="img-responsive" alt="Responsive image">
 		<h1>Welcome to PixHub</h1>
 		<p>PixHub is a community platform where you can share your photos.</p>
@@ -11,7 +11,7 @@
 		</a>
 	</div>
 </div>
-<div id="home-presentation" class="container-fluid">
+<div id="home-presentation" class="container-fluid page-shadow">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6">
