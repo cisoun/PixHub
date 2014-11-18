@@ -7,7 +7,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="home">
+			<a class="navbar-brand" href="/home">
 				Pix<b>Hub</b>
 			</a>
 		</div>
@@ -25,12 +25,12 @@
 			</form>
 			<ul class="nav navbar-nav navbar-right">
 				<li id="header-signin">
-					<a href="signin"><span class="glyphicon glyphicon-ok-circle"></span> Sign in</a>
+					<a href="/signin"><span class="glyphicon glyphicon-ok-circle"></span> Sign in</a>
 					<div id="header-signin-panel">
 						@include('fragments/signin-form')
 					</div>
 				</li>
-				<li class=""><a href="signup"><span class="glyphicon glyphicon-upload"></span> Sign up</a></li>
+				<li class=""><a href="/signup"><span class="glyphicon glyphicon-upload"></span> Sign up</a></li>
 			</ul>
 		</div><!--/.nav-collapse -->
 	</div>
