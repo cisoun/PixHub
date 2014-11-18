@@ -21,10 +21,19 @@ Route::get('/home', function()
 	return View::make('index', array('page' => 'home'));
 });
 
-//Route::get('/user/{user}', function()
-Route::get('/user', function()
+Route::get('/photo/{id}', function($id)
 {
-	return View::make('index', array('page' => 'user'));
+	return View::make('index', array('page' => 'photo', 'id' => $id));
+});
+
+Route::get('/user/{user}', function($user)
+{
+	return View::make('index', array('page' => 'user', 'user' => $user, 'section' => 'latest'));
+});
+
+Route::get('/user/{user}/{section}', function($user, $section)
+{
+	return View::make('index', array('page' => 'user', 'user' => $user, 'section' => $section));
 });
 
 Route::get('/signin', function()
