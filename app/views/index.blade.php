@@ -1,3 +1,11 @@
+<?php
+	$css = 				asset('css/pixhub.css');
+	$css_bootstrap =	asset('css/bootstrap.min.css');
+	$css_page = 		asset('css/pixhub-' . $page . '.css');
+	$js = 				asset('js/pixhub.js');
+	$js_page = 			asset('js/pixhub-' . $page . '.js');
+	$js_bootstrap = 	asset('js/bootstrap.min.js');
+?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -11,11 +19,11 @@
 		<title>PixHub</title>
 
 		<!-- Bootstrap core CSS -->
-		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="{{{ $css_bootstrap }}}" rel="stylesheet">
 
 		<!-- Custom styles for this template -->
-		<link href="css/pixhub.css" rel="stylesheet">
-		<link href="css/pixhub-{{ $page }}.css" rel="stylesheet">
+		<link href="{{{ $css }}}" rel="stylesheet">
+		<link href="{{{ $css_page }}}" rel="stylesheet">
 
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
@@ -37,10 +45,10 @@
 		<!-- Bootstrap core JavaScript ================================================== -->
 		<!-- Placed at the end of the document so the pages load faster -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
+		<script src="{{{ $js_bootstrap }}}"></script>
 		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 		<script src="js/ie10-viewport-bug-workaround.js"></script>
-		<script src="js/pixhub.js"></script>
-		<script src="js/pixhub-{{ $page }}.js"></script>
+		<script src="{{{ $js }}}"></script>
+		<script src="{{{ $js_page }}}"></script>
 	</body>
 </html>
