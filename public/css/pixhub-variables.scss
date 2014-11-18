@@ -1,3 +1,28 @@
+$bg: #fff;
+$fg: #333;
+
+
+
+$text-color: $fg;
+
+$link-color: #03A9F4;
+$link-hover-color: #00BCD4;
+
+
 $header-signin-bg: rgba(0, 0, 0, 0.8);
 $header-signin-border: #999;
 $header-signin-fg: #fff;
+
+$footer-fg: #999;
+$footer-border: #ddd;
+$footer-border-dark: #333;
+
+
+//
+// Dark variant
+//
+$bg-dark: #222;
+$fg-dark: #ccc;
+
+$link-color-dark: #ddd;
+$link-hover-color-dark: white;
