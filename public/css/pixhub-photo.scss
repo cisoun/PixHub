@@ -1,14 +1,48 @@
 @import 'pixhub-dark.scss';
 
-
-#photo-description {
-	padding-top: 50px;
+#photo {
+	padding-bottom: 0;
 }
 
-.photo-panel {
+#photo-container {
+	background-color: darken($bg-dark, 5%);
 	padding: 30px;
 }
 
+#photo-informations {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+#photo-title h1,
+#photo-title h4 {
+	margin: 0;
+	padding: 0;
+}
+
+#photo-avatar {
+	height: 64px;
+	margin-right: 20px;
+	width: 64px;
+
+	&:hover {
+		border-color: $link-color;
+	}
+}
+
+#photo-description {
+	padding: 30px 0;
+}
+
+.photo-panel {
+	padding: 30px 50px;
+}
+
 .separator {
-	border-right: 1px solid $footer-border-dark;
+	border-left: 1px solid $footer-border-dark;
+}
+
+.photo-exif {
+	color: $brand-info;
+	padding-right: 40px;
 }

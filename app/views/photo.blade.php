@@ -1,19 +1,52 @@
 <?php
-	$photo = asset('img/test.jpg');
+$photo = asset('img/test.jpg');
 ?>
-<div id="photo" class="container page">
-	<img src="{{{ $photo }}}" class="img-responsive photo" alt="photo"/>
-	<div id="photo-description" class="row">
-		<div class="col-lg-6 separator photo-panel">
-			<h1>Titre</h1>
-			<p>Description de la photo</p>
+<div id="photo" class="container-fluid page">
+	<div id="photo-container">
+		<div class="container">
+			<img src="{{{ $photo }}}" class="img-responsive photo" alt="photo"/>
 		</div>
-		<div class="col-lg-6 photo-panel">
-			<h1>{{{ trans('pixhub.photo-exif') }}}</h1>
-			<ul>
-				<li>Size : -</li>
-				<li>Cameral model : -</li>
-			</ul>
+	</div>
+	<div class="page-shadow">
+		<div id="photo-informations" class="container page">
+			<div class="col-md-6 photo-panel">
+				<div class="row">
+					<div id="photo-title" class="row">
+						<a href="/user/john/"><img id="photo-avatar" src="../img/avatar.png" class="avatar img-responsive pull-left" alt="Avatar"/></a>
+						<div class="pull-left">
+							<h1>Titre</h1>
+							<h4><a href="/user/john/">John Doe</a></h4>
+						</div>
+					</div>
+					<div id="photo-description" class="row">
+						<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tempus a massa non bibendum. Nullam varius nibh quis consequat suscipit. Aliquam erat volutpat. Ut magna felis, bibendum nec sollicitudin non, lacinia sed leo. Morbi accumsan mattis suscipit. Integer scelerisque ex vitae neque posuere eleifend. Mauris tempus tincidunt dolor sodales ornare.
+						</p>
+						<p>
+						Etiam scelerisque ex felis, id vulputate urna aliquet vel. Etiam augue diam, lobortis sit amet eros non, porta cursus risus. Duis imperdiet auctor interdum. Proin vehicula ornare eleifend. Aliquam vel condimentum quam. Curabitur ut quam dolor. Nulla tristique, arcu vitae sollicitudin porta, augue felis pharetra tortor, quis blandit nunc elit et augue. Vestibulum fermentum purus vitae justo semper, nec porttitor erat laoreet. In ut viverra ex.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 photo-panel separator">
+				<h1>{{{ trans('pixhub.photo-informations') }}}</h1>
+				<table>
+					<tr><td class="photo-exif">{{{ trans('pixhub.views') }}}</td><td>9001</td></tr>
+					<tr><td class="photo-exif">{{{ trans('exif.size') }}}</td><td>1000 × 800</td></tr>
+					<tr><td class="photo-exif">{{{ trans('exif.camera-model') }}}</td><td>Nikon D700</td></tr>
+					<tr><td class="photo-exif">{{{ trans('exif.camera-brand') }}}</td><td>Nikon</td></tr>
+					<tr><td class="photo-exif">{{{ trans('exif.iso') }}}</td><td>400</td></tr>
+					<tr><td class="photo-exif">{{{ trans('exif.aperture') }}}</td><td>f/2.8</td></tr>
+					<tr><td class="photo-exif">{{{ trans('exif.exposure') }}}</td><td>1/200 s</td></tr>
+					<tr><td class="photo-exif">{{{ trans('exif.focal') }}}</td><td>200 mm</td></tr>
+					<tr><td class="photo-exif">{{{ trans('exif.flash') }}}</td><td>No flash</td></tr>
+					<tr><td class="photo-exif">{{{ trans('exif.orientation') }}}</td><td>Landscape</td></tr>
+					<tr><td class="photo-exif">{{{ trans('exif.date') }}}</td><td>20 september 2014</td></tr>
+				</table>
+
+				<h1>Tags</h1>
+				<a href="#" class="tag">Example</a> <a href="#" class="tag">Example</a> <a href="#" class="tag">Example</a>
+			</div>
 		</div>
 	</div>
 </div>

@@ -12,3 +12,8 @@ body,
 #footer {
 	border-top: 1px solid $footer-border-dark !important;
 }
+
+.page-shadow {
+	border-top: 1px solid lighten($bg-dark, 10%);
+	box-shadow: 0 0 50px darken($bg-dark, 20%);
+}

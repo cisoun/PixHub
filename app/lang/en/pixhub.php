@@ -18,5 +18,6 @@ return array(
 	'user-albums'					=> 'Albums',
 	'user-about'					=> 'About me',
 
-	'photo-exif'					=> 'Exif datas',
+	'photo-informations'			=> 'Informations',
+	'views'							=> 'Views'
 );

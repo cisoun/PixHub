@@ -237,3 +237,14 @@ a:focus {
 	border: 2px solid white;
 	border-radius: 100%;
 }
+
+.tag {
+	background-color: $brand-success;
+	border-radius: 2px;
+	color: #fff;
+	padding: 2px 5px;
+
+	&:hover {
+		color: #fff;
+	}
+}

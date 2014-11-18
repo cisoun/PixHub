@@ -1,13 +1,8 @@
-$bg: #fff;
-$fg: #333;
-
-
-
-$text-color: $fg;
-
-$link-color: #03A9F4;
-$link-hover-color: #00BCD4;
-
+$brand-primary: #428bca;
+$brand-success: #5cb85c;
+$brand-info:    #5bc0de;
+$brand-warning: #f0ad4e;
+$brand-danger:  #d9534f;
 
 $header-signin-bg: rgba(0, 0, 0, 0.8);
 $header-signin-border: #999;
@@ -17,12 +12,20 @@ $footer-fg: #999;
 $footer-border: #ddd;
 $footer-border-dark: #333;
 
+//
+// Normal variant
+//
+$bg: #fff;
+$fg: #333;
+
+$link-color: #03A9F4;
+$link-hover-color: #00BCD4;
 
 //
 // Dark variant
 //
 $bg-dark: #222;
-$fg-dark: #ccc;
+$fg-dark: #999;
 
 $link-color-dark: #ddd;
 $link-hover-color-dark: white;
