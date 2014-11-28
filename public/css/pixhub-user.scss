@@ -36,6 +36,10 @@ $user-nav-link-hover: #fff;
 	font-size: 1.3em;
 }
 
+#user-website a {
+	color: $user-cover-fg;
+}
+
 #user-body {
 	background-color: $bg-dark;
 	padding: 0;

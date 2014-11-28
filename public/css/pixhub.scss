@@ -23,7 +23,6 @@ a:focus {
 	}
 }
 
-
 #header-signin:hover > #header-signin-panel {
 	display: inline-block;
 }
@@ -129,7 +128,8 @@ a:focus {
 	background-color: transparent;
 }
 
-.navbar a {
+.navbar a,
+.navbar a:focus {
 	border-top: 5px solid transparent;
 	color: #333;
 }
