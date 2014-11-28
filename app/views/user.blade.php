@@ -12,7 +12,7 @@
 		<div id="user-nav">
 			<div id="user-tabs">
 				<ul class="nav nav-pills">
-					<li role="presentation"><a href="latest">{{ trans('pixhub.user-latest-photos') }}</a></li>
+					<li role="presentation">{{ link_to('user/' . $user . '/latest', trans('pixhub.user-latest-photos'), $attributes = array(), $secure = null); }}</li>
 					<li role="presentation" class="dropdown">
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
 							{{ trans('pixhub.user-albums') }} <span class="caret"></span>
@@ -21,7 +21,7 @@
 							This user has no albums
 						</ul>
 					</li>
-					<li role="presentation"><a href="about">{{ trans('pixhub.user-about') }}</a></li>
+					<li role="presentation">{{ link_to('user/' . $user . '/about', trans('pixhub.user-about'), $attributes = array(), $secure = null); }}</li>
 				</ul>
 			</div>
 		</div>
