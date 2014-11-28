@@ -17,4 +17,9 @@ class AlbumController extends BaseController {
 		$albumID = Album::create($data)['id'];
 		return Redirect::to('test/tablestest'); // Page de login de test
 	}
+	
+	public function getImages($albumID)
+	{
+		return Album::find($albumID)->images;
+	}
 }

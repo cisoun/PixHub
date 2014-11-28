@@ -7,6 +7,16 @@ class ImageController extends BaseController {
 		return View::make('test/uploadtest');
 	}
 
+	public function getExif($imageID)
+	{
+		return Image::find($imageID)->exif;
+	}
+	
+	public function getTags($imageID)
+	{
+		return Image::find($imageID)->tags;
+	}
+	
 	public function createImage($exifID,$filename,$albumID)
 	{
 		$data =[
