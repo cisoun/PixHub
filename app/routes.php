@@ -16,35 +16,40 @@ Route::get('/', function()
 	return View::make('index', array('page' => 'home'));
 });
 
-Route::get('/home', function()
+Route::get('home', function()
 {
 	return View::make('index', array('page' => 'home'));
 });
 
-Route::get('/photo/{id}', function($id)
+Route::get('photo/{id}', function($id)
 {
 	return View::make('index', array('page' => 'photo', 'id' => $id));
 });
 
-Route::get('/user/{user}', function($user)
+Route::get('user/{user}', function($user)
 {
 	return View::make('index', array('page' => 'user', 'user' => $user, 'section' => 'latest'));
 });
 
-Route::get('/user/{user}/{section}', function($user, $section)
+Route::get('user/{user}/{section}', function($user, $section)
 {
 	return View::make('index', array('page' => 'user', 'user' => $user, 'section' => $section));
 });
 
-Route::get('/signin', function()
+Route::get('signin', function()
 {
 	return View::make('index', array('page' => 'signin'));
 });
 
-Route::get('/signup', function()
+Route::get('signup', function()
 {
 	return View::make('index', array('page' => 'signup'));
 });
+
+
+
+
+Route::post('signin', array('uses' => 'HomeController@doLogin'));
 
 
 
