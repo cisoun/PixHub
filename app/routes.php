@@ -60,10 +60,7 @@ Route::post('signin', array('uses' => 'HomeController@doLogin'));
 */
 
 // route pour afficher une page de test de la BDD
-Route::get('test/tablestest', function()
-{
-	return View::make('test/tablestest')->with('albums', Album::all());
-});
+Route::get('test/tablestest', array('uses' => 'UserController@getAlbums'));
 
 // formulaire de login de test
 Route::get('test/logintest', array('uses' => 'HomeController@showLogin'));
