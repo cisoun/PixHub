@@ -1,24 +1,28 @@
+/* line 7, /srv/http/PixHub/public/css/pixhub-home.scss */
 body {
   background-image: url('../img/background-blue.jpg');
   background-repeat: no-repeat;
   background-size: cover; }
 
+/* line 13, /srv/http/PixHub/public/css/pixhub-home.scss */
 #footer {
   margin-top: 800px;
   position: absolute; }
 
+/* line 18, /srv/http/PixHub/public/css/pixhub-home.scss */
 #home-welcome {
   color: #fff;
   padding: 200px 0;
-  position: fixed;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); }
+  position: fixed; }
 
+/* line 24, /srv/http/PixHub/public/css/pixhub-home.scss */
 #home-welcome-content {
   position: fixed;
   left: 50%;
   margin-left: -250px;
   width: 500px; }
 
+/* line 31, /srv/http/PixHub/public/css/pixhub-home.scss */
 #home-welcome .btn {
   border: 3px solid rgba(255, 255, 255, 0.4);
   border-radius: 0;
@@ -27,10 +31,12 @@ body {
   padding: 0;
   width: 403px;
   height: 86px; }
+  /* line 40, /srv/http/PixHub/public/css/pixhub-home.scss */
   #home-welcome .btn:focus, #home-welcome .btn:hover {
     border: 9px solid rgba(255, 255, 255, 0.8);
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25); }
 
+/* line 46, /srv/http/PixHub/public/css/pixhub-home.scss */
 #home-welcome .btn-inr {
   background-color: rgba(255, 255, 255, 0.4);
   color: #999;
@@ -43,33 +49,37 @@ body {
   text-transform: uppercase;
   transition: all 0.2s ease-in-out; }
 
+/* line 59, /srv/http/PixHub/public/css/pixhub-home.scss */
 #home-welcome .btn:hover .btn-inr {
   background-color: rgba(255, 255, 255, 0.8);
   margin: 0px; }
 
+/* line 64, /srv/http/PixHub/public/css/pixhub-home.scss */
 #home-welcome .btn .txt-a {
   display: inline; }
 
+/* line 65, /srv/http/PixHub/public/css/pixhub-home.scss */
 #home-welcome .btn .txt-b {
   display: none; }
 
+/* line 68, /srv/http/PixHub/public/css/pixhub-home.scss */
 #home-welcome .btn:focus .txt-a, #home-welcome .btn:hover .txt-a {
   display: none; }
 
+/* line 70, /srv/http/PixHub/public/css/pixhub-home.scss */
 #home-welcome .btn:focus .txt-b, #home-welcome .btn:hover .txt-b {
   display: inline; }
 
+/* line 72, /srv/http/PixHub/public/css/pixhub-home.scss */
 #home-presentation {
   background-color: #fff;
-  border-top: 1px solid #999;
-  box-shadow: 0 0 50px #999;
   font-size: 1.2em;
   font-weight: 100;
-  /*height: 1200px;*/
   padding: 100px 0;
   position: relative;
   top: 800px; }
 
+/* line 81, /srv/http/PixHub/public/css/pixhub-home.scss */
 #home-presentation .row {
   padding: 50px 0; }
 

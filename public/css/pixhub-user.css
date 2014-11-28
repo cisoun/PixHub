@@ -1,25 +1,89 @@
-#user {
-  min-height: 1000px; }
+/* line 3, /srv/http/PixHub/public/css/pixhub-dark.scss */
+body {
+  color: #999; }
 
+/* line 8, /srv/http/PixHub/public/css/pixhub-dark.scss */
+body, #footer {
+  background-color: #222; }
+
+/* line 12, /srv/http/PixHub/public/css/pixhub-dark.scss */
+#footer {
+  border-top: 1px solid #333 !important; }
+
+/* line 16, /srv/http/PixHub/public/css/pixhub-dark.scss */
+.page-shadow {
+  border-top: 1px solid #3c3c3c;
+  box-shadow: 0 0 50px black; }
+
+/* line 9, /srv/http/PixHub/public/css/pixhub-user.scss */
 #user-cover {
   background-image: url('../img/background-blue.jpg');
   background-size: cover;
   border-bottom: 1px solid #999;
-  height: 600px; }
+  color: #fff;
+  height: 700px;
+  padding-top: 150px;
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  top: 0px;
+  z-index: -1; }
 
+/* line 23, /srv/http/PixHub/public/css/pixhub-user.scss */
 #user-name {
-  left: 500px;
   font-size: 4em;
-  font-weight: 100;
-  position: absolute;
-  top: 660px; }
+  font-weight: 100; }
 
-.user-avatar {
+/* line 28, /srv/http/PixHub/public/css/pixhub-user.scss */
+#user-avatar {
   border: 3px solid #fff;
   height: 256px;
-  left: 200px;
-  top: 520px;
-  position: absolute;
+  margin: 0 auto;
   width: 256px; }
+
+/* line 35, /srv/http/PixHub/public/css/pixhub-user.scss */
+#user-location {
+  font-size: 1.3em; }
+
+/* line 39, /srv/http/PixHub/public/css/pixhub-user.scss */
+#user-website a {
+  color: #fff; }
+
+/* line 43, /srv/http/PixHub/public/css/pixhub-user.scss */
+#user-body {
+  background-color: #222;
+  padding: 0;
+  margin: 0;
+  margin-top: 700px;
+  width: 100%;
+  z-index: 1; }
+
+/* line 53, /srv/http/PixHub/public/css/pixhub-user.scss */
+#user-tabs .nav {
+  background-color: #333;
+  text-align: center; }
+
+/* line 58, /srv/http/PixHub/public/css/pixhub-user.scss */
+#user-tabs .nav li {
+  display: inline-block;
+  float: none; }
+
+/* line 63, /srv/http/PixHub/public/css/pixhub-user.scss */
+#user-tabs .nav li a {
+  background: transparent;
+  color: #ccc;
+  padding: 20px; }
+  /* line 69, /srv/http/PixHub/public/css/pixhub-user.scss */
+  #user-tabs .nav li a:hover, #user-tabs .nav li a:focus {
+    color: #fff; }
+
+/* line 74, /srv/http/PixHub/public/css/pixhub-user.scss */
+#user-tabs .dropdown-menu {
+  background-color: #333;
+  padding: 20px; }
+
+/* line 79, /srv/http/PixHub/public/css/pixhub-user.scss */
+#user-page {
+  padding: 50px 0; }
 
 /*# sourceMappingURL=pixhub-user.css.map */

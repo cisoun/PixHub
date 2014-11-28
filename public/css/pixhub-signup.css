@@ -1,6 +1,8 @@
+/* line 1, /srv/http/PixHub/public/css/pixhub-signup.scss */
 #signup h1 {
   text-transform: uppercase; }
 
+/* line 5, /srv/http/PixHub/public/css/pixhub-signup.scss */
 #signup #captcha {
   margin: 20px 0; }
 
