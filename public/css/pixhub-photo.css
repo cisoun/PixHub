@@ -1,0 +1,63 @@
+/* line 3, /srv/http/PixHub/public/css/pixhub-dark.scss */
+body {
+  color: #999; }
+
+/* line 8, /srv/http/PixHub/public/css/pixhub-dark.scss */
+body, #footer {
+  background-color: #222; }
+
+/* line 12, /srv/http/PixHub/public/css/pixhub-dark.scss */
+#footer {
+  border-top: 1px solid #333 !important; }
+
+/* line 16, /srv/http/PixHub/public/css/pixhub-dark.scss */
+.page-shadow {
+  border-top: 1px solid #3c3c3c;
+  box-shadow: 0 0 50px black; }
+
+/* line 3, /srv/http/PixHub/public/css/pixhub-photo.scss */
+#photo {
+  padding-bottom: 0; }
+
+/* line 7, /srv/http/PixHub/public/css/pixhub-photo.scss */
+#photo-container {
+  background-color: #151515;
+  padding: 30px; }
+
+/* line 12, /srv/http/PixHub/public/css/pixhub-photo.scss */
+#photo-informations {
+  padding-top: 50px;
+  padding-bottom: 50px; }
+
+/* line 18, /srv/http/PixHub/public/css/pixhub-photo.scss */
+#photo-title h1, #photo-title h4 {
+  margin: 0;
+  padding: 0; }
+
+/* line 23, /srv/http/PixHub/public/css/pixhub-photo.scss */
+#photo-avatar {
+  height: 64px;
+  margin-right: 20px;
+  width: 64px; }
+  /* line 28, /srv/http/PixHub/public/css/pixhub-photo.scss */
+  #photo-avatar:hover {
+    border-color: #03A9F4; }
+
+/* line 33, /srv/http/PixHub/public/css/pixhub-photo.scss */
+#photo-description {
+  padding: 30px 0; }
+
+/* line 37, /srv/http/PixHub/public/css/pixhub-photo.scss */
+.photo-panel {
+  padding: 30px 50px; }
+
+/* line 41, /srv/http/PixHub/public/css/pixhub-photo.scss */
+.separator {
+  border-left: 1px solid #333; }
+
+/* line 45, /srv/http/PixHub/public/css/pixhub-photo.scss */
+.photo-exif {
+  color: #5bc0de;
+  padding-right: 40px; }
+
+/*# sourceMappingURL=pixhub-photo.css.map */
