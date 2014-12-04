@@ -5,6 +5,10 @@
 	$js = 				asset('js/pixhub.js');
 	$js_page = 			asset('js/pixhub-' . $page . '.js');
 	$js_bootstrap = 	asset('js/bootstrap.min.js');
+	$js_ie10 =			asset('js/ie10-viewport-bug-workaround.js');
+	$js_jeditable =		asset('js/jquery.jeditable.min.js');
+
+	//print_r(Auth::user());
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,9 +49,10 @@
 		<!-- Bootstrap core JavaScript ================================================== -->
 		<!-- Placed at the end of the document so the pages load faster -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="{{{ $js_jeditable }}}"></script>
 		<script src="{{{ $js_bootstrap }}}"></script>
 		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-		<script src="js/ie10-viewport-bug-workaround.js"></script>
+		<script src="{{{ $js_ie10 }}}"></script>
 		<script src="{{{ $js }}}"></script>
 		<script src="{{{ $js_page }}}"></script>
 	</body>

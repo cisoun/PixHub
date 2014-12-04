@@ -91,6 +91,34 @@ a:focus {
 	z-index: 1000;
 }
 
+.editable {
+	border: 1px solid transparent;
+	padding: 10px;
+	transition: all .5s ease-in-out;
+}
+
+.editable:hover {
+	border: 1px solid lighten($bg-dark, 10%);
+	border-radius: 6px;
+	color: $link-color;
+	//padding: 30px 20px !important;
+}
+
+.editable textarea,
+.editable input {
+	outline: none !important;
+	border: 0;
+	border-color: $bg-dark;
+    /*border-color: #719ECE;
+    box-shadow: 0 0 10px #719ECE;*/
+	background-color: $bg-dark;
+	color: $fg-dark;
+	word-break: break-all;
+	word-wrap: break-word;
+	text-overflow: ellipsis;
+	hyphens: auto;
+}
+
 .signin-password-forgotten {
 	display: inline-block;
 	vertical-align: middle;
