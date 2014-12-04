@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mar 18 Novembre 2014 à 14:00
+-- Généré le :  Jeu 04 Décembre 2014 à 16:50
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -32,17 +32,17 @@ CREATE TABLE IF NOT EXISTS `albums` (
   `user_id` int(11) NOT NULL,
   PRIMARY KEY (`id`,`user_id`),
   KEY `fk_album_user_idx` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
 
 --
 -- Contenu de la table `albums`
 --
 
 INSERT INTO `albums` (`id`, `name`, `user_id`) VALUES
-(1, 'Panorama', 35),
+(1, 'Panorama', 65),
 (4, 'Macro', 65),
-(10, 'test', 35),
-(11, 'afasdfasd', 35);
+(10, 'test', 65),
+(11, 'simon''s album', 67);
 
 -- --------------------------------------------------------
 
@@ -64,7 +64,7 @@ CREATE TABLE IF NOT EXISTS `exifs` (
   `orientation` varchar(15) NOT NULL,
   `date` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=49 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=31 ;
 
 --
 -- Contenu de la table `exifs`
@@ -90,14 +90,19 @@ CREATE TABLE IF NOT EXISTS `images` (
   KEY `fk_image_album_idx` (`album_id`),
   KEY `fk_image_exif_idx` (`exif_id`),
   KEY `exif_id_UNIQUE` (`exif_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=26 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=40 ;
 
 --
 -- Contenu de la table `images`
 --
 
 INSERT INTO `images` (`id`, `name`, `description`, `dateUpload`, `album_id`, `exif_id`) VALUES
-(1, 'img1', '', '2014-11-06 15:12:12', 1, 1);
+(1, 'img1', '', '2014-11-06 15:12:12', 1, 1),
+(2, 'img2', '', '2014-11-06 15:12:12', 1, 1),
+(3, 'img3', '', '2014-11-06 15:12:12', 1, 1),
+(4, 'img4', '', '2014-11-06 15:12:12', 4, 1),
+(5, 'img5', '', '2014-11-06 15:12:12', 4, 1),
+(6, 'img6', '', '2014-11-06 15:12:12', 10, 1);
 
 -- --------------------------------------------------------
 
@@ -120,7 +125,8 @@ CREATE TABLE IF NOT EXISTS `image_has_tag` (
 INSERT INTO `image_has_tag` (`image_id`, `tag_id`) VALUES
 (1, 1),
 (1, 2),
-(1, 3);
+(1, 3),
+(2, 3);
 
 -- --------------------------------------------------------
 
@@ -132,7 +138,7 @@ CREATE TABLE IF NOT EXISTS `tags` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Contenu de la table `tags`
@@ -141,7 +147,8 @@ CREATE TABLE IF NOT EXISTS `tags` (
 INSERT INTO `tags` (`id`, `name`) VALUES
 (1, 'yolo'),
 (2, 'swag'),
-(3, 'filter');
+(3, 'filter'),
+(4, 'laravel');
 
 -- --------------------------------------------------------
 
@@ -151,7 +158,8 @@ INSERT INTO `tags` (`id`, `name`) VALUES
 
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(35) NOT NULL,
+  `pseudo` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
   `password` varchar(64) NOT NULL,
   `cover` varchar(20) NOT NULL,
   `site` varchar(20) NOT NULL,
@@ -159,18 +167,18 @@ CREATE TABLE IF NOT EXISTS `users` (
   `location` varchar(50) NOT NULL DEFAULT '-',
   `description` text NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `mail` (`mail`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=68 ;
+  UNIQUE KEY `mail` (`mail`),
+  UNIQUE KEY `pseudo` (`pseudo`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=71 ;
 
 --
 -- Contenu de la table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `password`, `cover`, `site`, `mail`, `location`, `description`) VALUES
-(35, 'Jack', '$2y$10$f/5r3wrHmKpMrv8PDYQV/e5pOd1qx61kJ9v4ckGFpYGBlyYzjOAHS', '', '', 'c@c.com', '-', 'sdfd'),
-(65, 'Eddy', '$2y$10$2T/6EuFYAskSH87mB85F7OmARTxSU1OXCGgyuh0n5CAT/DBdXaxt2', '-', '', 'ed.strambini@bluewin.ch', 'Suisse', 'Bla bla bla '),
-(66, 'Marc', '$2y$10$wKsQnp4skJx/QR2FBF9/U.1W6eCdhbTU4Z/34X9osHCt7AS1al5JS', '-', '', 'marc@marc.com', '', ''),
-(67, 'simon', '$2y$10$GsVo6YjJDK.iNXdeZ3YREeo/R59xvj00vVreVKGYYlF5fb/TlBKgK', '-', 'asdfasfd', 'simon@simon.com', 'asdfasdf', 'asdfasdf');
+INSERT INTO `users` (`id`, `pseudo`, `name`, `password`, `cover`, `site`, `mail`, `location`, `description`) VALUES
+(35, 'jack', 'Jack', '$2y$10$f/5r3wrHmKpMrv8PDYQV/e5pOd1qx61kJ9v4ckGFpYGBlyYzjOAHS', '', '', 'c@c.com', '-', 'sdfd'),
+(65, 'eddy', 'Eddy', '$2y$10$2T/6EuFYAskSH87mB85F7OmARTxSU1OXCGgyuh0n5CAT/DBdXaxt2', '-', '', 'ed.strambini@bluewin.ch', 'Suisse', 'Bla bla bla '),
+(67, 'simon', 'simon', '$2y$10$GsVo6YjJDK.iNXdeZ3YREeo/R59xvj00vVreVKGYYlF5fb/TlBKgK', '-', 'asdfasfd', 'simon@simon.com', 'asdfasdf', 'asdfasdf');
 
 --
 -- Contraintes pour les tables exportées
