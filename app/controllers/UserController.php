@@ -8,26 +8,12 @@ class UserController extends BaseController {
 		return View::make('test/createusertest'); // ... de test
 	}
 	
-	// Retourne l'id de l'utilisateur loggé
-	public function getUserID()
-	{
-		return Auth::id();
-	}
-	
-	// Retourne les albums de l'utlisateur
-	public function getAlbums()
-	{
-		$id = UserController::getUserID();
-		
-		return User::find($id)->albums;
-	}
-	
 	// Méthode de cération d'utilisateur
 	public function createUser()
 	{
 		// validate the info, create rules for the inputs
 		$rules = array(
-			'name' 	=> 'required|alphaNum|min:4', // name can only be alphanumeric and has to be greater than 4 characters
+			'pseudo' 	=> 'required|alphaNum|min:4', // name can only be alphanumeric and has to be greater than 4 characters
 			'mail'    => 'required|email', // make sure the email is an actual email
 			'password' => 'required|alphaNum|min:3' // password can only be alphanumeric and has to be greater than 3 characters
 		);
@@ -45,6 +31,7 @@ class UserController extends BaseController {
 			$pass = Input::get('password');
 			$user = [
 				'name' => Input::get('name'),
+				'pseudo' => Input::get('pseudo'),
 				'mail' => Input::get('mail'),
 				'site' => Input::get('site'),
 				'location' => Input::get('location'),

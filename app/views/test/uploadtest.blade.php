@@ -18,6 +18,7 @@
 		<h1>File upload</h1>
 		<p>
 			{{ Form::file('file') }}
+			{{ Form::hidden('albumID', 4) }} 	<!-- Au lieu de 4 mettre l'id de l'album -->
 		</p>
 
 		<p>{{ Form::submit('Upload image!') }}</p>

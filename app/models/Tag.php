@@ -10,5 +10,11 @@ class Tag extends Eloquent{
     public function images()
     {
         return $this->belongsToMany('Image', 'image_has_tag');
-    }
+    }	
+		
+	public function getImagesViaTag($tagID)
+	{
+		$images = Tag::find($tagID)->images;		
+		return $images;
+	}
 }

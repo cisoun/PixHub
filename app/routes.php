@@ -60,23 +60,29 @@ Route::get('signoff', array('uses' => 'HomeController@doLogout'));
 |--------------------------------------------------------------------------
 */
 
+// route pour afficher une page de test de presque tout
+Route::get('test/megatest', function()
+{
+	return View::make('test/megatest');
+});
+
 // route pour afficher une page de test de la BDD
 Route::get('test/tablestest', array('uses' => 'UserController@getAlbums'));
 
 // formulaire de login de test
-Route::get('test/logintest', array('uses' => 'HomeController@showLogin'));
+Route::get('test/logintest', array('uses' => 'UserController@showLogin'));
 
 // route pour effectuer le login
-Route::post('test/logintest', array('uses' => 'HomeController@doLogin'));
+Route::post('test/logintest', array('uses' => 'UserController@doLogin'));
 
 // route pour se dé loguer
-Route::get('test/logout', array('uses' => 'HomeController@doLogout'));
+Route::get('test/logout', array('uses' => 'UserController@doLogout'));
 
 // formulaire de crlation d'utilisateur de test
-Route::get('test/createusertest', array('uses' => 'HomeController@showCreate'));
+Route::get('test/createusertest', array('uses' => 'UserController@showCreate'));
 
 // route pour créer l'utilisateur dans la BDD
-Route::post('test/createusertest', array('uses' => 'HomeController@createUser'));
+Route::post('test/createusertest', array('uses' => 'UserController@createUser'));
 
 // route pour tester l'upload d'image
 Route::get('test/uploadtest', array('uses' => 'ImageController@showUpload'));

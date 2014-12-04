@@ -47,7 +47,7 @@ class HomeController extends BaseController {
 		} 
 		else {			
 			$pass = Input::get('password');
-			$user = [
+			$data = [
 				'name' => Input::get('name'),
 				'mail' => Input::get('mail'),
 				'site' => Input::get('site'),
@@ -57,7 +57,7 @@ class HomeController extends BaseController {
 				'password' => Hash::make($pass),
 			];
 			
-			User::create($user);
+			User::create($data);
 			
 			return Redirect::to('test/tablestest');
 		}

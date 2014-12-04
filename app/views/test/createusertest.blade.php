@@ -13,9 +13,14 @@
 			{{ $errors->first('mail') }}
 			{{ $errors->first('password') }}
 		</p>
-
+		
 		<p>
-			{{ Form::label('name', 'Your name') }}
+			{{ Form::label('pseudo', 'Your pseudo') }}
+			{{ Form::text('pseudo') }}
+		</p>
+		
+		<p>
+			{{ Form::label('name', 'Your real name') }}
 			{{ Form::text('name') }}
 		</p>
 

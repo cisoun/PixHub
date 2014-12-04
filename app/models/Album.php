@@ -16,5 +16,38 @@ class Album extends Eloquent {
 	
 	public function user() {
 		return $this->belongsTo('User');
-	}	
+	}
+	
+	// Getters
+	
+	public function getImages($albumID)
+	{
+		return Album::find($albumID)->images;
+
+	}
+	
+	public function getPath($userID)
+	{
+		return public_path().'\uploads\ '.sha1($userID);
+	}
+	
+	// Création d'album dans la BDD
+	public function createAlbum($albumName,$userID)
+	{
+		$data =[
+			'name' => $albumName,
+			'user_id' =>$userID,
+		];
+		
+		$albumID = Album::create($data)['id'];
+		
+		return $albumID;
+	}
+	
+	// Création d'image
+	public function createImage($filename,$description,$exifID)
+	{
+		$image = new Image;
+		$image->createImage($filename,$description,$this->id,$exifID);
+	}
 }

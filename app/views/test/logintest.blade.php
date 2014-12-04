@@ -4,7 +4,7 @@
 	<title>User login test</title>
 </head>
 <body>
-
+	{{{Auth::logout()}}}
 	{{ Form::open(array('url' => 'test/logintest')) }}
 		<h1>Login</h1>
 

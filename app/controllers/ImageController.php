@@ -6,29 +6,6 @@ class ImageController extends BaseController {
 	{
 		return View::make('test/uploadtest');
 	}
-
-	public function getExif($imageID)
-	{
-		return Image::find($imageID)->exif;
-	}
-	
-	public function getTags($imageID)
-	{
-		return Image::find($imageID)->tags;
-	}
-	
-	public function createImage($exifID,$filename,$albumID)
-	{
-		$data =[
-			'name' =>$filename,
-			'description' =>'Description',
-			'dateUpload' =>time(),
-			'album_id' =>$albumID,
-			'exif_id' =>$exifID,
-		];
-		
-		Image::create($data);
-	}
 	
     public function uploadImage()
     {
@@ -49,7 +26,9 @@ class ImageController extends BaseController {
 		
 		$path = $file->getRealPath();
 		
-        $destinationPath = public_path().'\uploads\ '.sha1('1'); // à la place de '1' mettre l'id de l'utilisateur
+		$id = Auth::id();
+		
+        $destinationPath = public_path().'\uploads\ '.sha1($id);
 		
         $filename = $file->getClientOriginalName();
 		$extension = $file->getClientOriginalExtension();
@@ -61,8 +40,12 @@ class ImageController extends BaseController {
         if( $uploadSuccess ) {
 			
 			$exifID = App::make('ExifController')->createExif($exif);
+
+			$albumID = Input::get('albumID');
+			$album = Album::find($albumID);
 			
-			$this->createImage($exifID,$sha1filename,1); // à la place de '1' mettre l'id de l'album
+			$album->createImage($filename,'Description',$exifID); 	
+			
 			return Redirect::to('test/tablestest');
         } else {
            return Redirect::to('home');
