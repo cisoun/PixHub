@@ -18,7 +18,7 @@
 
 		$id = Auth::id();
 		
-		$user = User::find($id);
+		$user = User::find($id); // Création d'un user avec l'id de l'authentifié
 
 		$path = $user->getPath(); // Chemin des uploads de l'utilisateur
 		
@@ -36,6 +36,15 @@
 		
 		$ImagesFromTag = $tag->images;	// Acces aux images d'un tag particulier (ici son id = 3)	
 		
+		if(!empty($userPseudo)) //$userPseudo passé par le route get
+		{
+			$userViaPseudo = User::getUserFromPseudo($userPseudo); // Création d'un user via son pseudo
+			if($userViaPseudo == null)
+				echo "L'utilisateur n'existe pas";
+			else
+				echo $userViaPseudo;
+		}
+
 	?>
 	
 </div>

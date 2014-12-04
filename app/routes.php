@@ -66,6 +66,12 @@ Route::get('test/megatest', function()
 	return View::make('test/megatest');
 });
 
+// route pour afficher une page de test avec comme pseudo celui passé après /megatest/
+Route::get('test/megatest/{user?}', function($userPseudo)
+{
+	return View::make('test/megatest')->with('userPseudo',$userPseudo);
+});
+
 // route pour afficher une page de test de la BDD
 Route::get('test/tablestest', array('uses' => 'UserController@getAlbums'));
 
