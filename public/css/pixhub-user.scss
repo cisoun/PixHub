@@ -2,9 +2,6 @@
 
 $user-cover-fg: #fff;
 $user-cover-fg-shadow: #000;
-$user-nav-bg: #333;
-$user-nav-link: #ccc;
-$user-nav-link-hover: #fff;
 
 #user-cover {
 	background-image: url('../img/background-blue.jpg');
@@ -48,32 +45,6 @@ $user-nav-link-hover: #fff;
 	margin-top: 700px;
 	width: 100%;
 	z-index: 1;
-}
-
-#user-tabs .nav {
-	background-color: $user-nav-bg;
-	text-align: center;
-}
-
-#user-tabs .nav li {
-	display: inline-block;
-	float: none;
-}
-
-#user-tabs .nav li a {
-	background: transparent;
-	color: $user-nav-link;
-	padding: 20px;
-
-	&:hover,
-	&:focus {
-		color: $user-nav-link-hover;
-	}
-}
-
-#user-tabs .dropdown-menu {
-	background-color: $user-nav-bg;
-	padding: 20px;
 }
 
 #user-page {

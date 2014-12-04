@@ -274,3 +274,30 @@ a:focus {
 		color: #fff;
 	}
 }
+
+.page-tabs .nav {
+	background-color: $page-nav-bg;
+	text-align: center;
+}
+
+.page-tabs .nav li {
+	display: inline-block;
+	float: none;
+}
+
+.page-tabs .nav li a {
+	background: transparent;
+	color: $page-nav-link;
+	padding: 20px;
+
+	&:hover,
+	&:focus {
+		background-color: transparent;
+		color: $page-nav-link-hover;
+	}
+}
+
+.page-tabs .dropdown-menu {
+	background-color: $page-nav-bg;
+	padding: 20px;
+}
