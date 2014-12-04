@@ -4,4 +4,4 @@
 		@include('fragments/signin-form')
 	</div>
 </li>
-<li class=""><a href="/signup"><span class="glyphicon glyphicon-upload"></span> Sign up</a></li>
+<li><a href="/signup"><span class="glyphicon glyphicon-upload"></span> Sign up</a></li>

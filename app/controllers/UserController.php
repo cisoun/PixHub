@@ -115,6 +115,6 @@ class UserController extends BaseController {
 	public function doLogout()
 	{
 		Auth::logout(); // log the user out of our application
-		return Redirect::to('test/logintest'); // redirect the user to the login screen
+		return Redirect::to('/'); // redirect the user to the login screen
 	}
 }

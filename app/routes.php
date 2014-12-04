@@ -50,6 +50,7 @@ Route::get('signup', function()
 
 
 Route::post('signin', array('uses' => 'HomeController@doLogin'));
+Route::get('signoff', array('uses' => 'HomeController@doLogout'));
 
 
 
