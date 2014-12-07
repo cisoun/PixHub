@@ -19,14 +19,14 @@
 		$id = Auth::id();
 		
 		$user = User::find($id); // Création d'un user avec l'id de l'authentifié
-
-		$path = $user->getPath(); // Chemin des uploads de l'utilisateur
+		
+		$path = User::getPath($id); // Chemin des uploads de l'utilisateur
 		
 		$albums = $user->albums; // Trouve les albums de l'utilisateur logué
 		
-		$album =  Album::find(4);
+		$album =  Album::find(14);
 		
-		$images = $album->images; // Acces aux images d'un album particulier (ici dont l'id = 4)
+		$images = $album->images; // Acces aux images d'un album particulier (ici dont l'id = 14)
 		
 		$image = Image::find(1);
 		
@@ -44,6 +44,11 @@
 			else
 				echo $userViaPseudo;
 		}
+		
+		// Test de suppréssion d'images
+		
+		$image = Image::find(22);
+		$image->deleteImage();
 
 	?>
 	

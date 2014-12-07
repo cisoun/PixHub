@@ -49,5 +49,34 @@ class Image extends Eloquent{
 		
 		return Image::create($data)['id'];
 	}
+	
+	// Supression de l'image (.png etc)
+	public function deleteImage()
+	{
+		$userID = $this->album->user->id;
+		
+		$path = User::getPath($userID);		
+		
+		$filename = $path.'\\'.$this->name;
+		echo $filename;
+		if (File::exists($filename)){
+			File::delete($filename);
+		}
+		
+		$this->deleteExif();
+	}
+	
+	// Supression de l'exif et de l'image dans la BDD
+	public function deleteExif()
+	{
+		$exifID = $this->exif_id;
+		
+		if($exifID != 1){ // Ne pas supprimer l'entrée 1 de la table exif qui représente les images sans exif
+			Exif::deleteExif($exifID);// Supprimer l'exif supprimera la photo dans la DBB
+		}
+		else{
+			$this->delete(); // Si photo sans exif, on supprime la photo de la BDD
+		}
+	}
 
 }

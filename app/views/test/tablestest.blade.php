@@ -13,6 +13,12 @@
 </head>
 <body class="container">
 <div class="col-sm-8 col-sm-offset-2">
+	{{{
+		$userID = 65;
+		$user = User::find($userID);
+		$albums = $user->albums;
+	
+	}}}
 	@foreach ($albums as $album)
 		<!-- GET OUR BASIC BEAR INFORMATION -->
 		<h2>Album : {{ $album->name }} <small> belongs to {{ $album->user->name }}</small></h2>

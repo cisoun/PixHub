@@ -37,14 +37,14 @@ class ImageController extends BaseController {
 		
         $uploadSuccess = $file->move($destinationPath, $sha1filename);
 
-        if( $uploadSuccess ) {
+        if( $uploadSuccess ) { 
 			
 			$exifID = App::make('ExifController')->createExif($exif);
 
 			$albumID = Input::get('albumID');
 			$album = Album::find($albumID);
 			
-			$album->createImage($filename,'Description',$exifID); 	
+			$album->createImage($sha1filename,'Description',$exifID); 	
 			
 			return Redirect::to('test/tablestest');
         } else {

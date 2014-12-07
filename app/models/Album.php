@@ -44,6 +44,19 @@ class Album extends Eloquent {
 		return $albumID;
 	}
 	
+	public function deleteAlbum()
+	{
+		//Supression des images de l'album
+		$images = $this->images;
+		foreach($images as $image)
+		{
+			$image->deleteImage();
+		}
+		
+		$this->delete();
+		
+	}
+	
 	// Création d'image
 	public function createImage($filename,$description,$exifID)
 	{

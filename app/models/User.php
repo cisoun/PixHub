@@ -21,9 +21,9 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		return $this->hasMany('Album');
 	}
 	
-	public function getPath()
+	public static function getPath($userID)
 	{
-		return public_path().'\uploads\ '.sha1($this->id);
+		return public_path().'\uploads\ '.sha1($userID);
 	}
 	
 	public function createAlbum($albumName)
@@ -35,5 +35,23 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	public static function getUserFromPseudo($pseudo)
 	{
 		return User::where('pseudo',$pseudo)->first();
+	}
+	
+	public function deleteUser()
+	{
+		$albums = $this->albums;
+		
+		foreach($albums as $album)
+		{
+			$album->deleteAlbum();
+		}
+		
+		$path = User::getPath($this->id);
+		echo $path;
+		if (File::exists($path)){
+			File::deleteDirectory($path);
+		}
+		
+		$this->delete();
 	}
 }
