@@ -31,6 +31,14 @@ class Album extends Eloquent {
 		return public_path().'\uploads\ '.sha1($userID);
 	}
 	
+	// Setter
+	
+	public function setName($name)
+	{
+		$this->name = $name;
+		$this->save();
+	}
+	
 	// Création d'album dans la BDD
 	public function createAlbum($albumName,$userID)
 	{

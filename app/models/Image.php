@@ -36,6 +36,14 @@ class Image extends Eloquent{
 		return $tags;		
 	}
 	
+	// Setter
+	
+	public function setDescription($description)
+	{
+		$this->description = $description;
+		$this->save();
+	}
+	
 	// Méthode de création d'image dans la BDD
 	public function createImage($filename,$description,$albumID,$exifID)
 	{

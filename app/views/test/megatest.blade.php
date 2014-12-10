@@ -15,7 +15,7 @@
 <div class="col-sm-8 col-sm-offset-2">
 
 	<?php 	
-
+		
 		$id = Auth::id();
 		
 		$user = User::find($id); // Création d'un user avec l'id de l'authentifié

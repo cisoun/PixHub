@@ -54,4 +54,43 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		
 		$this->delete();
 	}
+
+	// Setters
+	
+	public function setDescription($description)
+	{
+		$this->description = $description;
+		$this->save();
+	}
+	
+	public function setLocation($location)
+	{
+		$this->location = $location;
+		$this->save();
+	}
+	
+	public function setSite($site)
+	{
+		$this->site = $site;
+		$this->save();
+	}
+	
+	public function setCover($cover)
+	{
+		$this->cover = $cover;
+		$this->save();
+	}
+	
+	public function setName($name)
+	{
+		$this->name = $name;
+		$this->save();
+	}
+	
+	public function setPassword($passwordHash) // Le mot de passe doit être hashé (sha1(pass)) avant l'appel du set
+	{
+		$this->password = $passwordHash;
+		$this->save();
+	}
+	
 }
