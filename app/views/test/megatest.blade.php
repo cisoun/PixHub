@@ -16,7 +16,7 @@
 
 	<?php 	
 		
-		$id = Auth::id();
+		/*$id = Auth::id();
 		
 		$user = User::find($id); // Création d'un user avec l'id de l'authentifié
 		
@@ -48,7 +48,7 @@
 		// Test de suppréssion d'images
 		
 		$image = Image::find(22);
-		$image->deleteImage();
+		$image->deleteImage();*/
 
 	?>
 	
