@@ -1,13 +1,4 @@
 <?php
-	$css = 				asset('css/pixhub.css');
-	$css_bootstrap =	asset('css/bootstrap.min.css');
-	$css_page = 		asset('css/pixhub-' . $page . '.css');
-	$js = 				asset('js/pixhub.js');
-	$js_page = 			asset('js/pixhub-' . $page . '.js');
-	$js_bootstrap = 	asset('js/bootstrap.min.js');
-	$js_ie10 =			asset('js/ie10-viewport-bug-workaround.js');
-	$js_jeditable =		asset('js/jquery.jeditable.min.js');
-
 	//print_r(Auth::user());
 ?>
 <!DOCTYPE html>
@@ -23,11 +14,11 @@
 		<title>PixHub</title>
 
 		<!-- Bootstrap core CSS -->
-		<link href="{{{ $css_bootstrap }}}" rel="stylesheet">
+		{{ HTML::style('css/bootstrap.min.css') }}
 
 		<!-- Custom styles for this template -->
-		<link href="{{{ $css }}}" rel="stylesheet">
-		<link href="{{{ $css_page }}}" rel="stylesheet">
+		{{ HTML::style('css/pixhub.css') }}
+		{{ HTML::style('css/pixhub-' . $page . '.css') }}
 
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
@@ -48,12 +39,12 @@
 
 		<!-- Bootstrap core JavaScript ================================================== -->
 		<!-- Placed at the end of the document so the pages load faster -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script src="{{{ $js_jeditable }}}"></script>
-		<script src="{{{ $js_bootstrap }}}"></script>
+		{{ HTML::script('https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js') }}
+		{{ HTML::script('js/jquery.jeditable.min.js') }}
+		{{ HTML::script('js/bootstrap.min.js') }}
 		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-		<script src="{{{ $js_ie10 }}}"></script>
-		<script src="{{{ $js }}}"></script>
-		<script src="{{{ $js_page }}}"></script>
+		{{ HTML::script('js/ie10-viewport-bug-workaround.js') }}
+		{{ HTML::script('js/pixhub.js') }}
+		{{ HTML::script('js/pixhub-' . $page . '.js') }}
 	</body>
 </html>
