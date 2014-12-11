@@ -16,6 +16,14 @@
 
 	<?php 	
 		
+		/*$user = User::find(65);
+		
+		$latestImages = $user->getLatestImages();
+		
+		foreach($latestImages as $image){
+			echo $image->id;
+		}*/
+		
 		/*$id = Auth::id();
 		
 		$user = User::find($id); // Création d'un user avec l'id de l'authentifié

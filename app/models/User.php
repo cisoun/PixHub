@@ -37,6 +37,13 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		return User::find(Auth::id());
 	}
 	
+	public function getLatestImages() // 5 dernières images
+	{
+		$latestAlbumID = Album::getLatestAlbumID($this);
+		
+		return Image::getLatestImages($latestAlbumID);
+	}
+	
 	public static function getUserFromPseudo($pseudo)
 	{
 		return User::where('pseudo',$pseudo)->first();
