@@ -31,6 +31,14 @@ class Album extends Eloquent {
 		return public_path().'\uploads\ '.sha1($userID);
 	}
 	
+	// Setter
+	
+	public function setName($name)
+	{
+		$this->name = $name;
+		$this->save();
+	}
+	
 	// Création d'album dans la BDD
 	public function createAlbum($albumName,$userID)
 	{
@@ -42,6 +50,19 @@ class Album extends Eloquent {
 		$albumID = Album::create($data)['id'];
 		
 		return $albumID;
+	}
+	
+	public function deleteAlbum()
+	{
+		//Supression des images de l'album
+		$images = $this->images;
+		foreach($images as $image)
+		{
+			$image->deleteImage();
+		}
+		
+		$this->delete();
+		
 	}
 	
 	// Création d'image
