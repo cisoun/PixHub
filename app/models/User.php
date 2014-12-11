@@ -32,6 +32,11 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		$album->createAlbum($albumName,$this->id);
 	}
 	
+	public static function getCurrentUser()
+	{
+		return User::fund(Auth::id());
+	}
+	
 	public static function getUserFromPseudo($pseudo)
 	{
 		return User::where('pseudo',$pseudo)->first();
