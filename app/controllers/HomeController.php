@@ -92,7 +92,7 @@ class HomeController extends BaseController {
 
 			// create our user data for the authentication
 			$userdata = array(
-				'name'		=> Input::get('signinUsername'),
+				'pseudo'		=> Input::get('signinUsername'),
 				//'mail' 	=> Input::get('mail'), // Authentification par eMail
 				'password' 	=> Input::get('signinPassword'),
 			);
@@ -120,6 +120,6 @@ class HomeController extends BaseController {
 	public function doLogout()
 	{
 		Auth::logout(); // log the user out of our application
-		return Redirect::to('test/logintest'); // redirect the user to the login screen
+		return Redirect::to('/'); // redirect the user to the login screen
 	}
 }
