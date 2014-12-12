@@ -7,19 +7,20 @@ class ExifController extends BaseController {
 		if($exif) // Si données exif on créé une entrée dans la BDD
 		{			
 
-			$height = $exif['COMPUTED']['Height'];
-			$width = $exif['COMPUTED']['Width'];	
+			$height = 		ExifController::checkExif($exif,'COMPUTED','Height');
+			$width = 		ExifController::checkExif($exif,'COMPUTED','Width');	
 			
-			$brand = $exif['IFD0']['Make'];		
-			$model = $exif['IFD0']['Model'];
-			$orientation = $exif['IFD0']['Orientation'];
+			$brand = 		ExifController::checkExif($exif,'IFD0','Make');	
+			$model = 		ExifController::checkExif($exif,'IFD0','Model');
+			$orientation = 	ExifController::checkExif($exif,'IFD0','Orientation');
 			
-			$iso = $exif['EXIF']['ISOSpeedRatings'];		
-			$exposure = $exif['EXIF']['ExposureTime'];
-			$aperture = $exif['EXIF']['MaxApertureValue'];
-			$datetimeoriginal = $exif['EXIF']['DateTimeOriginal'];
-			$focallength = $exif['EXIF']['FocalLength'];
-			$flash = $exif['EXIF']['Flash'];
+			$iso = 			ExifController::checkExif($exif,'EXIF','ISOSpeedRatings');
+				
+			$exposure = 	ExifController::checkExif($exif,'EXIF','ExposureTime');
+			$aperture = 	ExifController::checkExif($exif,'EXIF','MaxApertureValue');
+			$datetimeoriginal = ExifController::checkExif($exif,'EXIF','DateTimeOriginal');
+			$focallength = 	ExifController::checkExif($exif,'EXIF','FocalLength');
+			$flash = 	ExifController::checkExif($exif,'EXIF','Flash');
 
 			$data = [
 					'height' =>$height,
@@ -43,6 +44,22 @@ class ExifController extends BaseController {
 		}
 
 		return $exifID;
-
+	}
+	
+	private static function checkExif($exif,$exifKey,$exifValue)
+	{
+		if(!isset($exif[$exifKey][$exifValue]))
+		{
+			if($exifValue == 'Height' OR $exifValue == 'Width' OR $exifValue == 'Flash')
+				return 0;
+			if($exifValue == 'DateTimeOriginal')
+				return NULL;
+			else
+				return "-";
+		}
+		else
+		{
+			return $exif[$exifKey][$exifValue];
+		}
 	}
 }

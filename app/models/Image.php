@@ -56,7 +56,7 @@ class Image extends Eloquent{
 		$data =[
 			'name' =>$filename,
 			'description' =>$description,
-			'dateUpload' =>time(),
+			'dateUpload' =>date("Y-m-d H:i:s"),
 			'album_id' =>$albumID,
 			'exif_id' =>$exifID,
 		];
