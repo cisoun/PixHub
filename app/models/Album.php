@@ -31,11 +31,6 @@ class Album extends Eloquent {
 		return public_path().'\uploads\ '.sha1($userID);
 	}
 	
-	public static function getLatestAlbumID($user)
-	{
-		return DB::table('albums')->orderBy('id', 'desc')->where('user_id',$user->id)->first()->id;
-	}
-	
 	// Setter
 	
 	public function setName($name)

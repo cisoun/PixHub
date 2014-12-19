@@ -24,10 +24,10 @@ class Image extends Eloquent{
 	
 	// Getters
 	
-	// Retourne les 5 dernières images de l'album dont l'id est passé en paramètre.
-	public static function getLatestImages($albumID)
+	// Retourne les 5 dernières images de l'utilisaterur passé en paramètre
+	public static function getLatestImages($userID)
 	{
-		return DB::table('images')->orderBy('id', 'desc')->take(5)->get();
+		return DB::table('albums')->join('images', 'images.album_id', '=', 'albums.id')->where('albums.user_id','=',$userID)->orderBy('dateUpload','desc')->take(5)->get();
 	}
 	
 	public function getExif($imageID)

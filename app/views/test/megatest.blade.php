@@ -16,13 +16,14 @@
 
 	<?php 	
 		
-		/*$user = User::find(65);
+		$user = User::find(65);
 		
 		$latestImages = $user->getLatestImages();
 		
 		foreach($latestImages as $image){
 			echo $image->id;
-		}*/
+			echo "<br>";
+		}
 		
 		/*$id = Auth::id();
 		
