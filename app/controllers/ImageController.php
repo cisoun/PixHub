@@ -17,7 +17,7 @@ class ImageController extends BaseController {
 		 
          if ($validation->fails())
          {
-           //return Response::make($validation->errors->first(), 400);
+           return Response::make($validation->errors(), 400);
          }
 
         $file = Input::file('file');
@@ -51,4 +51,38 @@ class ImageController extends BaseController {
            return Redirect::to('home');
         }
     }
+	
+	public function uploadAvatar()
+	{
+		$rules = array(
+             'file' => 'image|max:650' //Max 650KB
+        );
+
+         $validation = Validator::make(Input::all(), $rules);
+		 
+         if ($validation->fails())
+         {
+			return Response::make($validation->errors(), 400);
+         }
+
+        $file = Input::file('file');
+		
+		$path = $file->getRealPath();
+		
+		$id = Auth::id();
+		
+        $destinationPath = public_path().'\uploads\ '.sha1($id);
+		
+        $filename = $file->getClientOriginalName();
+		$extension = $file->getClientOriginalExtension();
+				
+        $uploadSuccess = $file->move($destinationPath, sha1($id).'.ava');
+
+        if( $uploadSuccess ) { 			
+			return Redirect::to('test/tablestest');
+        } else {
+           return Redirect::to('home');
+        }
+	}
+	
 }
