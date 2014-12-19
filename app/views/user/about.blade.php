@@ -1,4 +1,4 @@
-<h1>About me</h1>
+<h1>{{{ trans('pixhub.user-about') . $user->name }}}</h1>
 <p>
-	Hi ! I'm John Doe.
+	{{{ $user->description }}}
 </p>

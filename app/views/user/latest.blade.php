@@ -1,4 +1,4 @@
-<h1>Latest pictures from {{{ $user }}}</h1>
+<h1>{{{ trans('pixhub.user-latest-photos-from') }}}<b>{{{ $user->name }}}</b></h1>
 <div id="user-latest-grid">
 	<?php
 		for ($i = 0; $i < 10; $i++)
