@@ -15,8 +15,9 @@ return array(
 	'signin-email'					=> 'Email address',
 
 	'user-latest-photos'			=> 'Latest photos',
+	'user-latest-photos-from'		=> 'Latest photos from ',
 	'user-albums'					=> 'Albums',
-	'user-about'					=> 'About me',
+	'user-about'					=> 'About ',
 
 	'photo-informations'			=> 'Informations',
 	'views'							=> 'Views'
