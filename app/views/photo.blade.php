@@ -35,6 +35,7 @@ $photo = asset('img/test.jpg');
 						</div>
 					</div>
 					<div id="photo-description" class="editable row">
+						TODO : autoriser l'édition qu'en cas de login réussi (vérifier avec mot de passe ?)<br/><br/>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tempus a massa non bibendum. Nullam varius nibh quis consequat suscipit. Aliquam erat volutpat. Ut magna felis, bibendum nec sollicitudin non, lacinia sed leo. Morbi accumsan mattis suscipit. Integer scelerisque ex vitae neque posuere eleifend. Mauris tempus tincidunt dolor sodales ornare.<br/><br/>
 						Etiam scelerisque ex felis, id vulputate urna aliquet vel. Etiam augue diam, lobortis sit amet eros non, porta cursus risus. Duis imperdiet auctor interdum. Proin vehicula ornare eleifend. Aliquam vel condimentum quam. Curabitur ut quam dolor. Nulla tristique, arcu vitae sollicitudin porta, augue felis pharetra tortor, quis blandit nunc elit et augue. Vestibulum fermentum purus vitae justo semper, nec porttitor erat laoreet. In ut viverra ex.
 					</div>

@@ -47,6 +47,12 @@ Route::get('signup', function()
 });
 
 
+Route::get('upload', function()
+{
+	if (Auth::check())
+		return View::make('index', array('page' => 'upload'));
+	return View::make('index', array('page' => 'home'));
+});
 
 
 Route::post('signin', array('uses' => 'HomeController@doLogin'));

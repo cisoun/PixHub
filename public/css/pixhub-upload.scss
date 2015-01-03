@@ -1,0 +1,23 @@
+@import 'pixhub-variables.scss';
+
+#upload-toolbar {
+	background-color: $bg;
+	border-bottom: 1px solid $borders;
+	left: 0;
+	margin-bottom: 5em;
+	padding: 5px;
+	text-align: left;
+	top: 0em;
+	width: 100%;
+}
+
+#upload-photos-counter {
+	display: inline-block;
+	font-weight: bold;
+	padding: 0.5em 2em;
+	text-align: center;
+}
+
+.dropzone {
+	background-color: #f6f6f6 !important;
+}
