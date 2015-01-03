@@ -12,6 +12,7 @@
 				<input type="text" class="form-control" id="upload-album-name" placeholder="Album name">
 				<button type="button" class="btn btn-primary pull-right form-control">Upload ! (<span id="counter">0</span> photos)</button>
 			</div>
+			<img src="img/upload.png" class="dz-logo" style="pointer-events:none;"/>
 			<div class="fallback">
 				<input name="file" type="file" multiple />
 			</div>

@@ -29,6 +29,10 @@
 	opacity: 1;
 	-ms-filter: none;
 	filter: none;
+
+	color: darken($borders, 10%);
+	font-size: 2em;
+	padding: 30px;
 }
 .dropzone.dz-drag-hover {
 	border-color: $borders;
@@ -148,7 +152,7 @@
 /*.dropzone .dz-preview .dz-error-message,
 .dropzone-previews .dz-preview .dz-error-message {
 	display: none;
-	position: absolute;
+	position: abuploadsolute;
 	top: -5px;
 	left: -20px;
 	background: rgba(245,245,245,0.8);
@@ -181,4 +185,8 @@
 	float: left;
 	padding: 6px;
 	width: 250px;
+}
+
+.dropzone.dz-started .dz-logo {
+	display: none;
 }

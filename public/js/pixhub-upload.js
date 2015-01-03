@@ -1,6 +1,7 @@
 var filesProcessed = 0;
 
 Dropzone.options.uploadDropzone = {
+	acceptedFiles: "image/*",
 	addRemoveLinks: true,
 	dictCancelUpload: '',
 	dictRemoveFile: '',
