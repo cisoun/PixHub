@@ -91,6 +91,12 @@ a:focus {
 	z-index: 1000;
 }
 
+.dropdown-menu a,
+.dropdown-menu li {
+	margin: 0;
+	padding: 0;
+}
+
 .editable {
 	border: 1px solid transparent;
 	padding: 10px;
@@ -190,6 +196,20 @@ a:focus {
 .page-shadow {
 	border-top: 1px solid #999;
 	box-shadow: 0 0 50px #999;
+}
+
+.cover {
+	background-image: url('../img/background-blue.jpg');
+	background-size: cover;
+	border-bottom: 1px solid #999;
+	color: $cover-fg;
+	height: 700px;
+	padding-top: 150px;
+	//position: fixed;
+	width: 100%;
+	text-align: center;
+	top: 0px;
+	z-index: -1
 }
 
 .form-info {
@@ -299,5 +319,16 @@ a:focus {
 
 .page-tabs .dropdown-menu {
 	background-color: $page-nav-bg;
-	padding: 20px;
 }
+
+.page-tabs .dropdown-menu li a {
+	padding: 0;
+	display: block;
+	padding: 5px 20px;
+}
+/*
+.page-tabs .dropdown-menu li:hover {
+	background-color: $page-nav-bg-hover;
+	display: block;
+}
+*/

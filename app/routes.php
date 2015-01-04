@@ -36,6 +36,11 @@ Route::get('user/{user}/{section}', function($user, $section)
 	return View::make('index', array('page' => 'user', 'user' => $user, 'section' => $section));
 });
 
+Route::get('album/{album}', function($album)
+{
+	return View::make('index', array('page' => 'album', 'album' => $album));
+});
+
 Route::get('signin', function()
 {
 	return View::make('index', array('page' => 'signin'));
@@ -53,6 +58,9 @@ Route::get('upload', function()
 		return View::make('index', array('page' => 'upload'));
 	return View::make('index', array('page' => 'home'));
 });
+
+//Route::post('upload', array('uses' => 'ImageController@uploadImage'));
+Route::post('upload', 'ImageController@uploadImage');
 
 
 Route::post('signin', array('uses' => 'HomeController@doLogin'));

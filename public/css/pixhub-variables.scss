@@ -12,7 +12,11 @@ $footer-fg: #999;
 $footer-border: #ddd;
 $footer-border-dark: #333;
 
+$cover-fg: #fff;
+$cover-fg-shadow: #000;
+
 $page-nav-bg: #333;
+$page-nav-bg-hover: lighten($page-nav-bg, 5%);
 $page-nav-link: #ccc;
 $page-nav-link-hover: #fff;
 

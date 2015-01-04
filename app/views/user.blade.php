@@ -1,10 +1,11 @@
 <?php
-	$avatar = asset('img/avatar.png');
+$avatar = asset('img/avatar.png');
 
-	$user = User::getUserFromPseudo($user);
+$user = User::getUserFromPseudo($user);
+$albums = $user->albums;
 ?>
 <div id="user">
-	<div id="user-cover" class="text-shadow">
+	<div id="user-cover" class="text-shadow cover">
 		<img id="user-avatar" src="{{{ $avatar }}}" class="img-responsive img-circle" alt="avatar"/>
 		<div id="user-name">{{{ $user->name }}}</div>
 		<div id="user-location">{{{ $user->location }}}</div>
@@ -20,7 +21,11 @@
 							{{ trans('pixhub.user-albums') }} <span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu" role="menu">
-							This user has no albums
+							@forelse($albums as $album)
+								<li><a href="/album/{{ $album->id }}">{{ $album->name }}</a></li>
+							@empty
+								This user has no albums
+							@endforelse
 						</ul>
 					</li>
 					<li role="presentation">{{ link_to('user/' . $user->pseudo . '/about', trans('pixhub.user-about') . $user->name, $attributes = array(), $secure = null); }}</li>

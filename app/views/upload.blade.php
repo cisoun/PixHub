@@ -1,21 +1,26 @@
+<?php
+	$user = Auth::user();
+	$albums = $user->albums;
+?>
 <div id="upload" class="container-fluid page">
 	<div class="container">
 		<h1>Upload your pictures</h1>
-		<form action="{{ url('/upload') }}" class="dropzone" id="upload-dropzone">
+		{{ Form::open(array('url' => '/upload', 'files' => true, 'class' => 'dropzone', 'id' => 'upload-dropzone')) }}
 			<div id="upload-toolbar" class="content form-inline">
-				<select class="selectpicker form-control">
+				<select id="upload-album-list" class="selectpicker form-control">
 					<option><b>New album</b></option>
 					<option disabled>──────</option>
-					<option>Ketchup</option>
-					<option>Relish</option>
+					@foreach ($albums as $album)
+						<option>{{ $album->name }}</option>
+					@endforeach
 				</select>
-				<input type="text" class="form-control" id="upload-album-name" placeholder="Album name">
-				<button type="button" class="btn btn-primary pull-right form-control">Upload ! (<span id="counter">0</span> photos)</button>
+				<input type="text" class="form-control" id="upload-album-name" name="album-name" placeholder="Album name">
+				<button type="submit" class="btn btn-primary pull-right form-control">Upload ! (<span id="counter">0</span> photos)</button>
 			</div>
 			<img src="img/upload.png" class="dz-logo" style="pointer-events:none;"/>
 			<div class="fallback">
-				<input name="file" type="file" multiple />
+				<input name="files" type="file" multiple />
 			</div>
-		</form>
+		{{ Form::close() }}
 	</div>
 </div>

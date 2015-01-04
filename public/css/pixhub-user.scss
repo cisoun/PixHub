@@ -1,22 +1,5 @@
 @import 'pixhub-dark.scss';
 
-$user-cover-fg: #fff;
-$user-cover-fg-shadow: #000;
-
-#user-cover {
-	background-image: url('../img/background-blue.jpg');
-	background-size: cover;
-	border-bottom: 1px solid #999;
-	color: $user-cover-fg;
-	height: 700px;
-	padding-top: 150px;
-	position: fixed;
-	width: 100%;
-	text-align: center;
-	top: 0px;
-	z-index: -1
-}
-
 #user-name {
 	font-size: 4em;
 	font-weight: 100;
