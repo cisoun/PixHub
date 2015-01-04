@@ -43,13 +43,14 @@ body, #footer {
 
 /* line 32, /srv/http/PixHub/public/css/pixhub-user.scss */
 #user-location {
-  font-size: 1.3em; }
+  font-size: 1.5em; }
 
 /* line 36, /srv/http/PixHub/public/css/pixhub-user.scss */
 #user-website a {
-  color: #fff; }
+  color: #fff;
+  font-size: 1.3em; }
 
-/* line 40, /srv/http/PixHub/public/css/pixhub-user.scss */
+/* line 41, /srv/http/PixHub/public/css/pixhub-user.scss */
 #user-body {
   background-color: #222;
   padding: 0;
@@ -58,7 +59,7 @@ body, #footer {
   width: 100%;
   z-index: 1; }
 
-/* line 50, /srv/http/PixHub/public/css/pixhub-user.scss */
+/* line 51, /srv/http/PixHub/public/css/pixhub-user.scss */
 #user-page {
   padding: 50px 0; }
 

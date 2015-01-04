@@ -1,0 +1,191 @@
+/* line 6, /srv/http/PixHub/public/css/dropzone.scss */
+.dropzone, .dropzone *, .dropzone-previews, .dropzone-previews * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* line 11, /srv/http/PixHub/public/css/dropzone.scss */
+.dropzone {
+  position: relative;
+  border: 1px solid #ddd;
+  background: rgba(0, 0, 0, 0.02);
+  padding-bottom: 5em;
+  text-align: center; }
+
+/* line 18, /srv/http/PixHub/public/css/dropzone.scss */
+.dropzone.dz-clickable {
+  cursor: pointer; }
+
+/* line 22, /srv/http/PixHub/public/css/dropzone.scss */
+.dropzone.dz-clickable .dz-message, .dropzone.dz-clickable .dz-message span {
+  cursor: pointer; }
+
+/* line 25, /srv/http/PixHub/public/css/dropzone.scss */
+.dropzone.dz-clickable * {
+  cursor: default; }
+
+/* line 28, /srv/http/PixHub/public/css/dropzone.scss */
+.dropzone .dz-message {
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+  color: #c4c4c4;
+  font-size: 2em;
+  padding: 30px; }
+
+/* line 37, /srv/http/PixHub/public/css/dropzone.scss */
+.dropzone.dz-drag-hover {
+  border-color: #ddd;
+  background: rgba(0, 0, 0, 0.04); }
+
+/* line 41, /srv/http/PixHub/public/css/dropzone.scss */
+.dropzone.dz-started .dz-message {
+  display: none; }
+
+/* line 45, /srv/http/PixHub/public/css/dropzone.scss */
+.dropzone .dz-preview, .dropzone-previews .dz-preview {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 3px;
+  box-shadow: 0 0 10px #ccc;
+  position: relative;
+  display: inline-block;
+  margin: 5px;
+  vertical-align: top;
+  border: 1px solid #acacac; }
+
+/* line 56, /srv/http/PixHub/public/css/dropzone.scss */
+.dropzone .dz-preview.dz-file-preview [data-dz-thumbnail], .dropzone-previews .dz-preview.dz-file-preview [data-dz-thumbnail] {
+  display: none; }
+
+/* line 59, /srv/http/PixHub/public/css/dropzone.scss */
+.dropzone .dz-details {
+  background-color: #222; }
+
+/* line 63, /srv/http/PixHub/public/css/dropzone.scss */
+.dropzone .dz-preview .dz-details, .dropzone-previews .dz-preview .dz-details {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  background: #ebebeb;
+  padding: 5px; }
+
+/* line 71, /srv/http/PixHub/public/css/dropzone.scss */
+.dropzone .dz-preview .dz-details .dz-filename, .dropzone-previews .dz-preview .dz-details .dz-filename {
+  overflow: hidden;
+  height: 100%; }
+
+/* line 76, /srv/http/PixHub/public/css/dropzone.scss */
+.dropzone .dz-preview .dz-details img, .dropzone-previews .dz-preview .dz-details img {
+  border-bottom: 1px solid #ddd;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 300px; }
+
+/*.dropzone .dz-preview .dz-details .dz-size,
+.dropzone-previews .dz-preview .dz-details .dz-size {
+	position: absolute;
+	bottom: -28px;
+	left: 3px;
+	height: 28px;
+	line-height: 28px;
+}*/
+/* line 93, /srv/http/PixHub/public/css/dropzone.scss */
+.dropzone .dz-preview.dz-error .dz-error-mark, .dropzone-previews .dz-preview.dz-error .dz-error-mark {
+  display: block; }
+
+/* line 97, /srv/http/PixHub/public/css/dropzone.scss */
+.dropzone .dz-preview.dz-success .dz-success-mark, .dropzone-previews .dz-preview.dz-success .dz-success-mark {
+  display: block; }
+
+/*.dropzone .dz-preview:hover .dz-details img,
+.dropzone-previews .dz-preview:hover .dz-details img {
+	display: none;
+}*/
+/* line 107, /srv/http/PixHub/public/css/dropzone.scss */
+.dropzone .dz-preview .dz-success-mark, .dropzone-previews .dz-preview .dz-success-mark, .dropzone .dz-preview .dz-error-mark, .dropzone-previews .dz-preview .dz-error-mark {
+  display: none;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  font-size: 30px;
+  text-align: center;
+  right: 0px;
+  top: 0px; }
+
+/* line 118, /srv/http/PixHub/public/css/dropzone.scss */
+.dropzone .dz-preview .dz-success-mark, .dropzone-previews .dz-preview .dz-success-mark {
+  color: #03A9F4; }
+
+/* line 122, /srv/http/PixHub/public/css/dropzone.scss */
+.dropzone .dz-preview .dz-error-mark, .dropzone-previews .dz-preview .dz-error-mark {
+  color: #f0ad4e; }
+
+/* line 126, /srv/http/PixHub/public/css/dropzone.scss */
+.dropzone .dz-preview .dz-progress, .dropzone-previews .dz-preview .dz-progress {
+  position: relative;
+  height: 6px;
+  background: #d7d7d7;
+  display: none; }
+
+/* line 133, /srv/http/PixHub/public/css/dropzone.scss */
+.dropzone .dz-preview .dz-progress .dz-upload, .dropzone-previews .dz-preview .dz-progress .dz-upload {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  background-color: #03A9F4;
+  transition: width 0.1s; }
+
+/* line 145, /srv/http/PixHub/public/css/dropzone.scss */
+.dropzone .dz-preview.dz-processing .dz-progress, .dropzone-previews .dz-preview.dz-processing .dz-progress {
+  display: block; }
+
+/* line 149, /srv/http/PixHub/public/css/dropzone.scss */
+.dropzone .dz-preview.dz-error .dz-progress, .dropzone-previews .dz-preview.dz-error .dz-progress {
+  display: none; }
+
+/*.dropzone .dz-preview .dz-error-message,
+.dropzone-previews .dz-preview .dz-error-message {
+	display: none;
+	position: abuploadsolute;
+	top: -5px;
+	left: -20px;
+	background: rgba(245,245,245,0.8);
+	padding: 8px 10px;
+	color: #800;
+	min-width: 140px;
+	max-width: 500px;
+	z-index: 500;
+}*/
+/* line 166, /srv/http/PixHub/public/css/dropzone.scss */
+.dropzone .dz-preview:hover.dz-error .dz-error-message, .dropzone-previews .dz-preview:hover.dz-error .dz-error-message {
+  display: block; }
+
+/* line 169, /srv/http/PixHub/public/css/dropzone.scss */
+.dropzone .dz-remove {
+  color: #333;
+  cursor: pointer;
+  padding: 6px 0;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s; }
+  /* line 176, /srv/http/PixHub/public/css/dropzone.scss */
+  .dropzone .dz-remove:hover {
+    color: #d9534f; }
+
+/* line 182, /srv/http/PixHub/public/css/dropzone.scss */
+.dropzone .dz-title, .dropzone .dz-title:active, .dropzone .dz-title:focus {
+  border: 0;
+  border-right: 1px solid #ddd;
+  float: left;
+  padding: 6px;
+  width: 250px; }
+
+/* line 190, /srv/http/PixHub/public/css/dropzone.scss */
+.dropzone.dz-started .dz-logo {
+  display: none; }
+
+/*# sourceMappingURL=dropzone.css.map */

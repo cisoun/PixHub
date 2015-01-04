@@ -1,0 +1,23 @@
+/* line 3, /srv/http/PixHub/public/css/pixhub-upload.scss */
+#upload-toolbar {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  left: 0;
+  margin-bottom: 5em;
+  padding: 5px;
+  text-align: left;
+  top: 0em;
+  width: 100%; }
+
+/* line 14, /srv/http/PixHub/public/css/pixhub-upload.scss */
+#upload-photos-counter {
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.5em 2em;
+  text-align: center; }
+
+/* line 21, /srv/http/PixHub/public/css/pixhub-upload.scss */
+.dropzone {
+  background-color: #f6f6f6 !important; }
+
+/*# sourceMappingURL=pixhub-upload.css.map */
