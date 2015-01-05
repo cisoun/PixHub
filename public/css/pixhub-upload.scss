@@ -21,3 +21,10 @@
 .dropzone {
 	background-color: #f6f6f6 !important;
 }
+
+#upload-alert {
+	opacity: 0.0;
+
+	-webkit-transition: opacity 1s;
+	transition: opacity 1s;
+}

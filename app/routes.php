@@ -59,7 +59,6 @@ Route::get('upload', function()
 	return View::make('index', array('page' => 'home'));
 });
 
-//Route::post('upload', array('uses' => 'ImageController@uploadImage'));
 Route::post('upload', 'ImageController@uploadImage');
 
 

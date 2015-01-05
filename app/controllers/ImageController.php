@@ -9,51 +9,54 @@ class ImageController extends BaseController {
 
 	public function uploadImage()
 	{
-		$rules = array(
+
+		// Validation process
+
+		$rules = array (
+			'album-name' => 'required|min:1',
 			'file' => 'image'
 		);
 		
 		$validation = Validator::make(Input::all(), $rules);
-
 		if ($validation->fails())
 		{
 			return Response::make($validation->errors(), 400);
 		}
 
+		// Take file/author datas
 
 		$file = Input::file('file');
-
-		$exif = @exif_read_data($file->getRealPath(), 0, true);
+		$userID = Auth::id();
 		
+		// Define new file path
 
-		$path = $file->getRealPath();
-
-		$id = Auth::id();
-		$destinationPath = public_path() . '/uploads/' . sha1($id);
-
+		$destinationPath = public_path() . '/uploads/' . sha1($userID);
 		$filename = $file->getClientOriginalName();
 		$extension = $file->getClientOriginalExtension();
-
 		$sha1filename = sha1($filename).time() . '.' . $extension;
 
+		// Upload process
+
 		$uploadSuccess = $file->move($destinationPath, $sha1filename);
+		if( $uploadSuccess )
+		{
+			// Title was defined ? If so, use it. Otherwise, use original file's name.
+			$title = strlen(Input::has('title')) > 0 ? Input::get('title') : $sha1filename;
 
-		if( $uploadSuccess ) {
-
+			// Exif stuff...
+			$exif = @exif_read_data($file->getRealPath(), 0, true);
 			$exifID = App::make('ExifController')->createExif($exif);
 
-			//$albumID = Input::get('albumID');
-			//$album = Album::find($albumID);
+			// Get album's name. Create it if it doesn't exist.
 			$albumName = Input::get('album-name');
-			$album = Album::firstOrCreate(array('name' => $albumName));
-
-			$album->createImage($sha1filename, 'Description', $exifID);
+			$album = Album::firstOrCreate(array('name' => $albumName, 'user_id' => $userID));
+			$album->createImage($title, '', $exifID);
 
 			return Response::json('success', 200);
-			//return Redirect::to('user/simon/album/' . $album->id);
-		} else {
+		}
+		else
+		{
 			return Response::json('error', 400);
-			//return Redirect::to('home');
 		}
 	}
 

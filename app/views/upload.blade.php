@@ -5,6 +5,7 @@
 <div id="upload" class="container-fluid page">
 	<div class="container">
 		<h1>Upload your pictures</h1>
+		<div id="upload-alert" class="alert alert-success" role="alert"><b>Hurray</b> ! Your photos were successfully uploaded !</div>
 		{{ Form::open(array('url' => '/upload', 'files' => true, 'class' => 'dropzone', 'id' => 'upload-dropzone')) }}
 			<div id="upload-toolbar" class="content form-inline">
 				<select id="upload-album-list" class="selectpicker form-control">
@@ -15,7 +16,7 @@
 					@endforeach
 				</select>
 				<input type="text" class="form-control" id="upload-album-name" name="album-name" placeholder="Album name">
-				<button type="submit" class="btn btn-primary pull-right form-control">Upload ! (<span id="counter">0</span> photos)</button>
+				<button type="button" id="upload-button" class="btn btn-primary pull-right form-control">Upload ! <span id="counter" class="badge">0</span></button>
 			</div>
 			<img src="img/upload.png" class="dz-logo" style="pointer-events:none;"/>
 			<div class="fallback">

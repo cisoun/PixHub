@@ -40,7 +40,7 @@ class Album extends Eloquent {
 	}
 
 	// Création d'album dans la BDD
-	public function createAlbum($albumName,$userID)
+	public function createAlbum($albumName, $userID)
 	{
 		$data =[
 			'name' => $albumName,
