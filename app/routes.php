@@ -66,6 +66,33 @@ Route::post('signin', array('uses' => 'HomeController@doLogin'));
 Route::get('signoff', array('uses' => 'HomeController@doLogout'));
 
 
+Route::get('effect/{effect}/{id}', function($effect, $id)
+{
+	if ($effect === 'blur')
+	{
+		$album = Album::find(Image::find($id)->album_id);
+
+		/*header('Content-type: image/jpeg');
+		$image = new Imagick($album->getPath() . '/' . $id);
+		$image->blurImage(50, 50);
+		return $image;*/
+
+		$blurs = 50;
+		$file = '/srv/http/PixHub/public' . $album->getPath() . '/' . $id;
+		list($width, $height, $type, $attr) = getimagesize($file);
+		$image = imagecreatefromjpeg($file);
+		$image = imagescale($image, $width / 2, $height / 2,  IMG_NEAREST_NEIGHBOUR);
+		for ($i = 0; $i < $blurs; $i++) {
+			imagefilter($image, IMG_FILTER_GAUSSIAN_BLUR);
+		}
+
+		header('Content-Type: image/jpeg');
+
+		imagejpeg($image, NULL);
+		imagedestroy($image);
+	}
+});
+
 
 /*
 |--------------------------------------------------------------------------

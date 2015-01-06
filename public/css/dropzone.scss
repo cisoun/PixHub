@@ -91,6 +91,7 @@
 }*/
 .dropzone .dz-preview.dz-error .dz-error-mark,
 .dropzone-previews .dz-preview.dz-error .dz-error-mark {
+	color: $brand-danger;
 	display: block;
 }
 .dropzone .dz-preview.dz-success .dz-success-mark,

@@ -93,9 +93,10 @@
 }*/
 /* line 93, /srv/http/PixHub/public/css/dropzone.scss */
 .dropzone .dz-preview.dz-error .dz-error-mark, .dropzone-previews .dz-preview.dz-error .dz-error-mark {
+  color: #d9534f;
   display: block; }
 
-/* line 97, /srv/http/PixHub/public/css/dropzone.scss */
+/* line 98, /srv/http/PixHub/public/css/dropzone.scss */
 .dropzone .dz-preview.dz-success .dz-success-mark, .dropzone-previews .dz-preview.dz-success .dz-success-mark {
   display: block; }
 
@@ -103,7 +104,7 @@
 .dropzone-previews .dz-preview:hover .dz-details img {
 	display: none;
 }*/
-/* line 107, /srv/http/PixHub/public/css/dropzone.scss */
+/* line 108, /srv/http/PixHub/public/css/dropzone.scss */
 .dropzone .dz-preview .dz-success-mark, .dropzone-previews .dz-preview .dz-success-mark, .dropzone .dz-preview .dz-error-mark, .dropzone-previews .dz-preview .dz-error-mark {
   display: none;
   position: absolute;
@@ -114,22 +115,22 @@
   right: 0px;
   top: 0px; }
 
-/* line 118, /srv/http/PixHub/public/css/dropzone.scss */
+/* line 119, /srv/http/PixHub/public/css/dropzone.scss */
 .dropzone .dz-preview .dz-success-mark, .dropzone-previews .dz-preview .dz-success-mark {
   color: #03A9F4; }
 
-/* line 122, /srv/http/PixHub/public/css/dropzone.scss */
+/* line 123, /srv/http/PixHub/public/css/dropzone.scss */
 .dropzone .dz-preview .dz-error-mark, .dropzone-previews .dz-preview .dz-error-mark {
   color: #f0ad4e; }
 
-/* line 126, /srv/http/PixHub/public/css/dropzone.scss */
+/* line 127, /srv/http/PixHub/public/css/dropzone.scss */
 .dropzone .dz-preview .dz-progress, .dropzone-previews .dz-preview .dz-progress {
   position: relative;
   height: 6px;
   background: #d7d7d7;
   display: none; }
 
-/* line 133, /srv/http/PixHub/public/css/dropzone.scss */
+/* line 134, /srv/http/PixHub/public/css/dropzone.scss */
 .dropzone .dz-preview .dz-progress .dz-upload, .dropzone-previews .dz-preview .dz-progress .dz-upload {
   display: block;
   position: absolute;
@@ -140,11 +141,11 @@
   background-color: #03A9F4;
   transition: width 0.1s; }
 
-/* line 145, /srv/http/PixHub/public/css/dropzone.scss */
+/* line 146, /srv/http/PixHub/public/css/dropzone.scss */
 .dropzone .dz-preview.dz-processing .dz-progress, .dropzone-previews .dz-preview.dz-processing .dz-progress {
   display: block; }
 
-/* line 149, /srv/http/PixHub/public/css/dropzone.scss */
+/* line 150, /srv/http/PixHub/public/css/dropzone.scss */
 .dropzone .dz-preview.dz-error .dz-progress, .dropzone-previews .dz-preview.dz-error .dz-progress {
   display: none; }
 
@@ -161,22 +162,22 @@
 	max-width: 500px;
 	z-index: 500;
 }*/
-/* line 166, /srv/http/PixHub/public/css/dropzone.scss */
+/* line 167, /srv/http/PixHub/public/css/dropzone.scss */
 .dropzone .dz-preview:hover.dz-error .dz-error-message, .dropzone-previews .dz-preview:hover.dz-error .dz-error-message {
   display: block; }
 
-/* line 169, /srv/http/PixHub/public/css/dropzone.scss */
+/* line 170, /srv/http/PixHub/public/css/dropzone.scss */
 .dropzone .dz-remove {
   color: #333;
   cursor: pointer;
   padding: 6px 0;
   -webkit-transition: color 0.2s;
   transition: color 0.2s; }
-  /* line 176, /srv/http/PixHub/public/css/dropzone.scss */
+  /* line 177, /srv/http/PixHub/public/css/dropzone.scss */
   .dropzone .dz-remove:hover {
     color: #d9534f; }
 
-/* line 182, /srv/http/PixHub/public/css/dropzone.scss */
+/* line 183, /srv/http/PixHub/public/css/dropzone.scss */
 .dropzone .dz-title, .dropzone .dz-title:active, .dropzone .dz-title:focus {
   border: 0;
   border-right: 1px solid #ddd;
@@ -184,7 +185,7 @@
   padding: 6px;
   width: 250px; }
 
-/* line 190, /srv/http/PixHub/public/css/dropzone.scss */
+/* line 191, /srv/http/PixHub/public/css/dropzone.scss */
 .dropzone.dz-started .dz-logo {
   display: none; }
 

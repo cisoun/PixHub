@@ -34,7 +34,7 @@ class Image extends Eloquent{
 	{
 		return Image::find($imageID)->exif;
 	}
-	
+
 	public function getTags($imageID)
 	{
 		$tags = Image::find($imageID)->tags;

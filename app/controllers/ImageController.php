@@ -13,12 +13,11 @@ class ImageController extends BaseController {
 	 */
 	public function uploadImage()
 	{
-
 		// Validation process
 
 		$rules = array (
 			'album-name' => 'required|min:1',
-			'file' => 'image'
+			'file' => 'required|image'
 		);
 		
 		$validation = Validator::make(Input::all(), $rules);
@@ -37,16 +36,19 @@ class ImageController extends BaseController {
 		$destinationPath = public_path() . '/uploads/' . sha1($userID);
 		$filename = $file->getClientOriginalName();
 
+
 		// Upload process
 
 		$uploadSuccess = $file->move($destinationPath, $filename);
 		if( $uploadSuccess )
 		{
 			// Title was defined ? If so, use it. Otherwise, use original file's name.
-			$name = strlen(Input::has('title')) > 0 ? Input::get('title') : $filename;
+			// We'll use base64 in order to avoid spaces and dots when passing the name by POST.
+			$nameField = base64_encode($filename);
+			$name = Input::has($nameField) ? Input::get($nameField) : $filename;
 
 			// Exif stuff...
-			$exif = exif_read_data($destinationPath . '/'. $filename, 0, true);
+			$exif = @exif_read_data($destinationPath . '/'. $filename, 0, true);
 			$exifID = App::make('ExifController')->createExif($exif);
 
 			// Get album's name. Create it if it doesn't exist.

@@ -26,9 +26,9 @@ class Album extends Eloquent {
 
 	}
 
-	public function getPath($userID)
+	public function getPath()
 	{
-		return public_path() . '/uploads/' . sha1($userID);
+		return '/uploads/' . sha1($this->user_id);
 	}
 
 	// Setter
@@ -43,8 +43,8 @@ class Album extends Eloquent {
 	public function createAlbum($albumName, $userID)
 	{
 		$data =[
-			'name' => $albumName,
-			'user_id' =>$userID,
+			'name'		=> $albumName,
+			'user_id'	=> $userID,
 		];
 
 		$albumID = Album::create($data)['id'];
@@ -66,7 +66,7 @@ class Album extends Eloquent {
 	}
 
 	// Création d'image
-	public function createImage($name, $description, $exifID)
+	public function createImage($name, $description = '', $exifID = 1)
 	{
 		$image = new Image;
 		return $image->createImage($name, $description, $this->id, $exifID);
