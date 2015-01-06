@@ -1,11 +1,15 @@
 var filesProcessed = 0;
 
+//
+// Dropzone configuration
+//
 Dropzone.options.uploadDropzone = {
 	acceptedFiles: 'image/*',
 	addRemoveLinks: true,
 	autoProcessQueue: false,
 	dictCancelUpload: '',
 	dictRemoveFile: '',
+	maxFiles: 256,
 	parallelUploads: 256,
 	previewTemplate: '\
 		<div class="dz-preview dz-file-preview">\
@@ -16,7 +20,6 @@ Dropzone.options.uploadDropzone = {
 			</div>\
 			<div class="dz-success-mark"><span class="glyphicon glyphicon-ok-circle"></span></div>\
 			<div class="dz-error-mark"><span class="glyphicon glyphicon-remove-circle"></span></div>\
-			<div class="dz-error-message"><span data-dz-errormessage></span></div>\
 		</div>',
 	thumbnailHeight: 300,
 	thumbnailWidth: 300,
@@ -25,40 +28,76 @@ Dropzone.options.uploadDropzone = {
 	init: function() {
 		var uploadDropzone = this;
 
+		//$('#upload-button').attr('disabled', 'disabled');
+
 		$("#upload-button").click(function(e) {
+			error = false;
 			uploadDropzone.processQueue(); // Tell Dropzone to process all queued files.
 		});
 
-		this.on("addedfile", function(file) {
-			var titles = $(".dz-title");
-			titles.eq(filesProcessed).attr('value', file.name);
-			filesProcessed++;
+		//
+		// Dropzone events
+		//
 
+		this.on("addedfile", function(file) {
+			// Manage the file's title.
+			var titles = $(".dz-title");
+			titles.eq(filesProcessed).attr('placeholder', file.name);
+			titles.last().attr('name', btoa(file.name)); // Encoding the name in base64 to avoid POST problems (dots/spaces).
+
+			// Show how much files are ready to be uploaded.
+			filesProcessed++;
 			$("#counter").text(filesProcessed);
 		});
 
+		this.on("error", function(file) {
+			message(false);
+		});
+
 		this.on("removedfile", function(file) {
+			// Show how much files are ready to be uploaded.
 			filesProcessed--;
 			$("#counter").text(filesProcessed);
 		});
 
-		this.on("success", function(file) {
-			$("#upload-alert").css('opacity', '1.0');
-			//$("#upload-alert").css('display', 'block');
-
-
-			setInterval(function() {
-				$("#upload-alert").css('opacity', '0.0');
-			}, 6000);
-
-			setInterval(function() {
-				//$("#upload-alert").css('display', 'none');
-				$("#upload-alert").css('opacity', '0.0');
-			}, 7000);
-		});
+		// TODO : Add a success message.
+		/*this.on("success", function(file) {
+			message(true);
+		});*/
 	}
 };
 
+//
+// Events
+//
+
+// Replace album's name input text by the current option selected in the drop list.
 $('#upload-album-list').click(function(e) {
 	$('#upload-album-name').val($('#upload-album-list').val());
 });
+
+// Enable upload button if an album name was entered.
+$('#upload-album-name').change(function() {
+	var nameLength = $('#upload-album-name').val().length;
+	if (nameLength > 0)
+		$('#upload-button').removeAttr('disabled');
+	else
+		$('#upload-button').attr('disabled', 'disabled');
+});
+
+// Show a message about the upload's state.
+message = function(isSuccess) {
+	//var style = isSuccess ? 'message-success' : 'message-danger';
+
+	//$("#upload-message").addClass(style);
+	$("#upload-message").css('opacity', '1.0');
+
+	setInterval(function() {
+		$("#upload-message").css('opacity', '0.0');
+	}, 6000);
+
+	setInterval(function() {
+		$("#upload-message").css('opacity', '0.0');
+		//$("#upload-message").removeClass(style);
+	}, 7000);
+};
