@@ -7,6 +7,10 @@ class ImageController extends BaseController {
 		return View::make('test/uploadtest');
 	}
 
+	/**
+	 * @brief Image upload controller.
+	 * @return JSON response for Dropzone.
+	 */
 	public function uploadImage()
 	{
 
@@ -32,25 +36,26 @@ class ImageController extends BaseController {
 
 		$destinationPath = public_path() . '/uploads/' . sha1($userID);
 		$filename = $file->getClientOriginalName();
-		$extension = $file->getClientOriginalExtension();
-		$sha1filename = sha1($filename).time() . '.' . $extension;
 
 		// Upload process
 
-		$uploadSuccess = $file->move($destinationPath, $sha1filename);
+		$uploadSuccess = $file->move($destinationPath, $filename);
 		if( $uploadSuccess )
 		{
 			// Title was defined ? If so, use it. Otherwise, use original file's name.
-			$title = strlen(Input::has('title')) > 0 ? Input::get('title') : $sha1filename;
+			$name = strlen(Input::has('title')) > 0 ? Input::get('title') : $filename;
 
 			// Exif stuff...
-			$exif = @exif_read_data($file->getRealPath(), 0, true);
+			$exif = exif_read_data($destinationPath . '/'. $filename, 0, true);
 			$exifID = App::make('ExifController')->createExif($exif);
 
 			// Get album's name. Create it if it doesn't exist.
 			$albumName = Input::get('album-name');
 			$album = Album::firstOrCreate(array('name' => $albumName, 'user_id' => $userID));
-			$album->createImage($title, '', $exifID);
+
+			// Create and rename the file after its ID in order to find it easily.
+			$id = $album->createImage($name, '', $exifID);
+			rename($destinationPath . '/'. $filename, $destinationPath . '/' . $id);
 
 			return Response::json('success', 200);
 		}

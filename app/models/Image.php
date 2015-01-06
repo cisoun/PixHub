@@ -51,14 +51,14 @@ class Image extends Eloquent{
 	}
 	
 	// Méthode de création d'image dans la BDD
-	public function createImage($filename,$description,$albumID,$exifID)
+	public function createImage($name, $description, $albumID, $exifID)
 	{
-		$data =[
-			'name' =>$filename,
-			'description' =>$description,
-			'dateUpload' =>date("Y-m-d H:i:s"),
-			'album_id' =>$albumID,
-			'exif_id' =>$exifID,
+		$data = [
+			'name' => $name,
+			'description' => $description,
+			'dateUpload' => date("Y-m-d H:i:s"),
+			'album_id' => $albumID,
+			'exif_id' => $exifID,
 		];
 		
 		return Image::create($data)['id'];

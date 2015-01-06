@@ -66,9 +66,9 @@ class Album extends Eloquent {
 	}
 
 	// Création d'image
-	public function createImage($filename,$description,$exifID)
+	public function createImage($name, $description, $exifID)
 	{
 		$image = new Image;
-		$image->createImage($filename,$description,$this->id,$exifID);
+		return $image->createImage($name, $description, $this->id, $exifID);
 	}
 }

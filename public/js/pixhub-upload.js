@@ -6,6 +6,7 @@ Dropzone.options.uploadDropzone = {
 	autoProcessQueue: false,
 	dictCancelUpload: '',
 	dictRemoveFile: '',
+	parallelUploads: 256,
 	previewTemplate: '\
 		<div class="dz-preview dz-file-preview">\
 			<div class="dz-details"><img data-dz-thumbnail /></div>\
@@ -13,8 +14,8 @@ Dropzone.options.uploadDropzone = {
 			<div>\
 				<input type="text" class="dz-title" placeholder="Insert a title..." name="title"/>\<span class="glyphicon glyphicon-trash dz-remove" aria-hidden="true" data-dz-remove></span>\
 			</div>\
-			<div class="dz-success-mark"><span>✔</span></div>\
-			<div class="dz-error-mark"><span>✘</span></div>\
+			<div class="dz-success-mark"><span class="glyphicon glyphicon-ok-circle"></span></div>\
+			<div class="dz-error-mark"><span class="glyphicon glyphicon-remove-circle"></span></div>\
 			<div class="dz-error-message"><span data-dz-errormessage></span></div>\
 		</div>',
 	thumbnailHeight: 300,
@@ -46,18 +47,18 @@ Dropzone.options.uploadDropzone = {
 			//$("#upload-alert").css('display', 'block');
 
 
-			setInterval(function () {
+			setInterval(function() {
 				$("#upload-alert").css('opacity', '0.0');
-			}, 2000);
+			}, 6000);
 
-			setInterval(function () {
+			setInterval(function() {
 				//$("#upload-alert").css('display', 'none');
 				$("#upload-alert").css('opacity', '0.0');
-			}, 3000);
+			}, 7000);
 		});
 	}
 };
 
-$('#upload-album-list').click(function(e){
+$('#upload-album-list').click(function(e) {
 	$('#upload-album-name').val($('#upload-album-list').val());
 });
