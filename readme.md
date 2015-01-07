@@ -20,6 +20,48 @@ cd PixHub
 composer update
 ```
 
+### Configuration
+
+#### Upload folder
+
+Create the upload folder where PixHub will put the uploaded pictures.
+
+```bash
+mkdir public/uploads
+```
+
+#### Permission
+
+Some permissions will be required to allow PixHub to write in the folders.
+
+```bash
+chmod 777 -r app/storage
+chmod 777 -r public/uploads
+```
+
+#### Database
+
+Add your database identifiers in app/config/database.php and choose which database connection you will use.
+For example, if you use MySQL, just modify the "default" value.
+
+```
+'default' => 'mysql',
+```
+
+#### reCAPTCHA
+You must add your reCAPTCHA API key in order to use the sign up page. Go to https://www.google.com/recaptcha/admin#list and create your keys.
+
+When it's done, add them to PixHub/app/config/packages/greggilbert/recaptcha/config.php.
+
+#### Upload limits
+
+In most cases, PHP is defined to accept files which have a size up to 2 Mo. You can change the limits in php.ini.
+Look for "upload_max_filesize" and set the file size limit you wish.
+
+```bash
+upload_max_filesize = 10M
+```
+
 ### Running PixHub
 
 On the new directory, simply execute

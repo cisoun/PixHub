@@ -86,7 +86,7 @@ class ImageController extends BaseController {
 
 		$id = Auth::id();
 
-		$destinationPath = public_path().'\uploads\ '.sha1($id);
+		$destinationPath = public_path() . '/uploads/' . sha1($id);
 
 		$filename = $file->getClientOriginalName();
 		$extension = $file->getClientOriginalExtension();
