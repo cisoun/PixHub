@@ -262,18 +262,42 @@ a:focus {
 	width: 100%;
 }
 
-.photo-thumbnail-title {
+.photo-thumbnail-infos {
 	bottom: 0;
-	color: #fff;
-	font-size: 1.6em;
-	font-weight: 100;
 	padding: 30px;
 	position: absolute;
+	width: 100%;
 }
 
-.photo-thumbnail-title img {
+.photo-thumbnail-infos,
+.photo-thumbnail-infos a {
+	color: #fff;
+	font-weight: 100;
+}
+
+.photo-thumbnail-infos a:hover {
+	color: $link-hover-color;
+	text-decoration: none;
+}
+
+.photo-thumbnail-infos span {
+	display: block;
+}
+
+.photo-thumbnail-infos img {
 	height: 50px;
 	margin-right: 20px;
+	float: left;
+}
+
+.photo-thumbnail-title {
+	font-size: 1.6em;
+}
+
+.photo-thumbnail-author,
+.photo-thumbnail-author a{
+	font-size: 1em;
+	line-height: 1em;
 }
 
 .user-grid-thumbnail {
@@ -283,6 +307,10 @@ a:focus {
 .avatar {
 	border: 2px solid white;
 	border-radius: 100%;
+}
+
+a:hover .avatar {
+	border-color: $link-hover-color;
 }
 
 .tag {

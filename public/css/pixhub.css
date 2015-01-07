@@ -256,63 +256,89 @@ a, a:focus {
   width: 100%; }
 
 /* line 265, /srv/http/PixHub/public/css/pixhub.scss */
-.photo-thumbnail-title {
+.photo-thumbnail-infos {
   bottom: 0;
-  color: #fff;
-  font-size: 1.6em;
-  font-weight: 100;
   padding: 30px;
-  position: absolute; }
+  position: absolute;
+  width: 100%; }
 
-/* line 274, /srv/http/PixHub/public/css/pixhub.scss */
-.photo-thumbnail-title img {
+/* line 273, /srv/http/PixHub/public/css/pixhub.scss */
+.photo-thumbnail-infos, .photo-thumbnail-infos a {
+  color: #fff;
+  font-weight: 100; }
+
+/* line 278, /srv/http/PixHub/public/css/pixhub.scss */
+.photo-thumbnail-infos a:hover {
+  color: #00BCD4;
+  text-decoration: none; }
+
+/* line 283, /srv/http/PixHub/public/css/pixhub.scss */
+.photo-thumbnail-infos span {
+  display: block; }
+
+/* line 287, /srv/http/PixHub/public/css/pixhub.scss */
+.photo-thumbnail-infos img {
   height: 50px;
-  margin-right: 20px; }
+  margin-right: 20px;
+  float: left; }
 
-/* line 279, /srv/http/PixHub/public/css/pixhub.scss */
+/* line 293, /srv/http/PixHub/public/css/pixhub.scss */
+.photo-thumbnail-title {
+  font-size: 1.6em; }
+
+/* line 298, /srv/http/PixHub/public/css/pixhub.scss */
+.photo-thumbnail-author, .photo-thumbnail-author a {
+  font-size: 1em;
+  line-height: 1em; }
+
+/* line 303, /srv/http/PixHub/public/css/pixhub.scss */
 .user-grid-thumbnail {
   padding: 15px 0; }
 
-/* line 283, /srv/http/PixHub/public/css/pixhub.scss */
+/* line 307, /srv/http/PixHub/public/css/pixhub.scss */
 .avatar {
   border: 2px solid white;
   border-radius: 100%; }
 
-/* line 288, /srv/http/PixHub/public/css/pixhub.scss */
+/* line 312, /srv/http/PixHub/public/css/pixhub.scss */
+a:hover .avatar {
+  border-color: #00BCD4; }
+
+/* line 316, /srv/http/PixHub/public/css/pixhub.scss */
 .tag {
   background-color: #5cb85c;
   border-radius: 2px;
   color: #fff;
   padding: 2px 5px; }
-  /* line 294, /srv/http/PixHub/public/css/pixhub.scss */
+  /* line 322, /srv/http/PixHub/public/css/pixhub.scss */
   .tag:hover {
     color: #fff; }
 
-/* line 299, /srv/http/PixHub/public/css/pixhub.scss */
+/* line 327, /srv/http/PixHub/public/css/pixhub.scss */
 .page-tabs .nav {
   background-color: #333;
   text-align: center; }
 
-/* line 304, /srv/http/PixHub/public/css/pixhub.scss */
+/* line 332, /srv/http/PixHub/public/css/pixhub.scss */
 .page-tabs .nav li {
   display: inline-block;
   float: none; }
 
-/* line 309, /srv/http/PixHub/public/css/pixhub.scss */
+/* line 337, /srv/http/PixHub/public/css/pixhub.scss */
 .page-tabs .nav li a {
   background: transparent;
   color: #ccc;
   padding: 20px; }
-  /* line 315, /srv/http/PixHub/public/css/pixhub.scss */
+  /* line 343, /srv/http/PixHub/public/css/pixhub.scss */
   .page-tabs .nav li a:hover, .page-tabs .nav li a:focus {
     background-color: transparent;
     color: #fff; }
 
-/* line 321, /srv/http/PixHub/public/css/pixhub.scss */
+/* line 349, /srv/http/PixHub/public/css/pixhub.scss */
 .page-tabs .dropdown-menu {
   background-color: #333; }
 
-/* line 325, /srv/http/PixHub/public/css/pixhub.scss */
+/* line 353, /srv/http/PixHub/public/css/pixhub.scss */
 .page-tabs .dropdown-menu li a {
   padding: 0;
   display: block;
