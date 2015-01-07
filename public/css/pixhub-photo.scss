@@ -9,17 +9,14 @@
 	padding: 30px;
 }
 
+#photo-container img {
+	margin-left: auto;
+	margin-right: auto;
+}
+
 #photo-informations {
 	padding-top: 50px;
 	padding-bottom: 50px;
-}
-
-#photo-title {
-	display: table-row;
-}
-
-#photo-title div {
-	display: table-cell;
 }
 
 #photo-title h1,
@@ -29,9 +26,14 @@
 }
 
 #photo-avatar {
-	height: 64px;
 	margin-right: 20px;
+	height: 64px;
 	width: 64px;
+	min-height: 64px;
+	min-width: 64px;
+
+
+	display: inline-block;
 
 	&:hover {
 		border-color: $link-color;
@@ -40,8 +42,17 @@
 
 #photo-description {
 	padding: 15px;
-	margin: 15px -30px;
+	//margin: 15px -30px;
+	margin: 15px;
 	text-align: justify;
+}
+
+#photo-title h1,
+#photo-description {
+	word-break: break-all;
+	word-wrap: break-word;
+	text-overflow: ellipsis;
+	hyphens: auto;
 }
 
 .photo-panel {
@@ -55,12 +66,4 @@
 .photo-exif {
 	color: $brand-info;
 	padding-right: 40px;
-}
-
-#photo-title h1,
-#photo-description {
-	word-break: break-all;
-	word-wrap: break-word;
-	text-overflow: ellipsis;
-	hyphens: auto;
 }

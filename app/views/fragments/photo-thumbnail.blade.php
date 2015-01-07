@@ -7,7 +7,7 @@
 	$author = $image->user();
 ?>
 <div class="photo-thumbnail photo">
-	<img src="{{ $path }}" class="img-responsive" alt=""/>
+	<a href="/photo/{{ $id }}" ><img src="{{ $path }}" class="photo-thumbnail-img" class="img-responsive"/></a>
 	<div class="photo-thumbnail-overlay">
 		<div class="photo-thumbnail-infos">
 			<a href="/user/{{ $author->pseudo }}" ><img src="{{ $avatar }}" class="avatar"/></a>

@@ -33,13 +33,17 @@ $hasExif = $exif->id == 1 ? false : true;
 			<div class="col-md-6 photo-panel">
 				<div class="row">
 					<div id="photo-title" class="row">
-						<a href="{{ $user->url() }}"><img id="photo-avatar" src="../img/avatar.png" class="avatar img-responsive pull-left" alt="Avatar"/></a>
-						<div class="pull-left">
+						<div class="col-md-2">
+							<a href="{{ $user->url() }}"><img id="photo-avatar" src="../img/avatar.png" class="avatar img-responsive" alt="Avatar"/></a>
+						</div>
+						<div class="col-md-10">
 							<h1 id="editable_title" class="editable">{{ $image->name }}</h1>
 							<h4><a href="{{ $user->url() }}">{{ $user->name }}</a></h4>
 						</div>
 					</div>
-					<div id="photo-description" class="editable row">{{ $image->description }}</div>
+					<div class="row">
+						<div id="photo-description" class="editable">{{ $image->description }}</div>
+					</div>
 				</div>
 			</div>
 			<div class="col-md-6 photo-panel separator">

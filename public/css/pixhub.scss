@@ -115,8 +115,8 @@ a:focus {
 	outline: none !important;
 	border: 0;
 	border-color: $bg-dark;
-    /*border-color: #719ECE;
-    box-shadow: 0 0 10px #719ECE;*/
+	/*border-color: #719ECE;
+	box-shadow: 0 0 10px #719ECE;*/
 	background-color: $bg-dark;
 	color: $fg-dark;
 	word-break: break-all;
@@ -234,11 +234,24 @@ a:focus {
 .photo-thumbnail {
 	background-color: black;
 	height: 100%;
+	min-height: 300px;
 	width: 100%;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
 	&:hover > .photo-thumbnail-overlay {
 		opacity: 0.8;
 	}
+}
+
+
+.photo-thumbnail-img {
+	display: inline;
+	height: 100%;
+	vertical-align: middle;
+	width: 100%;
 }
 
 .photo-thumbnail-overlay {
@@ -253,6 +266,7 @@ a:focus {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 ); /* IE6-8 */
 
 	bottom: 0;
+	left: 0;
 	margin-bottom: 15px;
 	opacity: 0;
 
@@ -264,6 +278,7 @@ a:focus {
 
 .photo-thumbnail-infos {
 	bottom: 0;
+	left: 0;
 	padding: 30px;
 	position: absolute;
 	width: 100%;
@@ -357,7 +372,7 @@ a:hover .avatar {
 }
 /*
 .page-tabs .dropdown-menu li:hover {
-	background-color: $page-nav-bg-hover;
-	display: block;
+background-color: $page-nav-bg-hover;
+display: block;
 }
 */
