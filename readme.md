@@ -20,6 +20,22 @@ cd PixHub
 composer update
 ```
 
+### Configuration
+
+#### Database
+
+Add your database identifiers in app/config/database.php and choose which database connection you will use.
+For example, if you use MySQL, just modify the "default" value.
+
+```
+'default' => 'mysql',
+```
+
+#### reCAPTCHA
+You must add your reCAPTCHA API key in order to use the sign up page. Go to https://www.google.com/recaptcha/admin#list and create your keys.
+
+When it's done, add them to PixHub/app/config/packages/greggilbert/recaptcha/config.php.
+
 ### Running PixHub
 
 On the new directory, simply execute
