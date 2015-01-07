@@ -18,12 +18,9 @@
 		
 		$user = User::find(65);
 		
-		$latestImages = $user->getLatestImages();
+		$avatar = User::getAvatar(65);
 		
-		foreach($latestImages as $image){
-			echo $image->id;
-			echo "<br>";
-		}
+		echo $avatar;
 		
 		/*$id = Auth::id();
 		
