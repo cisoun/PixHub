@@ -17,7 +17,7 @@
 		for ($i = 0; $i < count($photos); $i++)
 		{
 			echo ('<div class="col-lg-12 user-grid-thumbnail">');
-			echo (View::make('fragments/photo-thumbnail', array('title' => $photos[$i]->name)));
+			echo (View::make('fragments/photo-thumbnail', array('title' => $photos[$i]->name, 'avatar' => asset('img/avatar.png'), 'image' => Image::find($photos[$i]->id)->path())));
 			echo ('</div>');
 		}
 	?>

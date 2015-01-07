@@ -14,6 +14,10 @@ class Album extends Eloquent {
 		return $this->hasMany('Image');
 	}
 
+	public function path() {
+		return '/uploads/' . sha1($this->user_id);
+	}
+
 	public function user() {
 		return $this->belongsTo('User');
 	}
@@ -23,12 +27,11 @@ class Album extends Eloquent {
 	public function getImages($albumID)
 	{
 		return Album::find($albumID)->images;
-
 	}
 
-	public function getPath()
+	public static function getPath($albumID)
 	{
-		return '/uploads/' . sha1($this->user_id);
+		return '/uploads/' . sha1(Album::find($albumID)->user_id);
 	}
 
 	// Setter

@@ -17,6 +17,10 @@ class Image extends Eloquent{
 		return $this->belongsTo('Album');
 	}
 	
+	public function path() {
+		return Album::getPath($this->album_id) . '/' . $this->id;
+	}
+
 	public function tags()
     {
         return $this->belongsToMany('Tag','image_has_tag');
@@ -33,6 +37,10 @@ class Image extends Eloquent{
 	public function getExif($imageID)
 	{
 		return Image::find($imageID)->exif;
+	}
+
+	public static function getPath($imageID) {
+		return Album::getPath(Image::find($imageID)->album_id) . '/' . $imageID;
 	}
 
 	public function getTags($imageID)
