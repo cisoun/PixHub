@@ -34,7 +34,19 @@ class Image extends Eloquent{
 		return DB::table('albums')->join('images', 'images.album_id', '=', 'albums.id')->where('albums.user_id','=',$userID)->orderBy('dateUpload','desc')->take(5)->get();
 	}
 	
-	public function getExif($imageID)
+	// Retourne les $nb dernières images de contenant la recherche
+	public static function getImagesFromResearch($research,$nb)
+	{
+		return DB::table('images')->where('name','like','%'.$research.'%')->orderBy('dateUpload','desc')->take($nb)->get();
+	}
+	
+	// Retourne $nb images au hasard
+	public static function getRandomImages($nb)
+	{
+		return DB::table('images')->orderByRaw('RAND()')->take($nb)->get();
+	}
+	
+	public static function getExif($imageID)
 	{
 		return Image::find($imageID)->exif;
 	}
@@ -43,7 +55,7 @@ class Image extends Eloquent{
 		return Album::getPath(Image::find($imageID)->album_id) . '/' . $imageID;
 	}
 
-	public function getTags($imageID)
+	public static function getTags($imageID)
 	{
 		$tags = Image::find($imageID)->tags;
 		

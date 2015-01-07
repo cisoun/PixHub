@@ -20,7 +20,11 @@
 		
 		$avatar = User::getAvatar(65);
 		
-		echo $avatar;
+		$imagesfromTags = Image::getRandomImages(2);
+		
+		foreach ($imagesfromTags as $image) {
+			echo $image->name;
+		}
 		
 		/*$id = Auth::id();
 		

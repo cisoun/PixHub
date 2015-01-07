@@ -23,6 +23,14 @@ class Tag extends Eloquent{
 		return Tag::where('name',$name)->first();
 	}
 	
+	// Retourne les $nb dernières images ayant le tag $name
+	public static function getImagesFromTag($name,$nb)
+	{
+		$tag = Tag::getTagByName($name);
+		
+		return DB::table('images')->join('image_has_tag', 'image_has_tag.image_id', '=', 'images.id')->where('image_has_tag.tag_id','=',$tag->id)->orderBy('dateUpload','desc')->take($nb)->get();
+	}
+	
 	// Ajout d'un tag à une image
 	public static function addTagToImage($name,$imageID)
 	{

@@ -59,6 +59,16 @@ CREATE TABLE IF NOT EXISTS `exifs` (
 -- --------------------------------------------------------
 
 --
+-- Contenu de la table `exifs`
+-- La première entrée (id 1) est vide et est attribuée aux images sans données exif.
+--
+
+INSERT INTO `exifs` (`id`, `height`, `width`, `cameraModel`, `cameraBrand`, `iso`, `aperture`, `exposure`, `focal`, `flash`, `orientation`, `date`) VALUES
+(1, 0, 0, '', '', '', '', '', '', 0, '', NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `images`
 --
 
