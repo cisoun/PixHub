@@ -21,6 +21,12 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		return $this->hasMany('Album');
 	}
 
+	public function url() {
+		return '/user/' . $this->pseudo;
+	}
+
+	// Getters
+
 	public static function getPath($userID)
 	{
 		return public_path() . '/uploads/'. sha1($userID);

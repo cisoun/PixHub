@@ -26,6 +26,10 @@ class Image extends Eloquent{
         return $this->belongsToMany('Tag','image_has_tag');
     }
 	
+	public function user() {
+		return User::find(Album::find($this->album_id)->user->id);
+	}
+
 	// Getters
 	
 	// Retourne les 5 dernières images de l'utilisaterur passé en paramètre

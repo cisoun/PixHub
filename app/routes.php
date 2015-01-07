@@ -51,7 +51,6 @@ Route::get('signup', function()
 	return View::make('index', array('page' => 'signup'));
 });
 
-
 Route::get('upload', function()
 {
 	if (Auth::check())
