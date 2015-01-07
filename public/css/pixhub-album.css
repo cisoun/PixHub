@@ -1,0 +1,54 @@
+/* line 3, /srv/http/PixHub/public/css/pixhub-dark.scss */
+body {
+  color: #999; }
+
+/* line 8, /srv/http/PixHub/public/css/pixhub-dark.scss */
+body, #footer {
+  background-color: #222; }
+
+/* line 12, /srv/http/PixHub/public/css/pixhub-dark.scss */
+#footer {
+  border-top: 1px solid #333 !important; }
+
+/* line 16, /srv/http/PixHub/public/css/pixhub-dark.scss */
+.page-shadow {
+  border-top: 1px solid #3c3c3c;
+  box-shadow: 0 0 50px black; }
+
+/* line 3, /srv/http/PixHub/public/css/pixhub-album.scss */
+#album-cover {
+  background-color: black;
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px); }
+
+/* line 12, /srv/http/PixHub/public/css/pixhub-album.scss */
+#album-infos {
+  background-image: none;
+  position: absolute;
+  top: 0;
+  z-index: 1; }
+
+/* line 19, /srv/http/PixHub/public/css/pixhub-album.scss */
+#album-infos h1 {
+  font-size: 6em;
+  line-height: 1.4em;
+  padding-bottom: 0;
+  padding-top: 60px; }
+
+/* line 26, /srv/http/PixHub/public/css/pixhub-album.scss */
+#album-infos h2 {
+  font-size: 2em;
+  font-weight: 100;
+  line-height: 0em;
+  padding: 0; }
+
+/* line 33, /srv/http/PixHub/public/css/pixhub-album.scss */
+#album-infos .avatar {
+  height: 120px;
+  margin-top: 30px;
+  vertical-align: middle; }
+
+/*# sourceMappingURL=pixhub-album.css.map */
