@@ -31,6 +31,11 @@ Route::get('user/{user}', function($user)
 	return View::make('index', array('page' => 'user', 'user' => $user, 'section' => 'latest'));
 });
 
+Route::get('explorer',function()
+{
+	return View::make('index', array('page' => 'explorer'));
+});
+
 Route::get('user/{user}/{section}', function($user, $section)
 {
 	return View::make('index', array('page' => 'user', 'user' => $user, 'section' => $section));
