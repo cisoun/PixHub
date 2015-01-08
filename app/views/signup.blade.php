@@ -26,7 +26,12 @@
 				<button type="submit" class="btn btn-lg btn-default">Let's go ! <span class="glyphicon glyphicon-upload"></span></button>
 				-->
 				<div class="form-group">				
-					<label for="signupName">Name or pseudo</label>
+					<label for="signupPseudo">Pseudo</label>
+					<!--{{ HTML::decode(Form::label('firstName', 'Test', array('class' => 'form-control'))) }}-->
+					{{ HTML::decode(Form::text('signupPseudo', Input::old('mail'), array('placeholder' => '','class' => 'form-control'))) }}
+				</div>
+				<div class="form-group">
+					<label for="signupName">Real name</label>
 					<!--{{ HTML::decode(Form::label('firstName', 'Test', array('class' => 'form-control'))) }}-->
 					{{ HTML::decode(Form::text('signupName', Input::old('mail'), array('placeholder' => 'Name','class' => 'form-control'))) }}
 				</div>
@@ -42,9 +47,10 @@
 					<label for="confirmedSignupPassword">Confirm password</label>
 					{{ HTML::decode(Form::password('confirmedSignupPassword',array('class' => 'form-control'))) }}
 				</div>
-				
 			
-			{{ HTML::decode(Form::submit('Submit!',array('class' => 'btn btn-lg btn-default'))) }}
+				<button type="submit" class="btn btn-default">
+					{{ trans('forms.signme') }} <span class="glyphicon glyphicon-ok-circle"></span>
+				</button>
 			{{ Form::close() }}
 			<p class="form-info">* {{ trans('forms.reminders.filled') }}</p>
 		</div>
