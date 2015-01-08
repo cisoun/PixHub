@@ -26,6 +26,19 @@ Route::get('photo/{id}', function($id)
 	return View::make('index', array('page' => 'photo', 'id' => $id));
 });
 
+Route::post('photo/update/{id}', function($id)
+{
+	if (!Auth::check())
+		return;
+	$image = Image::find($id);
+	$value = e(Input::get('value'));
+	if (Input::get('id') == 'photo-title')
+		$image->setName($value);
+	else
+		$image->setDescription($value);
+	return Input::get('value');
+});
+
 Route::get('user/{user}', function($user)
 {
 	return View::make('index', array('page' => 'user', 'user' => $user, 'section' => 'latest'));

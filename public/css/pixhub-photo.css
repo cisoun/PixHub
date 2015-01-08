@@ -35,7 +35,7 @@ body, #footer {
   padding-bottom: 50px; }
 
 /* line 23, /srv/http/PixHub/public/css/pixhub-photo.scss */
-#photo-title h1, #photo-title h4 {
+#photo-title-zone h1, #photo-title-zone h4 {
   margin: 0;
   padding: 0; }
 
@@ -58,7 +58,7 @@ body, #footer {
   text-align: justify; }
 
 /* line 51, /srv/http/PixHub/public/css/pixhub-photo.scss */
-#photo-title h1, #photo-description {
+#photo-title-zone h1, #photo-description {
   word-break: break-all;
   word-wrap: break-word;
   text-overflow: ellipsis;
