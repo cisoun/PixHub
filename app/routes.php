@@ -49,6 +49,13 @@ Route::get('explore',function()
 	return View::make('index', array('page' => 'explore'));
 });
 
+Route::get('research/{research}',function($research)
+{
+	return View::make('index', array('page' => 'research', 'research' => $research));
+});
+
+Route::post('research', array('uses' => 'HomeController@doResearch'));
+
 Route::get('user/{user}/{section}', function($user, $section)
 {
 	return View::make('index', array('page' => 'user', 'user' => $user, 'section' => $section));

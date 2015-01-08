@@ -28,7 +28,15 @@ class Tag extends Eloquent{
 	{
 		$tag = Tag::getTagByName($name);
 		
-		return DB::table('images')->join('image_has_tag', 'image_has_tag.image_id', '=', 'images.id')->where('image_has_tag.tag_id','=',$tag->id)->orderBy('dateUpload','desc')->take($nb)->get();
+		if($tag != null)
+		{				
+			$images = DB::table('images')->join('image_has_tag', 'image_has_tag.image_id', '=', 'images.id')->where('image_has_tag.tag_id','=',$tag->id)->orderBy('dateUpload','desc')->take($nb)->get();
+			$images = array_slice($images,0,4);
+			
+			return $images;
+		}
+		else
+			return array();
 	}
 	
 	// Ajout d'un tag à une image

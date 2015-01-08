@@ -26,6 +26,10 @@ class HomeController extends BaseController {
 		return View::make('test/createusertest'); // ... de test
 	}
 	
+	public function doResearch()
+	{
+		return Redirect::to('/research/' . Input::get('research'));
+	}
 
 	// Méthode de cération d'utilisateur
 	public function createUser()
