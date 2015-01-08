@@ -65,7 +65,7 @@ Route::get('upload', function()
 
 Route::post('upload', 'ImageController@uploadImage');
 
-
+Route::post('signup', array('uses' => 'HomeController@createUser'));
 Route::post('signin', array('uses' => 'HomeController@doLogin'));
 Route::get('signoff', array('uses' => 'HomeController@doLogout'));
 

@@ -26,14 +26,23 @@ class HomeController extends BaseController {
 		return View::make('test/createusertest'); // ... de test
 	}
 	
+
 	// Méthode de cération d'utilisateur
 	public function createUser()
 	{
+		Validator::extend('comparePassword', function ($attribute, $value, $parameters) 
+		{			
+			return ($parameters[0] == $value);
+		});
+		
+		$signupPassword = Input::get('signupPassword');
+
 		// validate the info, create rules for the inputs
 		$rules = array(
-			'name' 	=> 'required|alphaNum|min:4', // name can only be alphanumeric and has to be greater than 4 characters
-			'mail'    => 'required|email', // make sure the email is an actual email
-			'password' => 'required|alphaNum|min:3' // password can only be alphanumeric and has to be greater than 3 characters
+			'signupName' 	=> 'required|alphaNum|min:3', // name can only be alphanumeric and has to be greater than 4 characters
+			'signupEmail'    => 'required|email', // make sure the email is an actual email
+			'signupPassword' => 'required|alphaNum|min:3', // password can only be alphanumeric and has to be greater than 3 characters
+			'confirmedSignupPassword' => 'required|comparePassword:'.Input::get('signupPassword')
 		);
 		
 		// run the validation rules on the inputs from the form
@@ -41,25 +50,31 @@ class HomeController extends BaseController {
 
 		// if the validator fails, redirect back to the form
 		if ($validator->fails()) {
-			return Redirect::to('test/createusertest')
+			return Redirect::to('signup')
 				->withErrors($validator) // send back all errors to the login form
 				->withInput(Input::except('password')); // send back the input (not the password) so that we can repopulate the form
 		} 
 		else {			
-			$pass = Input::get('password');
+			$pass = Input::get('signupPassword');
 			$data = [
-				'name' => Input::get('name'),
-				'mail' => Input::get('mail'),
-				'site' => Input::get('site'),
-				'location' => Input::get('location'),
-				'description' => Input::get('description'),
-				'cover' => '-', // En 'dur' car pas de champs dans le formulaire de test.
+				'pseudo' => Input::get('signupName'),
+				'name' => Input::get('signupName'),
+				'mail' => Input::get('signupEmail'),				
 				'password' => Hash::make($pass),
 			];
 			
 			User::create($data);
 			
-			return Redirect::to('test/tablestest');
+			// create our user data for the authentication
+			$userdata = array(
+				'pseudo'		=> Input::get('signupName'),
+				//'mail' 	=> Input::get('mail'), // Authentification par eMail
+				'password' 	=> Input::get('signupPassword'),
+			);
+			
+			Auth::attempt($userdata);
+			
+			return Redirect::to('/user/' . Input::get('signupName')); // Return sur la page de test de table
 		}
 	}
 	

@@ -2,15 +2,15 @@
 	<div class="container">
 		<div class="col-md-8">
 			<h1>{{ trans('signup.title') }}</h1>
-			{{ Form::open(array('url' => 'foo/bar')) }}
-				<div class="form-group">
+			{{ Form::open(array('url' => 'signup')) }}
+				<!--- <div class="form-group">
 					<label for="signupName">Name or pseudo *</label>
 					<input type="text" class="form-control" id="signupName" placeholder="Enter name" required>
 				</div>
 				<div class="form-group">
 					<label for="signupEmail">Email address *</label>
 					<input type="email" class="form-control" id="signupEmail" placeholder="Enter email" required>
-				</div>
+				</div> 
 				<div class="form-group">
 					<label for="signupPassword">Password *</label>
 					<input type="password" class="form-control" id="signupPassword" placeholder="Password" required>
@@ -20,9 +20,31 @@
 					<input type="password" class="form-control" id="signupPasswordConfirm" placeholder="Password" required>
 				</div>
 				<div id="captcha">
-					<?php echo(Form::captcha()); ?>
+					 <?php //echo(Form::captcha()); ?>
 				</div>
-			<button type="submit" class="btn btn-lg btn-default">Let's go ! <span class="glyphicon glyphicon-upload"></span></button>
+				
+				<button type="submit" class="btn btn-lg btn-default">Let's go ! <span class="glyphicon glyphicon-upload"></span></button>
+				-->
+				<div class="form-group">				
+					<label for="signupName">Name or pseudo</label>
+					<!--{{ HTML::decode(Form::label('firstName', 'Test', array('class' => 'form-control'))) }}-->
+					{{ HTML::decode(Form::text('signupName', Input::old('mail'), array('placeholder' => 'Name','class' => 'form-control'))) }}
+				</div>
+				<div class="form-group">				
+					<label for="signupEmail">Email</label>
+					{{ HTML::decode(Form::text('signupEmail', Input::old('mail'), array('placeholder' => 'example@example.com','class' => 'form-control'))) }}
+				</div>
+				<div class="form-group">				
+					<label for="signupPassword">Password</label>
+					{{ HTML::decode(Form::password('signupPassword',array('class' => 'form-control'))) }}
+				</div>
+				<div class="form-group">				
+					<label for="confirmedSignupPassword">Confirm password</label>
+					{{ HTML::decode(Form::password('confirmedSignupPassword',array('class' => 'form-control'))) }}
+				</div>
+				
+			
+			{{ HTML::decode(Form::submit('Submit!',array('class' => 'btn btn-lg btn-default'))) }}
 			{{ Form::close() }}
 			<p class="form-info">* {{ trans('forms.reminders.filled') }}</p>
 		</div>
