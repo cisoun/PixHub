@@ -58,7 +58,7 @@ Route::post('research', array('uses' => 'HomeController@doResearch'));
 
 Route::get('user/{user}', function($user)
 {
-	if (!User::find($user))
+	if (User::getUserFromPseudo($user)->count() == 0)
 		return Redirect::to('home');
 	return View::make('index', array('page' => 'user', 'user' => $user, 'section' => 'latest'));
 });
