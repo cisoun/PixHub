@@ -1,9 +1,26 @@
 @import 'pixhub-dark.scss';
 
+body {
+	background-attachment: fixed;
+	background-image: url('../img/explore-bg.jpg');
+	background-position: center;
+	background-size: cover;
+}
+
+#explore {
+	color: #fff;
+	padding-bottom: 50px;
+	text-align: center;
+}
 
 #explore-title {
+	color: #fff;
 	height: 100vh;
 	text-align: center;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 #explore-title a,
@@ -15,18 +32,23 @@
 
 #explore-title h1 {
 	font-size: 3em;
-
-	padding-top: 35vh;
 }
 
 #explore-title a {
 	font-size: 3em;
-	color: $fg-dark;
+	color: #fff;
 	text-decoration: none;
-	transition: font-size 0.1s;
+	transition: font-size 0.1s, color 0.1s;
 
 	&:hover {
-		color: lighten($fg-dark, 20%);
+		color: #18d28a; //lighten($fg-dark, 20%);
 		font-size: 4em;
 	}
+}
+
+#explore-gallery {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
