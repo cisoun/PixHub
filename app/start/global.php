@@ -22,6 +22,22 @@ ClassLoader::addDirectories(array(
 
 /*
 |--------------------------------------------------------------------------
+| Handling 404 Errors
+|--------------------------------------------------------------------------
+|
+| You may register an error handler that handles all "404 Not Found"
+| errors in your application, allowing you to easily return custom 404
+| error pages:
+|
+*/
+
+App::missing(function($exception)
+{
+    return Response::view('index', array('page' => 'home'), 404);
+});
+
+/*
+|--------------------------------------------------------------------------
 | Application Error Logger
 |--------------------------------------------------------------------------
 |

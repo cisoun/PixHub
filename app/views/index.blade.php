@@ -21,6 +21,13 @@
 		{{ HTML::style('css/pixhub-' . $page . '.css') }}
 		{{ HTML::style('css/dropzone.css') }}
 
+		{{ HTML::script('//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js') }}
+		{{ HTML::script('js/jquery.jeditable.min.js') }}
+		{{ HTML::script('js/dropzone.js') }}
+		{{ HTML::script('js/bootstrap.min.js') }}
+		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+		{{ HTML::script('js/ie10-viewport-bug-workaround.js') }}
+
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
 		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -38,14 +45,6 @@
 			<a href="https://github.com/cisoun/PixHub">Check PixHub on GitHub</a>
 		</div>
 
-		<!-- Bootstrap core JavaScript ================================================== -->
-		<!-- Placed at the end of the document so the pages load faster -->
-		{{ HTML::script('//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js') }}
-		{{ HTML::script('js/jquery.jeditable.min.js') }}
-		{{ HTML::script('js/dropzone.js') }}
-		{{ HTML::script('js/bootstrap.min.js') }}
-		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-		{{ HTML::script('js/ie10-viewport-bug-workaround.js') }}
 		{{ HTML::script('js/pixhub.js') }}
 		{{ HTML::script('js/pixhub-' . $page . '.js') }}
 	</body>

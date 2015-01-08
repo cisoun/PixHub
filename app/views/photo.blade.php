@@ -4,7 +4,7 @@ $user = $image->user();
 $exif = $image->exif;
 
 $hasExif = $exif->id == 1 ? false : true;
-
+$editable = Auth::check() ? 'class="editable"' : '';
 ?>
 <div id="photo" class="container-fluid page">
 	<div id="photo-container">
@@ -32,17 +32,17 @@ $hasExif = $exif->id == 1 ? false : true;
 		<div id="photo-informations" class="container page">
 			<div class="col-md-6 photo-panel">
 				<div class="row">
-					<div id="photo-title" class="row">
+					<div id="photo-title-zone" class="row">
 						<div class="col-md-2">
 							<a href="{{ $user->url() }}"><img id="photo-avatar" src="../img/avatar.png" class="avatar img-responsive" alt="Avatar"/></a>
 						</div>
 						<div class="col-md-10">
-							<h1 id="editable_title" class="editable">{{ $image->name }}</h1>
+							<h1 id="photo-title" {{ $editable }}>{{ $image->name }}</h1>
 							<h4><a href="{{ $user->url() }}">{{ $user->name }}</a></h4>
 						</div>
 					</div>
 					<div class="row">
-						<div id="photo-description" class="editable">{{ $image->description }}</div>
+						<div id="photo-description" {{ $editable }}>{{ nl2br($image->description) }}</div>
 					</div>
 				</div>
 			</div>
@@ -71,3 +71,40 @@ $hasExif = $exif->id == 1 ? false : true;
 		</div>
 	</div>
 </div>
+@if(Auth::check())
+<script>
+	$(document).ready(function() {
+		$('#photo-title').editable('/photo/update/{{ $id }}', {
+			type     	: 'text',
+			//cancel    : 'Cancel',
+			//submit    : 'OK',
+			//indicator : '<img src="img/indicator.gif">',
+			onblur		: 'submit',
+			style		: 'display: block',
+			placeholder	: 'Click here to add a title...'
+			/*callback : function(value, settings) {
+				$('#photo-title').text(value);
+			}*/
+		});
+
+		$('#photo-description').editable('/photo/update/{{ $id }}', {
+			type      : 'textarea',
+			//cancel    : 'Cancel',
+			//submit    : 'OK',
+			//indicator : '<img src="img/indicator.gif">',
+			onblur		: 'submit',
+			placeholder	: 'Click here to add a description...',
+			callback: function(value,settings) {
+				var retval = value.replace(/\n/gi, "<br>\n");
+				$(this).html(retval);
+			},
+			data: function(value,settings) {
+				value = value.replace(/\r/gi, "");
+				value = value.replace(/\n/gi, "");
+				var retval = value.replace(/<br>/gi, "\n");
+				return retval;
+			}
+		});
+	});
+</script>
+@endif

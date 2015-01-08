@@ -74,6 +74,12 @@ class Image extends Eloquent{
 		$this->save();
 	}
 	
+	public function setName($name)
+	{
+		$this->name = $name;
+		$this->save();
+	}
+
 	// Méthode de création d'image dans la BDD
 	public function createImage($name, $description, $albumID, $exifID)
 	{
