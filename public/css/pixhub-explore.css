@@ -1,0 +1,45 @@
+/* line 3, /srv/http/PixHub/public/css/pixhub-dark.scss */
+body {
+  color: #999; }
+
+/* line 8, /srv/http/PixHub/public/css/pixhub-dark.scss */
+body, #footer {
+  background-color: #222; }
+
+/* line 12, /srv/http/PixHub/public/css/pixhub-dark.scss */
+#footer {
+  border-top: 1px solid #333 !important; }
+
+/* line 16, /srv/http/PixHub/public/css/pixhub-dark.scss */
+.page-shadow {
+  border-top: 1px solid #3c3c3c;
+  box-shadow: 0 0 50px black; }
+
+/* line 4, /srv/http/PixHub/public/css/pixhub-explore.scss */
+#explore-title {
+  height: 100vh;
+  text-align: center; }
+
+/* line 10, /srv/http/PixHub/public/css/pixhub-explore.scss */
+#explore-title a, #explore-title span {
+  display: block;
+  padding: 0;
+  line-height: 0; }
+
+/* line 16, /srv/http/PixHub/public/css/pixhub-explore.scss */
+#explore-title h1 {
+  font-size: 3em;
+  padding-top: 35vh; }
+
+/* line 22, /srv/http/PixHub/public/css/pixhub-explore.scss */
+#explore-title a {
+  font-size: 3em;
+  color: #999;
+  text-decoration: none;
+  transition: font-size 0.1s; }
+  /* line 28, /srv/http/PixHub/public/css/pixhub-explore.scss */
+  #explore-title a:hover {
+    color: #cccccc;
+    font-size: 4em; }
+
+/*# sourceMappingURL=pixhub-explore.css.map */

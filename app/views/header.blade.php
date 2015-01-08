@@ -11,7 +11,7 @@
 		</div>
 		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav">
-				<li><a href="/explorer"><span class="glyphicon glyphicon-search"></span> Explore</a></li>
+				<li><a href="/explore"><span class="glyphicon glyphicon-search"></span> Explore</a></li>
 			</ul>
 			<form class="navbar-form navbar-left" role="search">
 				<div class="input-group navbar-search">

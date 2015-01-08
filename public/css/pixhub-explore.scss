@@ -1,0 +1,32 @@
+@import 'pixhub-dark.scss';
+
+
+#explore-title {
+	height: 100vh;
+	text-align: center;
+}
+
+#explore-title a,
+#explore-title span {
+	display: block;
+	padding: 0;
+	line-height: 0;
+}
+
+#explore-title h1 {
+	font-size: 3em;
+
+	padding-top: 35vh;
+}
+
+#explore-title a {
+	font-size: 3em;
+	color: $fg-dark;
+	text-decoration: none;
+	transition: font-size 0.1s;
+
+	&:hover {
+		color: lighten($fg-dark, 20%);
+		font-size: 4em;
+	}
+}
