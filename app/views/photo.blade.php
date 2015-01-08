@@ -81,7 +81,7 @@ $editable = Auth::check() ? 'class="editable"' : '';
 			//indicator : '<img src="img/indicator.gif">',
 			onblur		: 'submit',
 			style		: 'display: block',
-			tooltip		: 'Click to edit...'
+			placeholder	: 'Click here to add a title...'
 			/*callback : function(value, settings) {
 				$('#photo-title').text(value);
 			}*/
@@ -93,7 +93,7 @@ $editable = Auth::check() ? 'class="editable"' : '';
 			//submit    : 'OK',
 			//indicator : '<img src="img/indicator.gif">',
 			onblur		: 'submit',
-			tooltip		: 'Click to edit...',
+			placeholder	: 'Click here to add a description...',
 			callback: function(value,settings) {
 				var retval = value.replace(/\n/gi, "<br>\n");
 				$(this).html(retval);
