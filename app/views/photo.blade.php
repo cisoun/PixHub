@@ -2,6 +2,7 @@
 $image = Image::find($id);
 $user = $image->user();
 $exif = $image->exif;
+$albums = User::find($user->id)->albums;
 
 $hasExif = $exif->id == 1 ? false : true;
 $editable = Auth::check() ? 'class="editable"' : '';
@@ -16,16 +17,20 @@ $editable = Auth::check() ? 'class="editable"' : '';
 		<div id="user-nav">
 			<div class="page-tabs">
 				<ul class="nav nav-pills">
-					<li role="presentation">{{ link_to('', trans('pixhub.user-latest-photos'), $attributes = array(), $secure = null); }}</li>
+					<li role="presentation">{{ link_to('/user/' . $user->pseudo . '/latest', trans('pixhub.user-latest-photos'), $attributes = array(), $secure = null); }}</li>
 					<li role="presentation" class="dropdown">
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
 							{{ trans('pixhub.user-albums') }} <span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu" role="menu">
-							This user has no albums
+							@forelse($albums as $album)
+								<li><a href="/album/{{ $album->id }}">{{ $album->name }}</a></li>
+							@empty
+								<li>This user has no albums</li>
+							@endforelse
 						</ul>
 					</li>
-					<li role="presentation">{{ link_to('', trans('pixhub.user-about'), $attributes = array(), $secure = null); }}</li>
+					<li role="presentation">{{ link_to('/user/' . $user->pseudo . '/about', trans('pixhub.user-about'), $attributes = array(), $secure = null); }}</li>
 				</ul>
 			</div>
 		</div>

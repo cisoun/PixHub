@@ -24,7 +24,7 @@ $albums = $user->albums;
 							@forelse($albums as $album)
 								<li><a href="/album/{{ $album->id }}">{{ $album->name }}</a></li>
 							@empty
-								This user has no albums
+								<li>This user has no albums</li>
 							@endforelse
 						</ul>
 					</li>
