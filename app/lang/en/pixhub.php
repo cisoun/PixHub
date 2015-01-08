@@ -20,5 +20,7 @@ return array(
 	'user-about'					=> 'About this user',
 
 	'photo-informations'			=> 'Informations',
-	'views'							=> 'Views'
+	'views'							=> 'Views',
+
+	'action-delete'					=> 'Delete'
 );

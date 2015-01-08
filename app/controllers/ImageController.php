@@ -2,6 +2,14 @@
 
 class ImageController extends BaseController {
 
+	public function deleteImage($id)
+	{
+		$image = Image::find($id);
+		$album = $image->album;
+		$image->deleteImage();
+		return Redirect::to('album/' . $album->id);
+	}
+
 	public function showUpload()
 	{
 		return View::make('test/uploadtest');
@@ -19,7 +27,7 @@ class ImageController extends BaseController {
 			'album-name' => 'required|min:1',
 			'file' => 'required|image'
 		);
-		
+
 		$validation = Validator::make(Input::all(), $rules);
 		if ($validation->fails())
 		{
@@ -30,7 +38,9 @@ class ImageController extends BaseController {
 
 		$file = Input::file('file');
 		$userID = Auth::id();
+		$mime = $file->getMimeType();
 		
+
 		// Define new file path
 
 		$destinationPath = public_path() . '/uploads/' . sha1($userID);
@@ -40,7 +50,8 @@ class ImageController extends BaseController {
 		// Upload process
 
 		$uploadSuccess = $file->move($destinationPath, $filename);
-		if( $uploadSuccess )
+		return Response::json($file->getMimeType(), 400);
+		if($uploadSuccess)
 		{
 			// Title was defined ? If so, use it. Otherwise, use original file's name.
 			// We'll use base64 in order to avoid spaces and dots when passing the name by POST.
@@ -48,8 +59,17 @@ class ImageController extends BaseController {
 			$name = Input::has($nameField) ? Input::get($nameField) : $filename;
 
 			// Exif stuff...
-			$exif = @exif_read_data($destinationPath . '/'. $filename, 0, true);
-			$exifID = App::make('ExifController')->createExif($exif);
+
+			if($file->getMimeType() == 'image/jpeg')
+			{
+				$exif = @exif_read_data($destinationPath . '/'. $filename, 0, true);
+				$exifID = App::make('ExifController')->createExif($exif);
+			}
+			else
+			{
+				$exifID = 1;
+			}
+			return Response::json('post', 400);
 
 			// Get album's name. Create it if it doesn't exist.
 			$albumName = Input::get('album-name');

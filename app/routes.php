@@ -16,6 +16,11 @@ Route::get('/', function()
 	return View::make('index', array('page' => 'home'));
 });
 
+Route::get('album/{album}', function($album)
+{
+	return View::make('index', array('page' => 'album', 'album' => $album));
+});
+
 Route::get('home', function()
 {
 	return View::make('index', array('page' => 'home'));
@@ -30,6 +35,8 @@ Route::get('photo/{id}', function($id)
 {
 	return View::make('index', array('page' => 'photo', 'id' => $id));
 });
+
+Route::post('photo/delete/{id}', array('uses' => 'ImageController@deleteImage'));
 
 Route::post('photo/update/{id}', function($id)
 {
@@ -56,6 +63,20 @@ Route::get('research/{research}',function($research)
 
 Route::post('research', array('uses' => 'HomeController@doResearch'));
 
+Route::get('signin', function()
+{
+	return View::make('index', array('page' => 'signin'));
+});
+
+Route::get('signup', function()
+{
+	return View::make('index', array('page' => 'signup'));
+});
+
+Route::post('signup', array('uses' => 'HomeController@createUser'));
+Route::post('signin', array('uses' => 'HomeController@doLogin'));
+Route::get('signoff', array('uses' => 'HomeController@doLogout'));
+
 Route::get('user/{user}', function($user)
 {
 	if (User::getUserFromPseudo($user)->count() == 0)
@@ -68,21 +89,6 @@ Route::get('user/{user}/{section}', function($user, $section)
 	return View::make('index', array('page' => 'user', 'user' => $user, 'section' => $section));
 });
 
-Route::get('album/{album}', function($album)
-{
-	return View::make('index', array('page' => 'album', 'album' => $album));
-});
-
-Route::get('signin', function()
-{
-	return View::make('index', array('page' => 'signin'));
-});
-
-Route::get('signup', function()
-{
-	return View::make('index', array('page' => 'signup'));
-});
-
 Route::get('upload', function()
 {
 	if (Auth::check())
@@ -92,9 +98,6 @@ Route::get('upload', function()
 
 Route::post('upload', 'ImageController@uploadImage');
 
-Route::post('signup', array('uses' => 'HomeController@createUser'));
-Route::post('signin', array('uses' => 'HomeController@doLogin'));
-Route::get('signoff', array('uses' => 'HomeController@doLogout'));
 
 
 Route::get('effect/{effect}/{id}', function($effect, $id)

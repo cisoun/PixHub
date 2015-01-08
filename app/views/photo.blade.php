@@ -7,6 +7,14 @@ $albums = User::find($user->id)->albums;
 $hasExif = $exif->id == 1 ? false : true;
 $editable = Auth::check() ? 'class="editable"' : '';
 ?>
+<div id="photo-remove-popup">
+	{{ Form::open(array('url' => '/photo/delete/' . $id)) }}
+	You are going to remove this photo.
+	<p><b>Are you sure to do this ?</b></p>
+	<button id="photo-remove-yes" type="submit" class="btn btn-danger">Yes !</button>
+	<button id="photo-remove-no" type="button" class="btn btn-default">Nope.</button>
+	{{ Form::close() }}
+</div>
 <div id="photo" class="container-fluid page">
 	<div id="photo-container">
 		<div class="container">
@@ -17,20 +25,25 @@ $editable = Auth::check() ? 'class="editable"' : '';
 		<div id="user-nav">
 			<div class="page-tabs">
 				<ul class="nav nav-pills">
-					<li role="presentation">{{ link_to('/user/' . $user->pseudo . '/latest', trans('pixhub.user-latest-photos'), $attributes = array(), $secure = null); }}</li>
+					<!--li role="presentation">{{ link_to('/user/' . $user->pseudo . '/latest', trans('pixhub.user-latest-photos'), $attributes = array(), $secure = null); }}</li-->
+					<li role="presentation"><a href="/user/{{ $user->pseudo }}/latest"><span class="glyphicon glyphicon-time"></span> {{ trans('pixhub.user-latest-photos') }}</a></li>
 					<li role="presentation" class="dropdown">
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
-							{{ trans('pixhub.user-albums') }} <span class="caret"></span>
+							<span class="glyphicon glyphicon-book"></span> {{ trans('pixhub.user-albums') }} <span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu" role="menu">
 							@forelse($albums as $album)
-								<li><a href="/album/{{ $album->id }}">{{ $album->name }}</a></li>
+							<li><a href="/album/{{ $album->id }}">{{ $album->name }}</a></li>
 							@empty
-								<li>This user has no albums</li>
+							<li>This user has no albums</li>
 							@endforelse
 						</ul>
 					</li>
-					<li role="presentation">{{ link_to('/user/' . $user->pseudo . '/about', trans('pixhub.user-about'), $attributes = array(), $secure = null); }}</li>
+					<!--li role="presentation">{{ link_to('/user/' . $user->pseudo . '/about', trans('pixhub.user-about'), $attributes = array(), $secure = null); }}</li-->
+					<li role="presentation"><a href="/user/{{ $user->pseudo }}/about"><span class="glyphicon glyphicon-user"></span> {{ trans('pixhub.user-about') }}</a></li>
+					@if(Auth::check())
+					<li role="presentation"><a id="photo-remove" href="#"><span class="glyphicon glyphicon-trash"></span> {{ trans('pixhub.action-delete') }}</a></li>
+					@endif
 				</ul>
 			</div>
 		</div>
