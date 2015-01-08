@@ -39,10 +39,10 @@ class HomeController extends BaseController {
 
 		// validate the info, create rules for the inputs
 		$rules = array(
-			'signupName' 	=> 'required|alphaNum|min:3', // name can only be alphanumeric and has to be greater than 4 characters
+			'signupPseudo' 	=> 'required|alphaNum|min:3', // name can only be alphanumeric and has to be greater than 4 characters
 			'signupEmail'    => 'required|email', // make sure the email is an actual email
 			'signupPassword' => 'required|alphaNum|min:3', // password can only be alphanumeric and has to be greater than 3 characters
-			'confirmedSignupPassword' => 'required|comparePassword:'.Input::get('signupPassword')
+			'confirmedSignupPassword' => 'required|comparePassword:' . Input::get('signupPassword')
 		);
 		
 		// run the validation rules on the inputs from the form
@@ -57,7 +57,7 @@ class HomeController extends BaseController {
 		else {			
 			$pass = Input::get('signupPassword');
 			$data = [
-				'pseudo' => Input::get('signupName'),
+				'pseudo' => Input::get('signupPseudo'),
 				'name' => Input::get('signupName'),
 				'mail' => Input::get('signupEmail'),				
 				'password' => Hash::make($pass),
@@ -67,14 +67,15 @@ class HomeController extends BaseController {
 			
 			// create our user data for the authentication
 			$userdata = array(
-				'pseudo'		=> Input::get('signupName'),
+				'pseudo'	=> Input::get('signupPseudo'),
+				'name'		=> Input::get('signupName'),
 				//'mail' 	=> Input::get('mail'), // Authentification par eMail
 				'password' 	=> Input::get('signupPassword'),
 			);
 			
 			Auth::attempt($userdata);
 			
-			return Redirect::to('/user/' . Input::get('signupName')); // Return sur la page de test de table
+			return Redirect::to('/user/' . Input::get('signupPseudo')); // Return sur la page de test de table
 		}
 	}
 	

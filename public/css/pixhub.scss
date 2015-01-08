@@ -91,10 +91,14 @@ a:focus {
 	z-index: 1000;
 }
 
+.dropdown-menu {
+	padding: 15px;
+}
+
 .dropdown-menu a,
 .dropdown-menu li {
 	margin: 0;
-	padding: 0;
+	padding: 2px !important;
 	display: block !important;
 }
 
