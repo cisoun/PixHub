@@ -21,6 +21,11 @@ Route::get('home', function()
 	return View::make('index', array('page' => 'home'));
 });
 
+Route::get('explore',function()
+{
+	return View::make('index', array('page' => 'explore'));
+});
+
 Route::get('photo/{id}', function($id)
 {
 	return View::make('index', array('page' => 'photo', 'id' => $id));
@@ -39,14 +44,9 @@ Route::post('photo/update/{id}', function($id)
 	return Input::get('value');
 });
 
-Route::get('user/{user}', function($user)
+Route::get('research', function()
 {
-	return View::make('index', array('page' => 'user', 'user' => $user, 'section' => 'latest'));
-});
-
-Route::get('explore',function()
-{
-	return View::make('index', array('page' => 'explore'));
+   return Redirect::to('home');
 });
 
 Route::get('research/{research}',function($research)
@@ -55,6 +55,13 @@ Route::get('research/{research}',function($research)
 });
 
 Route::post('research', array('uses' => 'HomeController@doResearch'));
+
+Route::get('user/{user}', function($user)
+{
+	if (!User::find($user))
+		return Redirect::to('home');
+	return View::make('index', array('page' => 'user', 'user' => $user, 'section' => 'latest'));
+});
 
 Route::get('user/{user}/{section}', function($user, $section)
 {

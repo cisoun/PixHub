@@ -1,0 +1,18 @@
+/* line 3, /srv/http/PixHub/public/css/pixhub-dark.scss */
+body {
+  color: #999; }
+
+/* line 8, /srv/http/PixHub/public/css/pixhub-dark.scss */
+body, #footer {
+  background-color: #222; }
+
+/* line 12, /srv/http/PixHub/public/css/pixhub-dark.scss */
+#footer {
+  border-top: 1px solid #333 !important; }
+
+/* line 16, /srv/http/PixHub/public/css/pixhub-dark.scss */
+.page-shadow {
+  border-top: 1px solid #3c3c3c;
+  box-shadow: 0 0 50px black; }
+
+/*# sourceMappingURL=pixhub-research.css.map */

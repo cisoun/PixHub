@@ -4,12 +4,10 @@ $imagesBySearch = Image::getImagesFromResearch($research,5);
 
 $images = array_unique(array_merge($imagesByTags,$imagesBySearch), SORT_REGULAR  );
 ?>
-<div id="research" class="container">
+<div id="research" class="container page">
 	<div id="research-title">
 		<div>
-			<img src="{{ asset('img/explore.png') }}"/>
-			<h1>Photos by research : <?php echo $research; ?> </h1>
-			<a href="#research-gallery"><span class="glyphicon glyphicon-chevron-down"></span></a>
+			<h1><b>Photos by research &gt; </b><?php echo $research; ?> </h1>
 		</div>
 	</div>
 	<div id="research-gallery">

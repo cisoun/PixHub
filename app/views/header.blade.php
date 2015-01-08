@@ -13,14 +13,14 @@
 			<ul class="nav navbar-nav">
 				<li><a href="/explore"><span class="glyphicon glyphicon-search"></span> Explore</a></li>
 			</ul>
-				{{ HTML::decode(Form::open(array('url' => 'research', 'class' => 'avbar-form navbar-left'))) }}
-					<div class="input-group navbar-search">
-							{{ HTML::decode(Form::text('research', '', array('placeholder' => '','class' => 'form-control'))) }}
-							<span class="input-group-btn">glyphicon glyphicon-ok-circle
-								{{ HTML::decode(Form::submit('Search',array('class' => 'form-control')))}}
-							</span>
-					</div>
-				{{ Form::close() }}					
+			{{ Form::open(array('url' => 'research', 'class' => 'navbar-form navbar-left')) }}
+				<div class="input-group navbar-search">
+					{{ Form::text('research', '', array('placeholder' => '','class' => 'form-control')) }}
+					<span class="input-group-btn">glyphicon glyphicon-ok-circle
+						<button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+					</span>
+				</div>
+			{{ Form::close() }}
 			<ul class="nav navbar-nav navbar-right">
 				@if(Auth::check())
 					@include('fragments/header-logged')
