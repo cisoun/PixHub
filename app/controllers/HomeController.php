@@ -30,6 +30,11 @@ class HomeController extends BaseController {
 	{
 		return Redirect::to('/research/' . Input::get('research'));
 	}
+	
+	public function showTags()
+	{
+		return Redirect::to('/tag/' . Input::get('tag'));
+	}
 
 	// Méthode de cération d'utilisateur
 	public function createUser()

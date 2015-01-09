@@ -66,6 +66,13 @@ Route::get('research/{research}',function($research)
 
 Route::post('research', array('uses' => 'HomeController@doResearch'));
 
+Route::get('tag/{tag}',function($tag)
+{
+	return View::make('index', array('page' => 'tag', 'tag' => $tag));
+});
+
+Route::post('tag', array('uses' => 'HomeController@showTags'));
+
 Route::get('signin', function()
 {
 	return View::make('index', array('page' => 'signin'));

@@ -133,7 +133,7 @@ function fbs_click(width, height) {
 				{
 					foreach($tags as $tag)
 					{					
-						echo '<a href="#" class="tag">' . $tag->name . '</a>';
+						echo '<a href="/tag/'.$tag->name.'" class="tag">' . $tag->name . '</a>';
 					}
 				}
 				else
