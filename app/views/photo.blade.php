@@ -4,7 +4,8 @@ $user = $image->user();
 $exif = $image->exif;
 $albums = User::find($user->id)->albums;
 $hasExif = $exif->id == 1 ? false : true;
-$editable = Auth::check() ? 'class="editable"' : '';
+$hasRights = Auth::check() && $user->id === Auth::id();
+$editable = $hasRights ? 'class="editable"' : '';
 ?>
 <style>
 @import url(http://weloveiconfonts.com/api/?family=zocial);
@@ -153,7 +154,7 @@ function fbs_click(width, height) {
 		</div>
 	</div>
 </div>
-@if(Auth::check())
+@if($hasRights)
 <script>
 	$(document).ready(function() {
 		$('#photo-title').editable('/photo/update/{{ $id }}', {
