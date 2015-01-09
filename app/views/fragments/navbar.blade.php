@@ -1,7 +1,11 @@
 <?php
+//if (!isset($albums)) $album = array();
 if (!isset($cover)) $cover = false;
 if (!isset($delete)) $delete = false;
 if (!isset($image)) $image = 0;
+
+//$albums = User::find($user->id)->albums;
+$albums = $user->albums;
 ?>
 <div class="page-tabs">
 	<ul class="nav nav-pills">

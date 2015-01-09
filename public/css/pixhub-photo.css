@@ -20,51 +20,26 @@ body, #footer {
   padding-bottom: 0; }
 
 /* line 7, /srv/http/PixHub/public/css/pixhub-photo.scss */
-#photo-remove-popup {
-  height: 25%;
-  opacity: 0;
-  position: fixed;
-  text-align: center;
-  top: -25%;
-  width: 100%;
-  z-index: 1;
-  transition: top 1s, opacity 1s; }
-
-/* line 19, /srv/http/PixHub/public/css/pixhub-photo.scss */
-#photo-remove-popup form {
-  background-color: rgba(255, 255, 255, 0.9);
-  border: 1px solid #cccccc;
-  border-radius: 5px;
-  box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.7);
-  color: #333;
-  display: inline-block;
-  padding: 20px 50px; }
-
-/* line 29, /srv/http/PixHub/public/css/pixhub-photo.scss */
-#photo-remove-popup form button {
-  padding: 5px 20px; }
-
-/* line 33, /srv/http/PixHub/public/css/pixhub-photo.scss */
 #photo-container {
   background-color: #151515;
   padding: 30px; }
 
-/* line 38, /srv/http/PixHub/public/css/pixhub-photo.scss */
+/* line 12, /srv/http/PixHub/public/css/pixhub-photo.scss */
 #photo-container img {
   margin-left: auto;
   margin-right: auto; }
 
-/* line 43, /srv/http/PixHub/public/css/pixhub-photo.scss */
+/* line 17, /srv/http/PixHub/public/css/pixhub-photo.scss */
 #photo-informations {
   padding-top: 50px;
   padding-bottom: 50px; }
 
-/* line 49, /srv/http/PixHub/public/css/pixhub-photo.scss */
+/* line 23, /srv/http/PixHub/public/css/pixhub-photo.scss */
 #photo-title-zone h1, #photo-title-zone h4 {
   margin: 0;
   padding: 0; }
 
-/* line 54, /srv/http/PixHub/public/css/pixhub-photo.scss */
+/* line 28, /srv/http/PixHub/public/css/pixhub-photo.scss */
 #photo-avatar {
   margin-right: 20px;
   height: 64px;
@@ -72,32 +47,32 @@ body, #footer {
   min-height: 64px;
   min-width: 64px;
   display: inline-block; }
-  /* line 64, /srv/http/PixHub/public/css/pixhub-photo.scss */
+  /* line 38, /srv/http/PixHub/public/css/pixhub-photo.scss */
   #photo-avatar:hover {
     border-color: #03A9F4; }
 
-/* line 69, /srv/http/PixHub/public/css/pixhub-photo.scss */
+/* line 43, /srv/http/PixHub/public/css/pixhub-photo.scss */
 #photo-description {
   padding: 15px;
   margin: 15px;
   text-align: justify; }
 
-/* line 77, /srv/http/PixHub/public/css/pixhub-photo.scss */
+/* line 51, /srv/http/PixHub/public/css/pixhub-photo.scss */
 #photo-title-zone h1, #photo-description {
   word-break: break-all;
   word-wrap: break-word;
   text-overflow: ellipsis;
   hyphens: auto; }
 
-/* line 84, /srv/http/PixHub/public/css/pixhub-photo.scss */
+/* line 58, /srv/http/PixHub/public/css/pixhub-photo.scss */
 .photo-panel {
   padding: 30px 50px; }
 
-/* line 88, /srv/http/PixHub/public/css/pixhub-photo.scss */
+/* line 62, /srv/http/PixHub/public/css/pixhub-photo.scss */
 .separator {
   border-left: 1px solid #333; }
 
-/* line 92, /srv/http/PixHub/public/css/pixhub-photo.scss */
+/* line 66, /srv/http/PixHub/public/css/pixhub-photo.scss */
 .photo-exif {
   color: #5bc0de;
   padding-right: 40px; }

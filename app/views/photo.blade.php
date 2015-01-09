@@ -7,16 +7,7 @@ $albums = User::find($user->id)->albums;
 $hasExif = $exif->id == 1 ? false : true;
 $editable = Auth::check() ? 'class="editable"' : '';
 ?>
-@if(Auth::check() && $user->id == Auth::id())
-<div id="photo-remove-popup">
-	{{ Form::open(array('url' => '/photo/delete/' . $id)) }}
-	You are going to remove this photo.
-	<p><b>Are you sure to do this ?</b></p>
-	<button id="photo-remove-yes" type="submit" class="btn btn-danger">Yes !</button>
-	<button id="photo-remove-no" type="button" class="btn btn-default">Nope.</button>
-	{{ Form::close() }}
-</div>
-@endif
+@include('fragments/popup', array('action' => '/photo/delete/' . $id, 'message' => 'You are going to remove this photo.<p><b>Are you sure to do this ?</b></p>', 'user' => $user))
 <div id="photo" class="container-fluid page">
 	<div id="photo-container">
 		<div class="container">

@@ -16,10 +16,12 @@ Route::get('/', function()
 	return View::make('index', array('page' => 'home'));
 });
 
-Route::get('album/{album}', function($album)
+Route::get('album/{id}', function($id)
 {
-	return View::make('index', array('page' => 'album', 'album' => $album));
+	return View::make('index', array('page' => 'album', 'id' => $id));
 });
+
+Route::post('album/delete/{id}', array('uses' => 'AlbumController@deleteAlbum'));
 
 Route::get('home', function()
 {

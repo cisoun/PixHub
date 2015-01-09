@@ -17,5 +17,19 @@ var PixHub =  {
 				}
 			});
 		}
+	},
+
+	showPopup : function() {
+		$('#popup').css('opacity', '1.0');
+		$('#popup').css('top', '100px');
 	}
 };
+
+$('#navbar-delete').click(function() {
+	PixHub.showPopup();
+});
+
+$('#popup-no').click(function() {
+	$('#popup').css('opacity', '0.0');
+	$('#popup').css('top', '-25%');
+});

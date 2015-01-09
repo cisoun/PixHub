@@ -4,32 +4,6 @@
 	padding-bottom: 0;
 }
 
-#photo-remove-popup {
-	height: 25%;
-	opacity: 0.0;
-	position: fixed;
-	text-align: center;
-	top: -25%;
-	width: 100%;
-	z-index: 1;
-
-	transition: top 1s, opacity 1s;
-}
-
-#photo-remove-popup form {
-	background-color: rgba(255, 255, 255, 0.9);
-	border: 1px solid darken($bg, 20%);
-	border-radius: 5px;
-	box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.7);
-	color: $fg;
-	display: inline-block;
-	padding: 20px 50px;
-}
-
-#photo-remove-popup form button {
-	padding: 5px 20px;
-}
-
 #photo-container {
 	background-color: darken($bg-dark, 5%);
 	padding: 30px;
