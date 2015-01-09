@@ -1,5 +1,17 @@
 <?php
-	//print_r(Auth::user());
+	if(isset($id))
+	{
+		$image = Image::find($id);
+		$pathImg = Image::getPath($id);
+	}
+	else
+	{
+		$image = new Image;
+		$image->name = '';
+		$image->description = '';
+		$pathImg  = '';
+	}
+		
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -7,8 +19,17 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="">
+
 		<meta name="author" content="">
+		
+		<!--- Meta utiles pour les fonctions de partage sociales --->
+		<meta name="description" content="<?php echo $image->description ?>"/>
+		<meta property="og:site_name" content="PixHub"/>
+		<meta property="og:type"   content="website" /> 
+		<meta property="og:title" content="<?php echo $image->name ?>"/>
+		<meta property="og:url" content="<?php echo $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'] ?>"/>
+		<meta property="og:image" content="<?php echo $_SERVER['HTTP_HOST'].$pathImg ?>"/>
+		
 		<link rel="icon" href="../../favicon.ico">
 
 		<title>PixHub</title>
