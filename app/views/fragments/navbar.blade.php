@@ -17,7 +17,7 @@ $albums = $user->albums;
 			</a>
 			<ul class="dropdown-menu" role="menu">
 				@forelse($albums as $album)
-				<li><a href="/album/{{ $album->id }}">{{ $album->name }}</a></li>
+				<li><a href="/album/{{ $album->id }}"><span class="glyphicon glyphicon-book"></span> {{ $album->name }}</a></li>
 				@empty
 				<li>This user has no albums</li>
 				@endforelse
