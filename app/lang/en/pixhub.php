@@ -14,6 +14,7 @@ return array(
 	'signin-name' 					=> 'Name/pseudo',
 	'signin-email'					=> 'Email address',
 
+	'user-avatar'					=> 'Change your avatar',
 	'user-latest-photos'			=> 'Latest photos of this user',
 	'user-latest-photos-from'		=> 'Latest photos of ',
 	'user-albums'					=> 'Albums',
@@ -23,6 +24,7 @@ return array(
 	'views'							=> 'Views',
 
 	'actions'						=> array(
+		'avatar'	=> 'Change avatar',
 		'cover'		=> 'Set as cover',
 		'delete'	=> 'Delete',
 	),

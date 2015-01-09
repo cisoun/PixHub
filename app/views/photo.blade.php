@@ -95,7 +95,9 @@ function fbs_click(width, height) {
 				<div class="row">
 					<div id="photo-title-zone" class="row">
 						<div class="col-md-2">
-							<a href="{{ $user->url() }}"><img id="photo-avatar" src="../img/avatar.png" class="avatar img-responsive" alt="Avatar"/></a>
+							<a href="{{ $user->url() }}">
+								@include('fragments/avatar', array('id' => 'photo-avatar', 'user' => $user->id))
+							</a>
 						</div>
 						<div class="col-md-10">
 							<h1 id="photo-title" {{ $editable }}>{{ $image->name }}</h1>

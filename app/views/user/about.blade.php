@@ -2,10 +2,10 @@
 $hasRights = Auth::check() && $user->id == Auth::id();
 $editable = $hasRights ? 'class="editable"' : '';
 ?>
-<h1>{{{ trans('pixhub.user-about') }}}</h1>
-<p>
+<div>
+	<h1>{{{ trans('pixhub.user-about') }}}</h1>
 	<div id="user-description" {{ $editable }}>{{ nl2br($user->description) }}</div>
-</p>
+</div>
 @if($hasRights)
 <script>
 	$(document).ready(function() {

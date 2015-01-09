@@ -1,5 +1,5 @@
 <?php
-//if (!isset($albums)) $album = array();
+if (!isset($avatar)) $avatar = false;
 if (!isset($cover)) $cover = false;
 if (!isset($delete)) $delete = false;
 if (!isset($image)) $image = 0;
@@ -24,8 +24,11 @@ $albums = $user->albums;
 			</ul>
 		</li>
 		<!--li role="presentation">{{ link_to('/user/' . $user->pseudo . '/about', trans('pixhub.user-about'), $attributes = array(), $secure = null); }}</li-->
-		<li role="presentation"><a href="/user/{{ $user->pseudo }}/about"><span class="glyphicon glyphicon-user"></span> {{ trans('pixhub.user-about') }}</a></li>
+		<li role="presentation"><a href="/user/{{ $user->pseudo }}/about"><span class="glyphicon glyphicon-question-sign"></span> {{ trans('pixhub.user-about') }}</a></li>
 		@if(Auth::check() && $user->id === Auth::id())
+		@if($avatar)
+		<li role="presentation"><a id="navbar-avatar" href="/user/{{ $user->pseudo }}/avatar"><span class="glyphicon glyphicon-user"></span> {{ trans('pixhub.actions.avatar') }}</a></li>
+		@endif
 		@if($cover)
 		<li role="presentation"><a id="navbar-cover" href="/photo/cover/{{ $image }}"><span class="glyphicon glyphicon-picture"></span> {{ trans('pixhub.actions.cover') }}</a></li>
 		@endif

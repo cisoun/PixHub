@@ -228,6 +228,7 @@ a:focus {
 	margin-left: 10px;
 	margin-top: -0.3em;
 	vertical-align: middle;
+	width: 1.6em;
 }
 
 .page {
@@ -370,10 +371,11 @@ a:focus {
 	display: block;
 }
 
-.photo-thumbnail-infos img {
+.photo-thumbnail-infos .avatar {
+	float: left;
 	height: 50px;
 	margin-right: 20px;
-	float: left;
+	width: 50px;
 }
 
 .photo-thumbnail-title {
@@ -391,6 +393,8 @@ a:focus {
 }
 
 .avatar {
+	background-position: center;
+	background-size: cover;
 	border: 2px solid white;
 	border-radius: 100%;
 }

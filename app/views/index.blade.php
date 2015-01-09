@@ -12,7 +12,7 @@
 		<!--- Meta tags for social sharing --->
 		<meta name="description" content="{{ $image->description }}"/>
 		<meta property="og:site_name" content="PixHub"/>
-		<meta property="og:type"   content="website" /> 
+		<meta property="og:type" content="website" />
 		<meta property="og:title" content="{{ $image->name }}"/>
 		<meta property="og:url" content="<?php echo $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'] ?>"/>
 		<meta property="og:image" content="{{ $_SERVER['HTTP_HOST'] . Image::getPath($id) }}"/>

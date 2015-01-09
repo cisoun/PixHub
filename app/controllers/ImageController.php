@@ -108,13 +108,9 @@ class ImageController extends BaseController {
 		$filename = $file->getClientOriginalName();
 		$extension = $file->getClientOriginalExtension();
 
-		$uploadSuccess = $file->move($destinationPath, sha1($id).'.ava');
+		$uploadSuccess = $file->move($destinationPath, 'avatar');
 
-		if( $uploadSuccess ) {
-			return Redirect::to('test/tablestest');
-		} else {
-			return Redirect::to('home');
-		}
+		return Redirect::to('user/' . User::find($id)->pseudo);
 	}
 
 }

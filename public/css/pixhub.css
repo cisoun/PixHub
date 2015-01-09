@@ -216,27 +216,28 @@ a, a:focus {
   height: 1.6em;
   margin-left: 10px;
   margin-top: -0.3em;
-  vertical-align: middle; }
+  vertical-align: middle;
+  width: 1.6em; }
 
-/* line 233, /srv/http/PixHub/public/css/pixhub.scss */
+/* line 234, /srv/http/PixHub/public/css/pixhub.scss */
 .page {
   padding: 100px 0;
   z-index: 2 !important; }
 
-/* line 238, /srv/http/PixHub/public/css/pixhub.scss */
+/* line 239, /srv/http/PixHub/public/css/pixhub.scss */
 .page-shadow {
   border-top: 1px solid #999;
   box-shadow: 0 0 50px #999;
   width: 100%; }
 
-/* line 244, /srv/http/PixHub/public/css/pixhub.scss */
+/* line 245, /srv/http/PixHub/public/css/pixhub.scss */
 .page-overlay {
   position: relative;
   margin-top: 700px;
   background-color: #222;
   padding: 0; }
 
-/* line 251, /srv/http/PixHub/public/css/pixhub.scss */
+/* line 252, /srv/http/PixHub/public/css/pixhub.scss */
 .cover {
   background-image: url('../img/cover.jpg');
   background-position: center;
@@ -250,7 +251,7 @@ a, a:focus {
   top: 0px;
   z-index: 0 !important; }
 
-/* line 266, /srv/http/PixHub/public/css/pixhub.scss */
+/* line 267, /srv/http/PixHub/public/css/pixhub.scss */
 .cover-blurred {
   background-color: black;
   -webkit-filter: blur(5px);
@@ -259,36 +260,36 @@ a, a:focus {
   -ms-filter: blur(5px);
   filter: blur(5px); }
 
-/* line 275, /srv/http/PixHub/public/css/pixhub.scss */
+/* line 276, /srv/http/PixHub/public/css/pixhub.scss */
 .cover-overlay {
   background-image: none;
   position: absolute;
   top: 0;
   z-index: 1 !important; }
 
-/* line 282, /srv/http/PixHub/public/css/pixhub.scss */
+/* line 283, /srv/http/PixHub/public/css/pixhub.scss */
 .cover-fixed {
   position: fixed; }
 
-/* line 286, /srv/http/PixHub/public/css/pixhub.scss */
+/* line 287, /srv/http/PixHub/public/css/pixhub.scss */
 .form-info {
   font-size: 0.9em;
   margin: 20px 0; }
 
-/* line 291, /srv/http/PixHub/public/css/pixhub.scss */
+/* line 292, /srv/http/PixHub/public/css/pixhub.scss */
 .img-center {
   margin-left: auto;
   margin-right: auto; }
 
-/* line 296, /srv/http/PixHub/public/css/pixhub.scss */
+/* line 297, /srv/http/PixHub/public/css/pixhub.scss */
 .text-shadow {
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); }
 
-/* line 300, /srv/http/PixHub/public/css/pixhub.scss */
+/* line 301, /srv/http/PixHub/public/css/pixhub.scss */
 .photo {
   box-shadow: 0 0 10px #000; }
 
-/* line 304, /srv/http/PixHub/public/css/pixhub.scss */
+/* line 305, /srv/http/PixHub/public/css/pixhub.scss */
 .photo-thumbnail {
   background-color: black;
   height: 100%;
@@ -298,18 +299,18 @@ a, a:focus {
   display: flex;
   align-items: center;
   justify-content: center; }
-  /* line 315, /srv/http/PixHub/public/css/pixhub.scss */
+  /* line 316, /srv/http/PixHub/public/css/pixhub.scss */
   .photo-thumbnail:hover > .photo-thumbnail-overlay {
     opacity: 0.8; }
 
-/* line 321, /srv/http/PixHub/public/css/pixhub.scss */
+/* line 322, /srv/http/PixHub/public/css/pixhub.scss */
 .photo-thumbnail-img {
   display: inline;
   height: 100%;
   vertical-align: middle;
   width: 100%; }
 
-/* line 328, /srv/http/PixHub/public/css/pixhub.scss */
+/* line 329, /srv/http/PixHub/public/css/pixhub.scss */
 .photo-thumbnail-overlay {
   /* IE9 SVG, needs conditional override of 'filter' to 'none' */
   background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
@@ -336,7 +337,7 @@ a, a:focus {
   transition: all 0.2s ease-in-out;
   width: 100%; }
 
-/* line 350, /srv/http/PixHub/public/css/pixhub.scss */
+/* line 351, /srv/http/PixHub/public/css/pixhub.scss */
 .photo-thumbnail-infos {
   bottom: 0;
   left: 0;
@@ -344,87 +345,90 @@ a, a:focus {
   position: absolute;
   width: 100%; }
 
-/* line 359, /srv/http/PixHub/public/css/pixhub.scss */
+/* line 360, /srv/http/PixHub/public/css/pixhub.scss */
 .photo-thumbnail-infos, .photo-thumbnail-infos a {
   color: #fff;
   font-weight: 100; }
 
-/* line 364, /srv/http/PixHub/public/css/pixhub.scss */
+/* line 365, /srv/http/PixHub/public/css/pixhub.scss */
 .photo-thumbnail-infos a:hover {
   color: #00BCD4;
   text-decoration: none; }
 
-/* line 369, /srv/http/PixHub/public/css/pixhub.scss */
+/* line 370, /srv/http/PixHub/public/css/pixhub.scss */
 .photo-thumbnail-infos span {
   display: block; }
 
-/* line 373, /srv/http/PixHub/public/css/pixhub.scss */
-.photo-thumbnail-infos img {
+/* line 374, /srv/http/PixHub/public/css/pixhub.scss */
+.photo-thumbnail-infos .avatar {
+  float: left;
   height: 50px;
   margin-right: 20px;
-  float: left; }
+  width: 50px; }
 
-/* line 379, /srv/http/PixHub/public/css/pixhub.scss */
+/* line 381, /srv/http/PixHub/public/css/pixhub.scss */
 .photo-thumbnail-title {
   font-size: 1.6em; }
 
-/* line 384, /srv/http/PixHub/public/css/pixhub.scss */
+/* line 386, /srv/http/PixHub/public/css/pixhub.scss */
 .photo-thumbnail-author, .photo-thumbnail-author a {
   font-size: 1em;
   line-height: 1em; }
 
-/* line 389, /srv/http/PixHub/public/css/pixhub.scss */
+/* line 391, /srv/http/PixHub/public/css/pixhub.scss */
 .user-grid-thumbnail {
   padding: 15px 0; }
 
-/* line 393, /srv/http/PixHub/public/css/pixhub.scss */
+/* line 395, /srv/http/PixHub/public/css/pixhub.scss */
 .avatar {
+  background-position: center;
+  background-size: cover;
   border: 2px solid white;
   border-radius: 100%; }
 
-/* line 398, /srv/http/PixHub/public/css/pixhub.scss */
+/* line 402, /srv/http/PixHub/public/css/pixhub.scss */
 a:hover .avatar {
   border-color: #00BCD4; }
 
-/* line 402, /srv/http/PixHub/public/css/pixhub.scss */
+/* line 406, /srv/http/PixHub/public/css/pixhub.scss */
 .tag {
   background-color: #5cb85c;
   border-radius: 2px;
   color: #fff;
   padding: 2px 5px; }
-  /* line 408, /srv/http/PixHub/public/css/pixhub.scss */
+  /* line 412, /srv/http/PixHub/public/css/pixhub.scss */
   .tag:hover {
     color: #fff; }
 
-/* line 413, /srv/http/PixHub/public/css/pixhub.scss */
+/* line 417, /srv/http/PixHub/public/css/pixhub.scss */
 .page-tabs {
   top: 0; }
 
-/* line 417, /srv/http/PixHub/public/css/pixhub.scss */
+/* line 421, /srv/http/PixHub/public/css/pixhub.scss */
 .page-tabs .nav {
   background-color: #333;
   text-align: center; }
 
-/* line 422, /srv/http/PixHub/public/css/pixhub.scss */
+/* line 426, /srv/http/PixHub/public/css/pixhub.scss */
 .page-tabs .nav li {
   display: inline-block;
   float: none; }
 
-/* line 427, /srv/http/PixHub/public/css/pixhub.scss */
+/* line 431, /srv/http/PixHub/public/css/pixhub.scss */
 .page-tabs .nav li a {
   background: transparent;
   color: #ccc;
   padding: 20px; }
-  /* line 433, /srv/http/PixHub/public/css/pixhub.scss */
+  /* line 437, /srv/http/PixHub/public/css/pixhub.scss */
   .page-tabs .nav li a:hover, .page-tabs .nav li a:focus {
     background-color: transparent;
     color: #fff; }
 
-/* line 439, /srv/http/PixHub/public/css/pixhub.scss */
+/* line 443, /srv/http/PixHub/public/css/pixhub.scss */
 .page-tabs .dropdown-menu {
   background-color: #333; }
 
-/* line 443, /srv/http/PixHub/public/css/pixhub.scss */
+/* line 447, /srv/http/PixHub/public/css/pixhub.scss */
 .page-tabs .dropdown-menu li a {
   padding: 0;
   display: block;
