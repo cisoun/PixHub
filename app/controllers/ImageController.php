@@ -39,7 +39,7 @@ class ImageController extends BaseController {
 		$file = Input::file('file');
 		$userID = Auth::id();
 		$mime = $file->getMimeType();
-		
+
 
 		// Define new file path
 
@@ -50,7 +50,6 @@ class ImageController extends BaseController {
 		// Upload process
 
 		$uploadSuccess = $file->move($destinationPath, $filename);
-		return Response::json($file->getMimeType(), 400);
 		if($uploadSuccess)
 		{
 			// Title was defined ? If so, use it. Otherwise, use original file's name.
@@ -60,7 +59,7 @@ class ImageController extends BaseController {
 
 			// Exif stuff...
 
-			if($file->getMimeType() == 'image/jpeg')
+			if($mime == 'image/jpeg')
 			{
 				$exif = @exif_read_data($destinationPath . '/'. $filename, 0, true);
 				$exifID = App::make('ExifController')->createExif($exif);
@@ -69,7 +68,6 @@ class ImageController extends BaseController {
 			{
 				$exifID = 1;
 			}
-			return Response::json('post', 400);
 
 			// Get album's name. Create it if it doesn't exist.
 			$albumName = Input::get('album-name');
