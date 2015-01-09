@@ -127,7 +127,18 @@ function fbs_click(width, height) {
 				<span>No EXIF datas.</span>
 				@endif
 				<h1>Tags</h1>
-				<a href="#" class="tag">Example</a> <a href="#" class="tag">Example</a> <a href="#" class="tag">Example</a>
+				<?php 
+				$tags = $image->tags; 
+				if(count($tags) > 0)
+				{
+					foreach($tags as $tag)
+					{					
+						echo '<a href="#" class="tag">' . $tag->name . '</a>';
+					}
+				}
+				else
+					echo '-';
+				?>
 				
 				<h1>Share</h1>
 				<a class="icon facebook" href="http://www.facebook.com/share.php?u=<full " onClick="return fbs_click(400, 300)" target="_blank" title="Share This on Facebook"><span class="zocial-facebook"></span></a>
