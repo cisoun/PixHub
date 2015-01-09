@@ -83,4 +83,10 @@ body {
 #home-presentation .row {
   padding: 50px 0; }
 
+/* line 85, /srv/http/PixHub/public/css/pixhub-home.scss */
+.big-title {
+  font-size: 4em;
+  text-align: center;
+  text-transform: uppercase; }
+
 /*# sourceMappingURL=pixhub-home.css.map */
