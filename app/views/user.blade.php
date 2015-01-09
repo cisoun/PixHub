@@ -3,7 +3,11 @@ $avatar = asset('img/avatar.png');
 
 $user = User::getUserFromPseudo($user);
 $albums = $user->albums;
-$cover = Image::find($user->cover)->path();
+
+// Cover
+$cover = asset('img/cover.jpg');
+if ($image = Image::find($user->cover))
+	$cover = $image->path();
 ?>
 <div id="user">
 	@include('fragments/cover', array('cover' => $cover))
