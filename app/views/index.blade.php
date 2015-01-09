@@ -1,18 +1,3 @@
-<?php
-	if(isset($id))
-	{
-		$image = Image::find($id);
-		$pathImg = Image::getPath($id);
-	}
-	else
-	{
-		$image = new Image;
-		$image->name = '';
-		$image->description = '';
-		$pathImg  = '';
-	}
-		
-?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -22,13 +7,16 @@
 
 		<meta name="author" content="">
 		
-		<!--- Meta utiles pour les fonctions de partage sociales --->
-		<meta name="description" content="<?php echo $image->description ?>"/>
+		@if($page == 'photo' && isset($id))
+		<?php $image = Image::find($id); ?>
+		<!--- Meta tags for social sharing --->
+		<meta name="description" content="{{ $image->description }}"/>
 		<meta property="og:site_name" content="PixHub"/>
 		<meta property="og:type"   content="website" /> 
-		<meta property="og:title" content="<?php echo $image->name ?>"/>
+		<meta property="og:title" content="{{ $image->name }}"/>
 		<meta property="og:url" content="<?php echo $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'] ?>"/>
-		<meta property="og:image" content="<?php echo $_SERVER['HTTP_HOST'].$pathImg ?>"/>
+		<meta property="og:image" content="{{ $_SERVER['HTTP_HOST'] . Image::getPath($id) }}"/>
+		@endif
 		
 		<link rel="icon" href="../../favicon.ico">
 
