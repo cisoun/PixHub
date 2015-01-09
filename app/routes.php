@@ -71,8 +71,6 @@ Route::get('tag/{tag}',function($tag)
 	return View::make('index', array('page' => 'tag', 'tag' => $tag));
 });
 
-Route::post('tag', array('uses' => 'HomeController@showTags'));
-
 Route::get('signin', function()
 {
 	return View::make('index', array('page' => 'signin'));
@@ -87,6 +85,8 @@ Route::post('signup', array('uses' => 'HomeController@createUser'));
 Route::post('signin', array('uses' => 'HomeController@doLogin'));
 Route::get('signoff', array('uses' => 'HomeController@doLogout'));
 
+Route::post('tag', array('uses' => 'HomeController@showTags'));
+
 Route::get('user/{user}', function($user)
 {
 	if (User::getUserFromPseudo($user)->count() == 0)
@@ -98,6 +98,8 @@ Route::get('user/{user}/{section}', function($user, $section)
 {
 	return View::make('index', array('page' => 'user', 'user' => $user, 'section' => $section));
 });
+
+Route::post('user/{user}/update', array('uses' => 'UserController@updateDescription'));
 
 Route::get('upload', function()
 {

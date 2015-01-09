@@ -1,13 +1,13 @@
 <?php
 
 class UserController extends BaseController {
-	
+
 	// création d'une vue de création d'ajout d'utilisateur ...
 	public function showCreate()
 	{
 		return View::make('test/createusertest'); // ... de test
 	}
-	
+
 	public function chooseCover($id)
 	{
 		$user = User::find(Auth::id());
@@ -24,7 +24,7 @@ class UserController extends BaseController {
 			'mail'    => 'required|email', // make sure the email is an actual email
 			'password' => 'required|alphaNum|min:3' // password can only be alphanumeric and has to be greater than 3 characters
 		);
-		
+
 		// run the validation rules on the inputs from the form
 		$validator = Validator::make(Input::all(), $rules);
 
@@ -46,13 +46,13 @@ class UserController extends BaseController {
 				'cover' => '-', // En 'dur' car pas de champs dans le formulaire de test.
 				'password' => Hash::make($pass),
 			];
-			
+
 			User::create($user);
-			
+
 			return Redirect::to('test/tablestest');
 		}
 	}
-	
+
 	// Création d'une vue de login ...
 	public function showLogin()
 	{
@@ -63,7 +63,7 @@ class UserController extends BaseController {
 	// Méthode de login
 	public function doLogin()
 	{
-	// validate the info, create rules for the inputs
+		// validate the info, create rules for the inputs
 		$rules = array(
 			//'name' 	=> 'required|alphaNum|min:3', // name can only be alphanumeric and has to be greater than 4 characters
 			'mail'    => 'required|email', // make sure the email is an actual email
@@ -104,11 +104,27 @@ class UserController extends BaseController {
 
 		}
 	}
-	
+
 	// Méthode de logOut
 	public function doLogout()
 	{
 		Auth::logout(); // log the user out of our application
 		return Redirect::to('/'); // redirect the user to the login screen
+	}
+
+	public function updateDescription($user)
+	{
+		if (!Auth::check())
+			return;
+
+		$user = User::getUserFromPseudo($user);
+
+		if ($user->id != Auth::id())
+			return;
+
+		$value = e(Input::get('value'));
+		if (Input::get('id') == 'user-description')
+			$user->setDescription($value);
+		return Input::get('value');
 	}
 }
