@@ -36,6 +36,7 @@ Route::get('photo/{id}', function($id)
 	return View::make('index', array('page' => 'photo', 'id' => $id));
 });
 
+Route::get('photo/cover/{id}', array('uses' => 'UserController@chooseCover'));
 Route::post('photo/delete/{id}', array('uses' => 'ImageController@deleteImage'));
 
 Route::post('photo/update/{id}', function($id)

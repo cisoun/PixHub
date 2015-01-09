@@ -1,21 +1,5 @@
 @import 'pixhub-dark.scss';
 
-#album-cover {
-	background-color: black;
-	-webkit-filter: blur(5px);
-	-moz-filter: blur(5px);
-	-o-filter: blur(5px);
-	-ms-filter: blur(5px);
-	filter: blur(5px);
-}
-
-#album-infos {
-	background-image: none;
-	position: absolute;
-	top: 0;
-	z-index: 1;
-}
-
 #album-infos h1 {
 	font-size: 6em;
 	line-height: 1.4em;

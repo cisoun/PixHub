@@ -22,5 +22,8 @@ return array(
 	'photo-informations'			=> 'Informations',
 	'views'							=> 'Views',
 
-	'action-delete'					=> 'Delete'
+	'actions'						=> array(
+		'cover'		=> 'Set as cover',
+		'delete'	=> 'Delete',
+	),
 );

@@ -18,6 +18,10 @@ class Album extends Eloquent {
 		return '/uploads/' . sha1($this->user_id);
 	}
 
+	public function url() {
+		return '/album/' . $this->id;
+	}
+
 	public function user() {
 		return $this->belongsTo('User');
 	}

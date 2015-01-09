@@ -18,8 +18,8 @@ Dropzone.options.uploadDropzone = {
 			<div>\
 				<input type="text" class="dz-title" placeholder="Insert a title..." name="title"/>\<span class="glyphicon glyphicon-trash dz-remove" aria-hidden="true" data-dz-remove></span>\
 			</div>\
-			<div class="dz-success-mark"><span class="glyphicon glyphicon-ok-sign"></span></div>\
-			<div class="dz-error-mark"><span class="glyphicon glyphicon-remove-sign"></span></div>\
+			<div class="dz-success-mark"><span class="glyphicon glyphicon-ok"></span></div>\
+			<div class="dz-error-mark"><span class="glyphicon glyphicon-remove"></span></div>\
 			<!--div class="dz-error-message"><span data-dz-errormessage></span></div-->\
 		</div>',
 	thumbnailHeight: 300,

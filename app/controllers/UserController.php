@@ -8,6 +8,13 @@ class UserController extends BaseController {
 		return View::make('test/createusertest'); // ... de test
 	}
 	
+	public function chooseCover($id)
+	{
+		$user = User::find(Auth::id());
+		$user->setCover($id);
+		return Redirect::to('user/' . $user->pseudo);
+	}
+
 	// Méthode de cération d'utilisateur
 	public function createUser()
 	{

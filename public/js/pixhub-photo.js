@@ -1,4 +1,4 @@
-$('#photo-remove').click(function() {
+$('#navbar-remove').click(function() {
 	$('#photo-remove-popup').css('opacity', '1.0');
 	$('#photo-remove-popup').css('top', '100px');
 });

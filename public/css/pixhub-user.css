@@ -15,51 +15,28 @@ body, #footer {
   border-top: 1px solid #3c3c3c;
   box-shadow: 0 0 50px black; }
 
-/* line 6, /srv/http/PixHub/public/css/pixhub-user.scss */
-#user-cover {
-  background-image: url('../img/background-blue.jpg');
-  background-size: cover;
-  border-bottom: 1px solid #999;
-  color: #fff;
-  height: 700px;
-  padding-top: 150px;
-  position: fixed;
-  width: 100%;
-  text-align: center;
-  top: 0px;
-  z-index: -1; }
-
-/* line 20, /srv/http/PixHub/public/css/pixhub-user.scss */
+/* line 3, /srv/http/PixHub/public/css/pixhub-user.scss */
 #user-name {
   font-size: 4em;
   font-weight: 100; }
 
-/* line 25, /srv/http/PixHub/public/css/pixhub-user.scss */
+/* line 8, /srv/http/PixHub/public/css/pixhub-user.scss */
 #user-avatar {
-  border: 3px solid #fff;
+  border: 3px solid white;
   height: 256px;
   margin: 0 auto;
   width: 256px; }
 
-/* line 32, /srv/http/PixHub/public/css/pixhub-user.scss */
+/* line 15, /srv/http/PixHub/public/css/pixhub-user.scss */
 #user-location {
   font-size: 1.5em; }
 
-/* line 36, /srv/http/PixHub/public/css/pixhub-user.scss */
+/* line 19, /srv/http/PixHub/public/css/pixhub-user.scss */
 #user-website a {
-  color: #fff;
+  color: white;
   font-size: 1.3em; }
 
-/* line 41, /srv/http/PixHub/public/css/pixhub-user.scss */
-#user-body {
-  background-color: #222;
-  padding: 0;
-  margin: 0;
-  margin-top: 700px;
-  width: 100%;
-  z-index: 1; }
-
-/* line 51, /srv/http/PixHub/public/css/pixhub-user.scss */
+/* line 24, /srv/http/PixHub/public/css/pixhub-user.scss */
 #user-page {
   padding: 50px 0; }
 

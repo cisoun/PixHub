@@ -7,6 +7,7 @@ $albums = User::find($user->id)->albums;
 $hasExif = $exif->id == 1 ? false : true;
 $editable = Auth::check() ? 'class="editable"' : '';
 ?>
+@if(Auth::check() && $user->id == Auth::id())
 <div id="photo-remove-popup">
 	{{ Form::open(array('url' => '/photo/delete/' . $id)) }}
 	You are going to remove this photo.
@@ -15,6 +16,7 @@ $editable = Auth::check() ? 'class="editable"' : '';
 	<button id="photo-remove-no" type="button" class="btn btn-default">Nope.</button>
 	{{ Form::close() }}
 </div>
+@endif
 <div id="photo" class="container-fluid page">
 	<div id="photo-container">
 		<div class="container">
@@ -22,30 +24,8 @@ $editable = Auth::check() ? 'class="editable"' : '';
 		</div>
 	</div>
 	<div class="page-shadow">
-		<div id="user-nav">
-			<div class="page-tabs">
-				<ul class="nav nav-pills">
-					<!--li role="presentation">{{ link_to('/user/' . $user->pseudo . '/latest', trans('pixhub.user-latest-photos'), $attributes = array(), $secure = null); }}</li-->
-					<li role="presentation"><a href="/user/{{ $user->pseudo }}/latest"><span class="glyphicon glyphicon-time"></span> {{ trans('pixhub.user-latest-photos') }}</a></li>
-					<li role="presentation" class="dropdown">
-						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
-							<span class="glyphicon glyphicon-book"></span> {{ trans('pixhub.user-albums') }} <span class="caret"></span>
-						</a>
-						<ul class="dropdown-menu" role="menu">
-							@forelse($albums as $album)
-							<li><a href="/album/{{ $album->id }}">{{ $album->name }}</a></li>
-							@empty
-							<li>This user has no albums</li>
-							@endforelse
-						</ul>
-					</li>
-					<!--li role="presentation">{{ link_to('/user/' . $user->pseudo . '/about', trans('pixhub.user-about'), $attributes = array(), $secure = null); }}</li-->
-					<li role="presentation"><a href="/user/{{ $user->pseudo }}/about"><span class="glyphicon glyphicon-user"></span> {{ trans('pixhub.user-about') }}</a></li>
-					@if(Auth::check())
-					<li role="presentation"><a id="photo-remove" href="#"><span class="glyphicon glyphicon-trash"></span> {{ trans('pixhub.action-delete') }}</a></li>
-					@endif
-				</ul>
-			</div>
+		<div>
+			@include('fragments/navbar', array('cover' => true, 'delete' => true, 'image' => $id))
 		</div>
 		<div id="photo-informations" class="container page">
 			<div class="col-md-6 photo-panel">
@@ -56,7 +36,8 @@ $editable = Auth::check() ? 'class="editable"' : '';
 						</div>
 						<div class="col-md-10">
 							<h1 id="photo-title" {{ $editable }}>{{ $image->name }}</h1>
-							<h4><a href="{{ $user->url() }}">{{ $user->name }}</a></h4>
+							<h4>In <a href="{{ $image->album->url() }}">{{ $image->album->name }}</a> from <a href="{{ $user->url() }}">{{ $user->name }}</a></h4>
+
 						</div>
 					</div>
 					<div class="row">

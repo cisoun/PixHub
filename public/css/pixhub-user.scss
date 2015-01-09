@@ -6,7 +6,7 @@
 }
 
 #user-avatar {
-	border: 3px solid $user-cover-fg;
+	border: 3px solid white;
 	height: 256px;
 	margin: 0 auto;
 	width: 256px;
@@ -17,18 +17,8 @@
 }
 
 #user-website a {
-	color: $user-cover-fg;
+	color: white;
 	font-size: 1.3em;
-}
-
-#user-body {
-	background-color: $bg-dark;
-	padding: 0;
-	margin: 0;
-	//position: relative;
-	margin-top: 700px;
-	width: 100%;
-	z-index: 1;
 }
 
 #user-page {

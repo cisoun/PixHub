@@ -15,31 +15,26 @@
 
 ?>
 <div id="album">
-	<div id="album-cover" class="cover" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url('{{ $cover }}');">
-
-	</div>
-	<div id="album-infos" class="cover">
+	@include('fragments/cover', array('cover' => $cover, 'fixed' => false))
+	<div id="album-infos" class="cover cover-overlay">
 		<h1>{{ $title }}</h1>
 		<h2>{{ $author }}</h2>
 		<img src="../../img/avatar.png" class="avatar"/>
 	</div>
-	<div id="album-gallery" class="page container">
-		<?php
-			/*for ($i = 0; $i < 10; $i++)
-			{
-				$newline = ($i % 4 == 0);
-
-				echo ('<div class="col-lg-12 user-grid-thumbnail">');
-				echo (View::make('fragments/photo-thumbnail', array('title' => 'Photo #' . $i)));
-				echo ('</div>');
-			}*/
-
-			for ($i = 0; $i < count($images); $i++)
-			{
-				echo ('<div class="col-lg-12 user-grid-thumbnail">');
-				echo (View::make('fragments/photo-thumbnail', array('id' => $images[$i]->id)));
-				echo ('</div>');
-			}
-		?>
+	<div id="album-gallery" class="page page-shadow container">
+		<div class="container">
+			@if(count($images) > 0)
+			<?php
+				for ($i = 0; $i < count($images); $i++)
+				{
+					echo ('<div class="col-lg-12 user-grid-thumbnail">');
+					echo (View::make('fragments/photo-thumbnail', array('id' => $images[$i]->id)));
+					echo ('</div>');
+				}
+			?>
+			@else
+				<div class="message">Aw snap ! This album is empty... :(</div>
+			@endif
+		</div>
 	</div>
 </div>
