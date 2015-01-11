@@ -17,7 +17,7 @@
 	<div id="album-infos" class="cover cover-overlay">
 		<h1>{{ $title }}</h1>
 		<h2>{{ $author->name }}</h2>
-		<img src="../../img/avatar.png" class="avatar"/>
+		@include('fragments/avatar', array('id' => 'photo-avatar', 'user' => $author->id))
 	</div>
 	<div id="album-gallery" class="page-shadow container">
 		@include('fragments/navbar', array('cover' => false, 'delete' => true, 'user' => $author))
