@@ -49,10 +49,10 @@
 
 		@include($page)
 
-		<div id="footer" class="container-fluid">
+		<footer id="footer" class="container-fluid">
 			PixHub is a free and open source project created at the Haute-École Arc Engineering School of Neuchâtel |
 			<a href="https://github.com/cisoun/PixHub">Check PixHub on GitHub</a>
-		</div>
+		</footer>
 
 		{{ HTML::script('js/pixhub.js') }}
 		{{ HTML::script('js/pixhub-' . $page . '.js') }}
