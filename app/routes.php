@@ -100,7 +100,7 @@ Route::get('user/{user}/{section}', function($user, $section)
 });
 
 Route::post('user/{user}/avatar', array('uses' => 'ImageController@uploadAvatar'));
-Route::post('user/{user}/update', array('uses' => 'UserController@updateDescription'));
+Route::post('user/{user}/update', array('uses' => 'UserController@update'));
 
 Route::get('upload', function()
 {

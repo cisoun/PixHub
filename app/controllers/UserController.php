@@ -1,13 +1,5 @@
 <?php
-
 class UserController extends BaseController {
-
-	// création d'une vue de création d'ajout d'utilisateur ...
-	public function showCreate()
-	{
-		return View::make('test/createusertest'); // ... de test
-	}
-
 	public function chooseCover($id)
 	{
 		$user = User::find(Auth::id());
@@ -33,8 +25,8 @@ class UserController extends BaseController {
 			return Redirect::to('test/createusertest')
 				->withErrors($validator) // send back all errors to the login form
 				->withInput(Input::except('password')); // send back the input (not the password) so that we can repopulate the form
-		} 
-		else {			
+		}
+		else {
 			$pass = Input::get('password');
 			$user = [
 				'name' => Input::get('name'),
@@ -95,9 +87,9 @@ class UserController extends BaseController {
 				// for now we'll just echo success (even though echoing in a controller is bad)
 				//echo 'SUCCESS!';
 
-			} else {	 	
+			} else {
 
-				// validation not successful, send back to form	
+				// validation not successful, send back to form
 				return Redirect::to('test/logintest'); // Page de login de test
 
 			}
@@ -105,26 +97,38 @@ class UserController extends BaseController {
 		}
 	}
 
-	// Méthode de logOut
 	public function doLogout()
 	{
 		Auth::logout(); // log the user out of our application
 		return Redirect::to('/'); // redirect the user to the login screen
 	}
 
-	public function updateDescription($user)
+	/**
+	 * @brief Update an user
+	 * @param user User's pseudo
+	 * @return Sent value (useful for JEditable)
+	 */
+	public function update($user)
 	{
+		// Authorization verification
 		if (!Auth::check())
 			return;
 
 		$user = User::getUserFromPseudo($user);
 
+		// Check if modified user is the logged one.
+		// TODO : Bypass this if an administrator is implemented.
 		if ($user->id != Auth::id())
 			return;
 
-		$value = e(Input::get('value'));
+		$value = e(Input::get('value')); // Sent value
+
+		// Modify what is called to be changed.
 		if (Input::get('id') == 'user-description')
 			$user->setDescription($value);
+		if (Input::get('id') == 'user-name')
+			$user->setName($value);
+
 		return Input::get('value');
 	}
 }
