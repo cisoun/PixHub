@@ -81,7 +81,7 @@ class Image extends Eloquent{
 	}
 
 	// Méthode de création d'image dans la BDD
-	public function createImage($name, $description, $albumID, $exifID)
+	public static function createImage($name, $description, $albumID, $exifID)
 	{
 		$data = [
 			'name' => $name,
@@ -91,7 +91,8 @@ class Image extends Eloquent{
 			'exif_id' => $exifID,
 		];
 		
-		return Image::create($data)['id'];
+		$image = Image::create($data);
+		return $image->id;
 	}
 	
 	// Supression de l'image (.png etc)

@@ -39,12 +39,10 @@ class ImageController extends BaseController {
 		$userID = Auth::id();
 		$mime = $file->getMimeType();
 
-
 		// Define new file path
 
 		$destinationPath = public_path() . '/uploads/' . sha1($userID);
 		$filename = $file->getClientOriginalName();
-
 
 		// Upload process
 
