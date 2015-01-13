@@ -99,7 +99,7 @@ Route::get('user/{user}/{section}', function($user, $section)
 	return View::make('index', array('page' => 'user', 'user' => $user, 'section' => $section));
 });
 
-Route::post('user/{user}/avatar', array('uses' => 'ImageController@uploadAvatar'));
+Route::post('user/{user}/avatar', 'ImageController@uploadAvatar');
 Route::post('user/{user}/update', array('uses' => 'UserController@update'));
 
 Route::get('upload', function()

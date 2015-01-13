@@ -1,5 +1,5 @@
 <h1>{{ trans('pixhub.user-avatar') }}</h1>
-{{ Form::open(array('url' => '/user/' . $user . '/avatar', 'files' => true)) }}
+{{ Form::open(array('url' => '/user/' . $user->pseudo . '/avatar', 'files' => true)) }}
 <div class="form-group">
 	<label for="avatar">File input</label>
 	<input type="file" id="avatar" name="file">
