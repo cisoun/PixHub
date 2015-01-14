@@ -75,7 +75,7 @@ INSERT INTO `exifs` (`id`, `height`, `width`, `cameraModel`, `cameraBrand`, `iso
 CREATE TABLE IF NOT EXISTS `images` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
-  `description` varchar(50) NOT NULL,
+  `description` text NOT NULL,
   `dateUpload` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `album_id` int(11) NOT NULL,
   `exif_id` int(11) NOT NULL,
