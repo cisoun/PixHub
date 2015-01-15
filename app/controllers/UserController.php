@@ -128,6 +128,8 @@ class UserController extends BaseController {
 			$user->setDescription($value);
 		if (Input::get('id') == 'user-name')
 			$user->setName($value);
+		if (Input::get('id') == 'user-location')
+			$user->setLocation($value);
 
 		return Input::get('value');
 	}

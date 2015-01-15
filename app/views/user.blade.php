@@ -49,5 +49,17 @@ $(document).ready(function() {
 			return value;
 		}
 	});
+
+	$('#user-location').editable('/user/{{ $user->pseudo }}/update', {
+		type: 'text',
+		onblur: 'submit',
+		placeholder: 'Click here to change your location...',
+		callback: function(value, settings) {
+			$(this).html(retval);
+		},
+		data: function(value, settings) {
+			return value;
+		}
+	});
 });
 </script>
